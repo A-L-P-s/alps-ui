@@ -56,6 +56,7 @@ const Form = () => {
           onChange={event => setSent2(event.target.value)}
         />
       </div>
+      <button>Submit</button>
     </form>
   );
 }
