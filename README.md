@@ -180,11 +180,13 @@ Happy path, sad path, and edge case testing were considered and tested. When a r
     <pre>
     <code>
 {
-  "error": {
+  "errors": [
+    {
       "status": "404"
       "title": "Invalid Request",
       "detail": "Couldn't find User with 'id'=<id>"
      }
+   ]
 }
     </code></pre>
 </details>
