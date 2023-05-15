@@ -14,6 +14,10 @@ const mockPrompt = {
            {
             grammar_point: 'geçmiş zaman',
             eng_grammar_point: 'past simple'
+           },
+           {
+            grammar_point: 'geçmiş Kirk',
+            eng_grammar_point: 'past Kirk'
            }
         ],
         sentences: null
