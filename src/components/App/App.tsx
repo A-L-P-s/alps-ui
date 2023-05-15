@@ -7,26 +7,26 @@ import Feedback from '../Feedback/Feedback';
 
 import './App.css';
 
-interface IChallenge {
-  challenge_id: string, 
-  language: string, 
-  verb: string,
-  eng_verb: string, 
-  image_url: string,
-  image_alt_text: string, 
-  created_at: string
-}
+// interface IChallenge {
+//   challenge_id: string, 
+//   language: string, 
+//   verb: string,
+//   eng_verb: string, 
+//   image_url: string,
+//   image_alt_text: string, 
+//   created_at: string
+// }
 
-interface IUser {
-  attributes: {
-    name: string,
-    preferred_lang: string,
-    challenges: IChallenge[]
-  }
-}
+// interface IUser {
+//   attributes: {
+//     name: string,
+//     preferred_lang: string,
+//     challenges: IChallenge[]
+//   }
+// }
 
 const App = () => {
-  const [user, setUser] = useState({})
+  // const [user, setUser] = useState({})
 
   return (
     <>
