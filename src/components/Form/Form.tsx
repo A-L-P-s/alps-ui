@@ -30,12 +30,12 @@ const Form = () => {
     setVerb(mockData.verb);
     setEngVerb(mockData.eng_verb);
     setGrammarPoints(mockGrammar);
-  }, [])
+  }, []);
 
   return (
     <form>
-      <img alt={imgAlt} src={imgUrl}/>
-      <div>
+      <img alt={imgAlt} src={imgUrl} className='prompt-img'/>
+      <div className='form-container'>
         <h2>{verb}</h2>
         <h3>{engVerb}</h3>
         <img src={infoIcon} alt='instructions icon' />
@@ -55,8 +55,8 @@ const Form = () => {
           placeholder='Enter your sentence'
           onChange={event => setSent2(event.target.value)}
         />
-      </div>
       <button>Submit</button>
+      </div>
     </form>
   );
 }

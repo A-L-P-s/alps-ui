@@ -1,0 +1,14 @@
+form {
+  display: flex;
+}
+
+.prompt-img {
+  width: 40%;
+  height: auto;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
