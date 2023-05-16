@@ -1,0 +1,7 @@
+.feedback-container {
+  display: flex;
+}
+
+.prompt-img {
+  width: 40%;
+}
