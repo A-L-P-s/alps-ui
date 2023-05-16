@@ -1,4 +1,15 @@
 img {
-  height: 200px;
-  width: 100px;
+  height: 240px;
+  width: 200px;
+}
+
+.challenge-card-container {
+  display: grid;
+  overflow-y: scroll;
+  height: 465px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-rows: minmax(250px, auto);
+  border: 1px solid black;
+  padding: 20px;
 }

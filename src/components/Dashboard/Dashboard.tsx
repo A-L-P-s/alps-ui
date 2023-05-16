@@ -31,8 +31,9 @@ const Dashboard = () => {
   const [userData, setUserData] = useState<IUser>(mockUser)
 
   return (
-    <div>
+    <div className='dashboard'>
       <PastChallenges challenges={userData.data.attributes.challenges}/>
+      <button>New Challenge</button>
     </div>
   );
 }
