@@ -1,22 +1,25 @@
 img {
-  height: 240px;
-  width: 200px;
+  height: 34vh;
+  width: 15vw;
 }
 
 .challenge-card-container {
   display: grid;
   overflow-y: scroll;
-  height: 70vh;
+  height: 75vh;
   grid-template-columns: repeat(3, 1fr);
   gap: 5vh;
   grid-auto-rows: minmax(250px, auto);
   border: 1px solid black;
-  padding: 20px;
 }
 
 @media screen and (max-width: 1200px) {
   .challenge-card-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    height: 25vh;
   }
 }
 
