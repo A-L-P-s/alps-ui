@@ -8,7 +8,7 @@ interface UserProps {
 
 const User: React.FC<UserProps> = (props) => {
   return (
-    <div>
+    <div className='user'>
       <p>{props.name}</p>
       <p>{props.preferred_lang}</p>
     </div>
