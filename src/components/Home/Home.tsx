@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import './Home.css';
 import User from '../User/User';
 import users from '../../sampleData/users'
