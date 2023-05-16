@@ -25,7 +25,6 @@ const PastChallenges = ({ challenges }: IProps) => {
       <ChallengeCard 
         verb={challenge.verb}
         eng_verb={challenge.eng_verb}
-        challenge_num={challenge.challenge_id}
         image_url={challenge.image_url}
         image_alt_text={challenge.image_alt_text}
         date={challenge.created_at}
