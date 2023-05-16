@@ -12,10 +12,6 @@ const getUsers: (userId?: string) => void = async (userId) => {
         return response.json()
       }
     })
-    .then(data => {
-      console.log('Response: ', data);
-      return data;
-    })
     .catch(error => {
       console.error('An error occurred:', error)
     });
