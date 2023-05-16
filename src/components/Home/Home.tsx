@@ -3,6 +3,18 @@ import './Home.css';
 import User from '../User/User';
 import users from '../../sampleData/users'
 
+interface UserAttributes {
+  name: string;
+  preferred_lang: string;
+  challenges: null;
+}
+
+interface UserData {
+  id: string;
+  type: string;
+  attributes: UserAttributes;
+}
+
 const userOne = users.data[0].attributes;
 const userTwo = users.data[1].attributes;
 
