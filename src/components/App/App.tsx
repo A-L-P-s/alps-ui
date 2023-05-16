@@ -4,7 +4,7 @@ import Home from '../Home/Home';
 import Dashboard from '../Dashboard/Dashboard';
 import Form from '../Form/Form';
 import Feedback from '../Feedback/Feedback';
-
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // interface IChallenge {
@@ -31,10 +31,12 @@ const App = () => {
   return (
     <>
       <Header />
-      <Home />
-      <Dashboard />
-      <Form />
-      <Feedback />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/Deniz/dashboard' element={<Dashboard />} />
+        <Route path='/Deniz/new-challenge' element={<Form />} />
+        <Route path='/Deniz/feedback/:challenge-id' element={<Feedback />} />
+      </Routes>
     </>
   );
 }
