@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ISentences } from '../../Utilities/interfaces';
 import './Feedback.css';
 
 // MOCK DATA
@@ -6,14 +7,6 @@ import mockFeedback from '../../sampleData/feedback';
 
 // MOCK DATA PATH
 const mockData = mockFeedback.data.attributes;
-
-interface ISentences {
-  sent_id: string;
-  grammar_point: string;
-  eng_grammar_point: string;
-  user_sent: string;
-  ai_sent: string;
-}
 
 const Feedback = () => {
   const [imgUrl, setImgUrl] = useState<string>('');
