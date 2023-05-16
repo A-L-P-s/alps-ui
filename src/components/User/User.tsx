@@ -6,7 +6,7 @@ interface UserProps {
   preferred_lang:string
 }
 
-const User = (props: UserProps) => {
+const User: React.FC<UserProps> = (props) => {
   return (
     <div>
       <p>{props.name}</p>
