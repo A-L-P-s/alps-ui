@@ -108,7 +108,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 **ALPs** was created by a cross-functional development team of students from the Turing School of Software and Design as their [capstone project](https://mod4.turing.edu/projects/capstone/).
 
-The mission of **ALPs** is to provide users with writing promts that ignite their imagination and immediate feedback on their language output.
+The mission of **ALPs** is to provide users with writing promts that ignite their imagination and provide immediate feedback on their language output.
 
 Users simply choose their target language via an avatar to start a new challenge. When they begin, they'll see a random verb, inspiring image, and multiple grammar points to create fresh, unique sentences. Once they submit the challenge -- with the help of AI -- immediate feedback and correct sentences are provided so they can review and learn even faster! Users also have the option to email a copy of their work to themselves since tracking personal progress not only expediates growth but also cultivates confidence!
 
