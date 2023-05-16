@@ -1,10 +1,16 @@
 import React from 'react';
 import './User.css';
 
-const User = () => {
+interface UserProps {
+  name:string,
+  preferred_lang:string
+}
+
+const User: React.FC<UserProps> = (props) => {
   return (
-    <div>
-      
+    <div className='user'>
+      <p>{props.name}</p>
+      <p>{props.preferred_lang}</p>
     </div>
   );
 }
