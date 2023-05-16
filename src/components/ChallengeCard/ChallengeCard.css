@@ -1,0 +1,14 @@
+.challenge-card {
+  border: 1px solid black;
+  display: flex;
+  margin: 4vh;
+  height: fit-content;
+  width: fit-content;
+}
+
+.card-right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
