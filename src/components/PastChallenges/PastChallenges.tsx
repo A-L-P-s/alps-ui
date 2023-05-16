@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ChallengeCard from '../ChallengeCard/ChallengeCard';
 import './PastChallenges.css';
 
@@ -21,13 +22,14 @@ const PastChallenges = ({ challenges }: IProps) => {
 
   const challengeCards = pastChallenges.map(challenge => {
     return (
+      <Link to='/Deniz/feedback/:challenge-id'>
       <ChallengeCard 
         verb={challenge.verb}
         eng_verb={challenge.eng_verb}
         image_url={challenge.image_url}
         image_alt_text={challenge.image_alt_text}
         date={challenge.created_at}
-      />
+      /></Link>
     )
   })
 
