@@ -32,18 +32,10 @@ const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path='/'>
-          <Home />
-        </Route>
-        <Route path='/Deniz/dashboard'>
-          <Dashboard />
-        </Route>
-        <Route path='/Deniz/new-challenge'>
-          <Form />
-        </Route>
-        <Route path='/Deniz/feedback/:challenge-id'>
-          <Feedback />
-        </Route>
+        <Route path='/' element={<Home />} />
+        <Route path='/Deniz/dashboard' element={<Dashboard />} />
+        <Route path='/Deniz/new-challenge' element={<Form />} />
+        <Route path='/Deniz/feedback/:challenge-id' element={<Feedback />} />
       </Routes>
     </>
   );
