@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import mockUser from '../../sampleData/user';
 import PastChallenges from '../PastChallenges/PastChallenges';
 import './Dashboard.css';
@@ -28,7 +28,7 @@ const Dashboard = () => {
     created_at: string
   }
 
-  const [userData, setUserData] = useState<IUser>(mockUser)
+  const [userData] = useState<IUser>(mockUser)
 
   return (
     <div className='dashboard'>

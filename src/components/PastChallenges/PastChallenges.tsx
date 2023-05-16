@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import mockUser from '../../sampleData/user';
 import ChallengeCard from '../ChallengeCard/ChallengeCard';
 import './PastChallenges.css';
 
@@ -18,7 +17,7 @@ interface IProps {
 }
 
 const PastChallenges = ({ challenges }: IProps) => {
-  const [pastChallenges, setPastChallenges] = useState(challenges)
+  const [pastChallenges] = useState(challenges)
 
   const challengeCards = pastChallenges.map(challenge => {
     return (
