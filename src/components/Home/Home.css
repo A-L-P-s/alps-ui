@@ -2,12 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .choose-user {
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  display: flex;
+  /* flex-direction: column;
+  align-items: center; */
+  margin: 1.5vh;
+  padding: 1.5vh;
+  border: 0.2vh solid black;
+  border-radius: 0.5vh;
+  display: inline-block;
 }
