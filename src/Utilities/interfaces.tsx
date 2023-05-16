@@ -29,3 +29,8 @@ export interface ISentences {
   user_sent: string;
   ai_sent: string;
 }
+
+export interface IGrammarPoint {
+  grammar_point: string;
+  eng_grammar_point: string;
+}

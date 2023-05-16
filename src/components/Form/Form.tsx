@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { IGrammarPoint } from '../../Utilities/interfaces';
 import './Form.css';
 import infoIcon from '../../assets/info_icon.svg';
 
@@ -8,11 +9,6 @@ import mockPrompt from '../../sampleData/prompt';
 // MOCK PATH
 const mockData = mockPrompt.data.attributes;
 const mockGrammar = mockData.grammar_points;
-
-interface IGrammarPoint {
-  grammar_point: string;
-  eng_grammar_point: string;
-}
 
 const Form = () => {
   const [imgUrl, setImgUrl] = useState<string>('');
