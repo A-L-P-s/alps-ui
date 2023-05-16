@@ -14,17 +14,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run cypress`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches Cypress testing app.\
+See the documentation about the [Cypress App](https://docs.cypress.io/guides/core-concepts/cypress-app) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
@@ -83,7 +82,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#testing">Testing</a></li>
       </ul>
     </li>
@@ -143,76 +141,29 @@ The `agile methodology` was chosen for backend development to expedite the app's
 
 If you'd like to demo this API on your local machine:
 1. Ensure you have the prerequisites
-2. Sign up for external API Keys
-2. Clone this repo: `git clone git@github.com:A-L-P-s/ALPs_api.git`
-3. Navigate to the root folder: `cd ALPs_api`
-4. Run: `bundle install`
-5. Run: `rails db:{create,migrate,seed}`
-6. Run: `bundle exec figaro install`
-7. In the `app/config/application.yml` file add you API keys:
-  - `UNSPLASH_API_KEY: add_api_key_here`
-  - `OPENAI_API_KEY: add_api_key_here`
-8. Inspect the `/db/schema.rb` and compare to the 'Schema' section below to ensure migration has been done successfully
-9. Run: `rails s`
-10. Visit http://localhost:3000/
-
-<br>
-
-<!-- Prerequisites -->
-### Prerequisites 
-
-- Ruby Version 3.1.1
-- Rails Version 7.0.4.x
-- Bundler Version 2.4.9
+1. Sign up for external API Keys
+1. Clone this repo: `git@github.com:A-L-P-s/alps-ui.git`
+1. Navigate to the root folder: `cd ALPs_ui`
+1. Run: `npm install`
+1. Run: `npm start`
+1. Visit http://localhost:3000/
 
 <br>
 
 <!-- Testing -->
 ### Testing 
 
-To test the entire spec suite, run `bundle exec rspec`.
-*All tests should be passing.*
+Happy path, sad path, and edge case E2E testing were considered and tested.
 
-Happy path, sad path, and edge case testing were considered and tested. When a request cannot be completed, an error object is returned.
-
-<details>
-  <summary>See Error Object</summary>
-    <pre>
-    <code>
-{
-  "errors": [
-    {
-      "status": "404"
-      "title": "Invalid Request",
-      "detail": "Couldn't find User with 'id'=<id>"
-     }
-   ]
-}
-    </code></pre>
-</details>
+Follow these steps (make sure you have run `npm install` previously):
+1. Run `npm run cypress`.
+1. Once the Cypress App loads, click "E2E Testing".
+1. Make sure "Chrome" is selected, then click "Start E2E Testing in Chrome".
+1. Select "Specs" in the left panel.
+1. Select the spec file you would like to run.
+1. The test should automatically run.
 
 <br>
-
-<!-- Status Codes (DO WE ADD THIS ON FE?)
-### Status Codes
-
-<details><summary>See All</summary>
-
-**ALPs** API reutrns the folowing status codes:
-
-| Status Code | Description |
-| :--- | :--- |
-| 200 | `OK` |
-| 201 | `CREATED` |
-| 204 | `NO CONTENT` |
-| 404 | `NOT FOUND` |
-| 418 | `I'M A TEAPOT` |
-| 422 | `UNPROCESSABLE CONTENT` |
-| 500 | `INTERNAL SERVER ERROR` |
-
-</details>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- WireFrames -->
 ## WireFrames 
