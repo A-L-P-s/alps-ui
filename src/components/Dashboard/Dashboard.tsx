@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   return (
     <div className='dashboard'>
-      <PastChallenges challenges={userData.data.attributes.challenges}/>
+      {userData.data.attributes.challenges && <PastChallenges challenges={userData.data.attributes.challenges}/>}
       <Link to='/Deniz/new-challenge'><button>New Challenge</button></Link>
     </div>
   );

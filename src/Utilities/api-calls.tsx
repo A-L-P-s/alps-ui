@@ -1,7 +1,9 @@
 // Deployed Backend Domain (waiting for CORS permission)
 // https://calm-thicket-75558.herokuapp.com/
 
-export const getUsers: (userId?: string) => void = async (userId) => {
+import { IUsers, IUser } from "./interfaces";
+
+export const getUsers: (userId?: string) => Promise<IUsers | IUser | null> = async (userId) => {
   const endPath: string = userId ? `/${userId}` : '';
 
   return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users${endPath}`)

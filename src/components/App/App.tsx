@@ -7,7 +7,8 @@ import Feedback from '../Feedback/Feedback';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { IUsers, IUser } from '../../Utilities/interfaces';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getUsers } from '../../Utilities/api-calls';
 
 const App = () => {
 
@@ -18,7 +19,10 @@ const App = () => {
   const [users, setUsers] = useState<IUsers>(initialUsers)
   const [user, setUser] = useState<IUser>()
 
-  
+  useEffect(() => {
+    getUsers()
+      .then(data => console.log(data))
+  }, [])
 
 
   return (
