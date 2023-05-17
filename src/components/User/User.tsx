@@ -3,7 +3,8 @@ import './User.css';
 
 interface IProps {
   name:string,
-  preferred_lang:string
+  preferred_lang:string,
+  id:string
 }
 
 const User: React.FC<IProps> = (props) => {
