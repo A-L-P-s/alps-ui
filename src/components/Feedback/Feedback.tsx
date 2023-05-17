@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ISentences } from '../../Utilities/interfaces';
 import './Feedback.css';
 
@@ -35,7 +36,10 @@ const Feedback = () => {
         <p>{sentences[0].user_sent}</p>
         <h5>Corrected Sentence</h5>
         <p>{sentences[0].ai_sent}</p>
-        <button>Home</button>
+        {/* Will need to make the username dynamic */}
+        <Link to={'/Deniz/dashboard'}>
+          <button>Home</button>
+        </Link>
       </div>}
     </div>
   );
