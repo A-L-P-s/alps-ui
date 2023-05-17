@@ -8,6 +8,15 @@ interface IProps {
   allUsers: IUsers
 }
 
+interface IUserCards {
+  userCards: ICard[]
+}
+
+interface ICard {
+  card: React.FC
+}
+
+
 const Home = ({ allUsers }: IProps) => {
   const [userCards, setUserCards] = useState<any>(null)
 
