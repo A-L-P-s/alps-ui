@@ -11,11 +11,12 @@ interface IProps {
 
 const Home = ({ allUsers, setUserData }: IProps) => {
   const [userCards, setUserCards] = useState<any>(null)
+  // ANY HERE WILL NEED TO BE UPDATED!
 
   useEffect(() => {
     if(allUsers.data.length) {
       let cards = allUsers.data.map(user => {
-      return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id} setUserData={setUserData}/>
+      return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id} key={user.id} setUserData={setUserData}/>
       })
       setUserCards(cards)
     }
