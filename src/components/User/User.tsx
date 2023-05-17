@@ -7,11 +7,11 @@ interface IProps {
   id:string
 }
 
-const User: React.FC<IProps> = (props) => {
+const User: React.FC<IProps> = ({ name, preferred_lang, id }) => {
   return (
     <div className='user'>
-      <p>{props.name}</p>
-      <p>{props.preferred_lang}</p>
+      <p>{name}</p>
+      <p>{preferred_lang}</p>
     </div>
   );
 }

@@ -1,41 +1,30 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from 'react';
+import { useState } from 'react';
 import './Home.css';
 import User from '../User/User';
-// import users from '../../sampleData/users';
 import { IUsers } from '../../Utilities/interfaces';
 import { useEffect } from 'react';
-
-
-// const userOne = users.data[0].attributes;
-// const userTwo = users.data[1].attributes;
 
 interface IProps {
   allUsers: IUsers
 }
 
-const Home = ({ allUsers }: IProps) => {  
-
-  let userCards;
-  // console.log(allUsers)
+const Home = ({ allUsers }: IProps) => {
+  const [userCards, setUserCards] = useState<any>(null)
 
   useEffect(() => {
-    if(allUsers.data.length !== 0) {
-        userCards = allUsers.data.map(user => {
-          console.log('User', user)
-          console.log('Attributes', user.attributes)
-        return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id}/>
+    if(allUsers.data.length) {
+      let cards = allUsers.data.map(user => {
+      return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id}/>
       })
+      
+      setUserCards(cards)
     }
   }, [allUsers])
-
 
   return (
     <div>
       <p className='choose-user'>Choose your user</p>
-      <div className='user-container'>
-        {userCards}
-      </div>
+      {allUsers.data.length ? <div className='user-container'>{userCards}</div> : <p>Loading</p>}
     </div>
   );
 }
