@@ -58,10 +58,12 @@ const Form = () => {
       <button>Submit</button>
       </div>
       <PureModal
+        className='custom-modal'
         header="Instructions"
+        width="50%"
         isOpen={modal}
         closeButton="X"
-        closeButtonPosition="bottom"
+        closeButtonPosition="header"
         onClose={() => {
           setModal(false);
           return true;

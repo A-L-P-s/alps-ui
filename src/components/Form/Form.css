@@ -11,3 +11,9 @@ form {
   flex-direction: column;
   justify-content: space-evenly;
 }
+
+.custom-modal .panel-body,
+.custom-modal .panel-title {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
