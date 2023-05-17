@@ -1,17 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IChallenge } from '../../Utilities/interfaces';
 import ChallengeCard from '../ChallengeCard/ChallengeCard';
 import './PastChallenges.css';
-
-interface IChallenge {
-  challenge_id: string,
-  language: string,
-  verb: string,
-  eng_verb: string,
-  image_url: string,
-  image_alt_text: string,
-  created_at: string
-}
 
 interface IProps {
   challenges: IChallenge[]

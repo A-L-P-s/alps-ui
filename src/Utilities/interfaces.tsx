@@ -13,7 +13,6 @@ export interface IUserData {
 }
 
 export interface IChallenge {
-  challenge_id: string,
   language: string,
   verb: string,
   eng_verb: string,

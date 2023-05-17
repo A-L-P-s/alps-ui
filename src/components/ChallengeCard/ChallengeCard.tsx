@@ -6,7 +6,7 @@ interface IProps {
   eng_verb: string,
   image_url: string,
   image_alt_text: string,
-  date: string
+  date: string,
 }
 
 const ChallengeCard = ({ verb, eng_verb, image_url, image_alt_text, date }: IProps) => {
