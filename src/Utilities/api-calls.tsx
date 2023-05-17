@@ -1,7 +1,7 @@
 // Deployed Backend Domain (waiting for CORS permission)
 // https://calm-thicket-75558.herokuapp.com/
 
-import { IPromptData } from "./interfaces";
+import { IPrompt } from "./interfaces";
 
 export const getUsers: (userId?: string) => void = async (userId) => {
   const endPath: string = userId ? `/${userId}` : '';
@@ -36,7 +36,7 @@ export const getFeedback: (challengeId?:string, userId?:string) => void = async 
   });
 }
 
-export const getPrompt: () => Promise<IPromptData | null> = async () => {
+export const getPrompt: () => Promise<IPrompt | null> = async () => {
   return fetch('https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users/55/challenges/new')
     .then(response => {
       if (!response.ok) {
