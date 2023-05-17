@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { IGrammarPoint } from '../../Utilities/interfaces';
+import PureModal from 'react-pure-modal';
+import 'react-pure-modal/dist/react-pure-modal.min.css';
 import './Form.css';
 import infoIcon from '../../assets/info_icon.svg';
 
 // MOCK DATA
 import mockPrompt from '../../sampleData/prompt';
+import Instructions from '../Instructions/Instructions';
 
 // MOCK PATH
 const mockData = mockPrompt.data.attributes;
@@ -18,6 +21,7 @@ const Form = () => {
   const [grammarPoints, setGrammarPoints] = useState<IGrammarPoint[]>([]);
   const [sent1, setSent1] = useState<string>('');
   const [sent2, setSent2] = useState<string>('');
+  const [modal, setModal] = useState<boolean>(false);
 
   useEffect(() => {
     //fetch new challenge someday
@@ -34,7 +38,7 @@ const Form = () => {
       <div className='form-container'>
         <h2>{verb}</h2>
         <h3>{engVerb}</h3>
-        <img src={infoIcon} alt='instructions icon' />
+        <img src={infoIcon} alt='instructions icon' onClick={() => setModal(true)} />
         {grammarPoints.length && <label htmlFor='sent1'>{grammarPoints[0].grammar_point} | {grammarPoints[0].eng_grammar_point}</label>}
         <input
           id='sent1'
@@ -53,6 +57,18 @@ const Form = () => {
         />
       <button>Submit</button>
       </div>
+      <PureModal
+        header="Instructions"
+        isOpen={modal}
+        closeButton="X"
+        closeButtonPosition="bottom"
+        onClose={() => {
+          setModal(false);
+          return true;
+        }}
+      >
+        <Instructions />
+      </PureModal>
     </form>
   );
 }
