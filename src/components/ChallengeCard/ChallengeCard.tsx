@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ChallengeCard.css';
 
 interface IProps {
+  id: string,
   verb: string,
   eng_verb: string,
   image_url: string,
@@ -9,8 +11,9 @@ interface IProps {
   date: string,
 }
 
-const ChallengeCard = ({ verb, eng_verb, image_url, image_alt_text, date }: IProps) => {
+const ChallengeCard = ({ verb, eng_verb, id, image_url, image_alt_text, date }: IProps) => {
   return (
+    <Link to={`/Deniz/feedback/${id}`}>
     <div className='challenge-card'>
       <img src={image_url} alt={image_alt_text}></img>
       <div className='card-right-content'>
@@ -19,6 +22,7 @@ const ChallengeCard = ({ verb, eng_verb, image_url, image_alt_text, date }: IPro
         <p>({eng_verb})</p>
       </div>
     </div>
+    </Link>
   );
 }
 
