@@ -1,7 +1,7 @@
 // Deployed Backend Domain (waiting for CORS permission)
 // https://calm-thicket-75558.herokuapp.com/
 
-const getUsers: (userId?: string) => void = async (userId) => {
+export const getUsers: (userId?: string) => void = async (userId) => {
   const endPath: string = userId ? `/${userId}` : '';
 
   return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users${endPath}`)
@@ -17,4 +17,19 @@ const getUsers: (userId?: string) => void = async (userId) => {
     });
 }
 
-export default getUsers;
+export const getFeedback: (challengeId?:string, userId?:string) => void = async (challengeId, userId) => {
+  const userPath: string = userId ? `/${userId}` : '';
+  const challengePath: string = challengeId ? `/${challengeId}` : '';
+
+  return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users${userPath}/challenges${challengePath}`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`${response.status}: ${response.statusText}`);
+    } else {
+      return response.json();
+    }
+  })
+  .catch(error => {
+    console.error('An error occurred:', error);
+  });
+}
