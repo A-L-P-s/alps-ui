@@ -40,17 +40,15 @@ const Form = () => {
         <h3>{engVerb}</h3>
         <img src={infoIcon} alt='instructions icon' onClick={() => setModal(true)} />
         {grammarPoints.length && <label htmlFor='sent1'>{grammarPoints[0].grammar_point} | {grammarPoints[0].eng_grammar_point}</label>}
-        <input
+        <textarea
           id='sent1'
-          type='text'
           value={sent1}
           placeholder='Enter your sentence'
           onChange={event => setSent1(event.target.value)}
         />
         {grammarPoints.length && <label htmlFor='sent2'>{grammarPoints[1].grammar_point} | {grammarPoints[1].eng_grammar_point}</label>}
-        <input
+        <textarea
           id='sent2'
-          type='text'
           value={sent2}
           placeholder='Enter your sentence'
           onChange={event => setSent2(event.target.value)}
