@@ -8,8 +8,6 @@ import './Dashboard.css';
 const Dashboard = () => {
   const [userData] = useState<IUser>(mockUser)
 
-  console.log(mockUser)
-
   return (
     <div className='dashboard'>
       <PastChallenges challenges={userData.data.attributes.challenges}/>

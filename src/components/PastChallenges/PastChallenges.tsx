@@ -11,7 +11,6 @@ const PastChallenges = ({ challenges }: IProps) => {
   const [pastChallenges] = useState(challenges)
 
   const challengeCards = pastChallenges.map(challenge => {
-    let challengeId = challenge.challenge_id
     return (
       <ChallengeCard
         id={challenge.challenge_id}
