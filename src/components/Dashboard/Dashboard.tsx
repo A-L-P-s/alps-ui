@@ -5,8 +5,12 @@ import mockUser from '../../sampleData/user';
 import PastChallenges from '../PastChallenges/PastChallenges';
 import './Dashboard.css';
 
-const Dashboard = () => {
-  const [userData] = useState<IUser>(mockUser)
+interface IProps {
+  user: IUser
+}
+
+const Dashboard = ({ user }: IProps) => {
+  const [userData] = useState<IUser>(user)
 
   return (
     <div className='dashboard'>
