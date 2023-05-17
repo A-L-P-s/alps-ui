@@ -35,7 +35,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/Deniz/dashboard' element={<Dashboard />} />
         <Route path='/Deniz/new-challenge' element={<Form />} />
-        <Route path='/Deniz/feedback/:challenge-id' element={<Feedback />} />
+        <Route path='/Deniz/feedback/:id' element={<Feedback />} />
       </Routes>
     </>
   );

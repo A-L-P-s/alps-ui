@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { IGrammarPoint } from '../../Utilities/interfaces';
 import './Form.css';
 import infoIcon from '../../assets/info_icon.svg';
@@ -51,7 +52,10 @@ const Form = () => {
           placeholder='Enter your sentence'
           onChange={event => setSent2(event.target.value)}
         />
-      <button>Submit</button>
+        {/* Will need to make this route dynamic in the future */}
+      <Link to={'/Deniz/feedback/1'}>
+        <button>Submit</button>
+      </Link>
       </div>
     </form>
   );
