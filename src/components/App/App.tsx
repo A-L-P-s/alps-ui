@@ -35,7 +35,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path='/' element={users !== null && <Home allUsers={users} setUserData={setUserData}/>} />
-        <Route path='/Deniz/dashboard' element={user !== null && <Dashboard user={user}/>} />
+        <Route path='/:userName/dashboard' element={user !== null && <Dashboard user={user}/>} />
         <Route path='/Deniz/new-challenge' element={<Form />} />
         <Route path='/Deniz/feedback/:id' element={<Feedback />} />
       </Routes>

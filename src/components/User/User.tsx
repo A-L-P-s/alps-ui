@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './User.css';
 
 interface IProps {
@@ -14,7 +15,7 @@ const User: React.FC<IProps> = ({ name, preferred_lang, id, setUserData}) => {
     <div className='user'>
       <p>{name}</p>
       <p>{preferred_lang}</p>
-      <button onClick={() => setUserData(id)}>{`Continue as ${name}`}</button>
+      <Link to={`/${name}/dashboard`}><button onClick={() => setUserData(id)}>{`Continue as ${name}`}</button></Link>
     </div>
   );
 }
