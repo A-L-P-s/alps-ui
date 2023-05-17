@@ -1,5 +1,11 @@
 export interface IUsers {
-  data: IUser[]
+  data: ITruncUser[]
+}
+
+export interface ITruncUser {
+  id: string,
+  type: string,
+  attributes: IUserData
 }
 
 export interface IUser {

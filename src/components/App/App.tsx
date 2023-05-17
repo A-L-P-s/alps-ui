@@ -16,12 +16,12 @@ const App = () => {
     data: []
   }
 
-  const [users, setUsers] = useState<IUsers>(initialUsers)
-  const [user, setUser] = useState<IUser>()
+  const [users, setUsers] = useState<IUsers | null>(initialUsers)
+  // const [user, setUser] = useState<IUser>()
 
   useEffect(() => {
     getUsers()
-      .then(data => console.log(data))
+      .then(data => setUsers(data))
   }, [])
 
 
@@ -29,7 +29,7 @@ const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={users !== null && <Home allUsers={users}/>} />
         <Route path='/Deniz/dashboard' element={<Dashboard />} />
         <Route path='/Deniz/new-challenge' element={<Form />} />
         <Route path='/Deniz/feedback/:id' element={<Feedback />} />

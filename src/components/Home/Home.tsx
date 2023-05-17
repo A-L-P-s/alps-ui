@@ -2,19 +2,39 @@
 import React from 'react';
 import './Home.css';
 import User from '../User/User';
-import users from '../../sampleData/users';
+// import users from '../../sampleData/users';
+import { IUsers } from '../../Utilities/interfaces';
+import { useEffect } from 'react';
 
 
-const userOne = users.data[0].attributes;
-const userTwo = users.data[1].attributes;
+// const userOne = users.data[0].attributes;
+// const userTwo = users.data[1].attributes;
 
-const Home = () => {
+interface IProps {
+  allUsers: IUsers
+}
+
+const Home = ({ allUsers }: IProps) => {  
+
+  let userCards;
+  // console.log(allUsers)
+
+  useEffect(() => {
+    if(allUsers.data.length !== 0) {
+        userCards = allUsers.data.map(user => {
+          console.log('User', user)
+          console.log('Attributes', user.attributes)
+        return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id}/>
+      })
+    }
+  }, [allUsers])
+
+
   return (
     <div>
       <p className='choose-user'>Choose your user</p>
       <div className='user-container'>
-        <User name={userOne.name} preferred_lang={userOne.preferred_lang} id={users.data[0].id}/>
-        <User name={userTwo.name} preferred_lang={userTwo.preferred_lang} id={users.data[1].id}/>
+        {userCards}
       </div>
     </div>
   );
