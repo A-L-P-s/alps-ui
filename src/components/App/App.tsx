@@ -6,27 +6,19 @@ import Form from '../Form/Form';
 import Feedback from '../Feedback/Feedback';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-
-// interface IChallenge {
-//   challenge_id: string, 
-//   language: string, 
-//   verb: string,
-//   eng_verb: string, 
-//   image_url: string,
-//   image_alt_text: string, 
-//   created_at: string
-// }
-
-// interface IUser {
-//   attributes: {
-//     name: string,
-//     preferred_lang: string,
-//     challenges: IChallenge[]
-//   }
-// }
+import { IUsers, IUser } from '../../Utilities/interfaces';
+import { useState } from 'react';
 
 const App = () => {
-  // const [user, setUser] = useState({})
+
+  const initialUsers = {
+    data: []
+  }
+
+  const [users, setUsers] = useState<IUsers>(initialUsers)
+  const [user, setUser] = useState<IUser>()
+
+  
 
 
   return (

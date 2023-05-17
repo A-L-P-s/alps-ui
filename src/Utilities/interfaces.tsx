@@ -1,3 +1,7 @@
+export interface IUsers {
+  data: IUser[]
+}
+
 export interface IUser {
   data: {
     id: string,
@@ -9,7 +13,7 @@ export interface IUser {
 export interface IUserData {
   name: string,
   preferred_lang: string,
-  challenges: IChallenge[]
+  challenges: IChallenge[] | null
 }
 
 export interface IChallenge {
