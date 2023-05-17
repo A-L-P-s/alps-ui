@@ -23,14 +23,15 @@ export interface IChallenge {
 }
 
 export interface ISentences {
-  sent_id: string;
-  grammar_point: string;
-  eng_grammar_point: string;
-  user_sent: string;
-  ai_sent: string;
+  sent_id: string,
+  grammar_point: string,
+  eng_grammar_point: string,
+  user_sent: string,
+  ai_sent: string,
+  ai_explanation: string
 }
 
 export interface IGrammarPoint {
-  grammar_point: string;
-  eng_grammar_point: string;
+  grammar_point: string,
+  eng_grammar_point: string
 }
