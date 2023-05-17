@@ -2,7 +2,8 @@
 import React from 'react';
 import './Home.css';
 import User from '../User/User';
-import users from '../../sampleData/users'
+import users from '../../sampleData/users';
+
 
 const userOne = users.data[0].attributes;
 const userTwo = users.data[1].attributes;
