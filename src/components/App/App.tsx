@@ -17,7 +17,12 @@ const App = () => {
   }
 
   const [users, setUsers] = useState<IUsers | null>(initialUsers)
-  // const [user, setUser] = useState<IUser>()
+  const [user, setUser] = useState<IUser | null>(null)
+
+  const setUserData = (userData: IUser) => {
+    setUser(userData)
+    console.log(user)
+  }
 
   useEffect(() => {
     getUsers()
@@ -29,7 +34,7 @@ const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path='/' element={users !== null && <Home allUsers={users}/>} />
+        <Route path='/' element={users !== null && <Home allUsers={users} setUserData={setUserData}/>} />
         <Route path='/Deniz/dashboard' element={<Dashboard />} />
         <Route path='/Deniz/new-challenge' element={<Form />} />
         <Route path='/Deniz/feedback/:id' element={<Feedback />} />

@@ -20,7 +20,7 @@ export const getUsers: () => Promise<IUsers | null> = async () => {
 
 export const getUser: (userId: string) => Promise<IUser | null> = async (userId) => {
 
-  return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users${userId}`)
+  return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users/${userId}`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`${response.status}: ${response.statusText}`);

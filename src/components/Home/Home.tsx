@@ -6,26 +6,17 @@ import { useEffect } from 'react';
 
 interface IProps {
   allUsers: IUsers
+  setUserData: Function
 }
 
-interface IUserCards {
-  userCards: ICard[]
-}
-
-interface ICard {
-  card: React.FC
-}
-
-
-const Home = ({ allUsers }: IProps) => {
+const Home = ({ allUsers, setUserData }: IProps) => {
   const [userCards, setUserCards] = useState<any>(null)
 
   useEffect(() => {
     if(allUsers.data.length) {
       let cards = allUsers.data.map(user => {
-      return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id}/>
+      return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id} setUserData={setUserData}/>
       })
-      
       setUserCards(cards)
     }
   }, [allUsers])
