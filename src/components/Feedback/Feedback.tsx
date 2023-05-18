@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ISentences } from '../../Utilities/interfaces';
 import './Feedback.css';
+import { getFeedback } from '../../Utilities/api-calls';
+import { IFeedback } from '../../Utilities/interfaces';
 
-// MOCK DATA
-import mockFeedback from '../../sampleData/feedback';
-
-// MOCK DATA PATH
-const mockData = mockFeedback.data.attributes;
 
 const Feedback = () => {
+  //const [feedback, setFeedback] = useState<IFeedback>(null);
   const [imgUrl, setImgUrl] = useState<string>('');
   const [imgAlt, setImgAlt] = useState<string>('')
   const [verb, setVerb] = useState<string>('');
@@ -18,6 +16,13 @@ const Feedback = () => {
 
   useEffect(() => {
     //fetch goes here someday
+    getFeedback("1", "55")
+      .then( feedback => {
+        console.log(feedback)
+
+        setImgUrl( feedback.)
+      })
+      
     setImgUrl(mockData.image_url);
     setImgAlt(mockData.image_alt_text);
     setVerb(mockData.verb);

@@ -65,3 +65,22 @@ export interface IPromptData {
   grammar_points: IGrammarPoint[],
   sentences: null
 }
+
+export interface IFeedback {
+  data: {
+    id: string,
+    type: string,
+    attributes: IFeedbackData
+  }
+}
+
+export interface IFeedbackData {
+  language: string,
+  verb: string,
+  eng_verb: string,
+  image_url: string,
+  image_alt_text: string,
+  created_at: null,
+  grammar_points: IGrammarPoint[],
+  sentences: ISentences[]
+}
