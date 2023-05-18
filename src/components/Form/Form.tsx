@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Form.css';
-import { IGrammarPoint, ISubmissionResponse } from '../../Utilities/interfaces';
+import { IGrammarPoint } from '../../Utilities/interfaces';
 import { getPrompt, postSubmission } from '../../Utilities/api-calls';
 import infoIcon from '../../assets/info_icon.svg';
 
@@ -27,7 +27,7 @@ const Form = ({ userId, userName, language }: IProps) => {
     if (feedbackId) {
       navigate(`/${userName}/feedback/${feedbackId}`);
     }
-  }, [feedbackId]);
+  }, [feedbackId, navigate, userName]);
 
   useEffect(() => {
     getPrompt()
