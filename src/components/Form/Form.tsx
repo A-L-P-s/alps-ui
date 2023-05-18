@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IGrammarPoint } from '../../Utilities/interfaces';
 import './Form.css';
+import { IGrammarPoint } from '../../Utilities/interfaces';
+import { getPrompt } from '../../Utilities/api-calls';
 import infoIcon from '../../assets/info_icon.svg';
-
-// MOCK DATA
-import mockPrompt from '../../sampleData/prompt';
-
-// MOCK PATH
-const mockData = mockPrompt.data.attributes;
-const mockGrammar = mockData.grammar_points;
 
 const Form = () => {
   const [imgUrl, setImgUrl] = useState<string>('');
@@ -21,12 +15,21 @@ const Form = () => {
   const [sent2, setSent2] = useState<string>('');
 
   useEffect(() => {
-    //fetch new challenge someday
-    setImgUrl(mockData.image_url);
-    setImgAlt(mockData.image_alt_text);
-    setVerb(mockData.verb);
-    setEngVerb(mockData.eng_verb);
-    setGrammarPoints(mockGrammar);
+    getPrompt()
+      .then(prompt => {
+        if (prompt) {
+          const promptAttributes = prompt.data.attributes
+
+          setImgUrl(promptAttributes.image_url);
+          setImgAlt(promptAttributes.image_alt_text);
+          setVerb(promptAttributes.verb);
+          setEngVerb(promptAttributes.eng_verb);
+          setGrammarPoints(promptAttributes.grammar_points);
+        }
+      })
+      .catch(error => {
+        console.error('An error occurred:', error);
+      });
   }, []);
 
   return (

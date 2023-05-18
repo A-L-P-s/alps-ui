@@ -1,7 +1,7 @@
 // Deployed Backend Domain (waiting for CORS permission)
 // https://calm-thicket-75558.herokuapp.com/
 
-import { IUsers, IUser } from "./interfaces";
+import { IUsers, IUser, IPrompt } from "./interfaces";
 
 export const getUsers: () => Promise<IUsers | null> = async () => {
 
@@ -48,4 +48,18 @@ export const getFeedback: (challengeId?:string, userId?:string) => void = async 
   .catch(error => {
     console.error('An error occurred:', error);
   });
+}
+
+export const getPrompt: () => Promise<IPrompt | null> = async () => {
+  return fetch('https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users/55/challenges/new')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`${response.status}: ${response.statusText}`);
+      } else {
+        return response.json();
+      }
+    })
+    .catch(error => {
+      console.error('An error occurred:', error);
+    });
 }

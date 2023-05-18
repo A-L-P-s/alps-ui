@@ -44,3 +44,23 @@ export interface IGrammarPoint {
   grammar_point: string;
   eng_grammar_point: string;
 }
+
+export interface IPrompt {
+  data: {
+    id: null,
+    type: string,
+    attributes: IPromptData
+  }
+}
+
+export interface IPromptData {
+  user_id: string,
+  language: string,
+  verb: string,
+  eng_verb: string,
+  image_url: string,
+  image_alt_text: string,
+  created_at: null,
+  grammar_points: IGrammarPoint[],
+  sentences: null
+}
