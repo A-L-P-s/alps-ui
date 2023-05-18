@@ -12,7 +12,7 @@ const Dashboard = ({ user }: IProps) => {
   return (
     <div className='dashboard'>
       {user.data.attributes.challenges && <PastChallenges challenges={user.data.attributes.challenges}/>}
-      <Link to='/Deniz/new-challenge'><button>New Challenge</button></Link>
+      <Link to={`/${user.data.attributes.name}/new-challenge`}><button>New Challenge</button></Link>
     </div>
   );
 }

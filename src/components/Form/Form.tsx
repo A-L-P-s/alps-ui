@@ -5,7 +5,11 @@ import { IGrammarPoint } from '../../Utilities/interfaces';
 import { getPrompt } from '../../Utilities/api-calls';
 import infoIcon from '../../assets/info_icon.svg';
 
-const Form = () => {
+interface IProps {
+  userName: string | undefined
+}
+
+const Form = ({ userName }: IProps) => {
   const [imgUrl, setImgUrl] = useState<string>('');
   const [imgAlt, setImgAlt] = useState<string>('')
   const [verb, setVerb] = useState<string>('');
@@ -68,7 +72,7 @@ const Form = () => {
         </div>
         {/* Will need to make this route dynamic in the future */}
         <div className='submit-button-container'>
-          <Link to={'/Deniz/feedback/1'} className='submit-link'>
+          <Link to={`/${userName}/feedback/1`} className='submit-link'>
             <button className='submit-button'>Submit</button>
           </Link>
         </div>

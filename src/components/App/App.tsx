@@ -39,7 +39,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={users !== null && <Home allUsers={users} setUserData={setUserData} resetUser={resetUser}/>} />
         <Route path='/:userName/dashboard' element={user !== null && <Dashboard user={user}/>}/>
-        <Route path='/Deniz/new-challenge' element={<Form />} />
+        <Route path='/:userName/new-challenge' element={<Form userName={user?.data.attributes.name} />} />
         <Route path='/Deniz/feedback/:id' element={<Feedback />} />
       </Routes>
     </>
