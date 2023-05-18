@@ -67,7 +67,7 @@ export interface IPromptData {
 }
 
 export interface ISubmission {
-  language: string,
+  language: string | undefined,
   verb: string,
   eng_verb: string,
   image_url: string,

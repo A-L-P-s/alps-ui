@@ -4,7 +4,7 @@ interface IProps {
   userName: string | undefined
 }
 
-const Header = ({ userName}: IProps) => {
+const Header = ({ userName }: IProps) => {
   return (
     <div className='header'>
       <h1>ALPs</h1>

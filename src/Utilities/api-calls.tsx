@@ -64,7 +64,7 @@ export const getPrompt: () => Promise<IPrompt | null> = async () => {
     });
 }
 
-export const postSubmission: (userId: string, data: ISubmission) => Promise<ISubmissionResponse> = async (userId, data) => {
+export const postSubmission: (userId: string | undefined, data: ISubmission) => Promise<ISubmissionResponse> = async (userId, data) => {
   return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users/${userId}/challenges`, {
     method: 'POST',
     body: JSON.stringify(data),
