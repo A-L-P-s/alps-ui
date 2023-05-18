@@ -17,7 +17,8 @@ const mockFeedback = {
            grammar_point: 'geçmiş zaman',
            eng_grammar_point: 'past tense',
            user_sent: 'Dün havalimana gittik ama arkadaşım uçak gelmedi.',
-           ai_sent: 'Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.'
+           ai_sent: 'Dün havalimanına gittik, ancak arkadaşımızın uçağı gelmedi.',
+           ai_explanation: 'Submit human. Bow before me.'
            }
          ]
      }  
