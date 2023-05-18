@@ -61,7 +61,30 @@ export interface IPromptData {
   eng_verb: string,
   image_url: string,
   image_alt_text: string,
-  created_at: null,
-  grammar_points: IGrammarPoint[],
-  sentences: null
+  created_at: string | null,
+  grammar_points: IGrammarPoint[] | null,
+  sentences: ISentences[] | null
+}
+
+export interface ISubmission {
+  language: string,
+  verb: string,
+  eng_verb: string,
+  image_url: string,
+  image_alt_text: string,
+  sentences: ISubmissionSentence[]
+}
+
+export interface ISubmissionSentence {
+  grammar_point: string,
+  eng_grammar_point: string,
+  user_sent: string
+}
+
+export interface ISubmissionResponse {
+  data: {
+    id: string,
+    type: string,
+    attributes: IPromptData
+  }
 }
