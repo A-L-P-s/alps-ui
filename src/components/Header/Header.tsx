@@ -6,9 +6,9 @@ interface IProps {
 
 const Header = ({ userName}: IProps) => {
   return (
-    <div>
+    <div className='header'>
       <h1>ALPs</h1>
-      {userName && <p>Welcome, {userName}!</p>}
+      {userName && <p className='welcome-msg'>Welcome, {userName}!</p>}
     </div>
   );
 }

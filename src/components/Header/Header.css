@@ -1,3 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 h1 {
-  margin-left: 2vw;
+  margin-left: 20px;
+}
+
+.welcome-msg {
+  margin-right: 20px;
 }
