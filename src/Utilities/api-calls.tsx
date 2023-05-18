@@ -63,3 +63,31 @@ export const getPrompt: () => Promise<IPrompt | null> = async () => {
       console.error('An error occurred:', error);
     });
 }
+
+
+
+interface ISubmission {
+  language: string,
+  verb: string,
+  eng_verb: string,
+  image_url: string,
+  image_alt_text: string,
+  sentences: ISubmissionSentence[]
+}
+
+interface ISubmissionSentence {
+  grammar_point: string,
+  eng_grammar_point: string,
+  user_sent: string
+}
+
+// NEED TO CHANGE PROMISE TYPE FROM ANY TO SOMETHING
+export const postSubmission: (userId: string, data: ISubmission) => Promise<any> = async (userId, data) => {
+  return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users/${userId}/challenges`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}
