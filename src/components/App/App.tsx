@@ -6,35 +6,39 @@ import Form from '../Form/Form';
 import Feedback from '../Feedback/Feedback';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-
-// interface IChallenge {
-//   challenge_id: string, 
-//   language: string, 
-//   verb: string,
-//   eng_verb: string, 
-//   image_url: string,
-//   image_alt_text: string, 
-//   created_at: string
-// }
-
-// interface IUser {
-//   attributes: {
-//     name: string,
-//     preferred_lang: string,
-//     challenges: IChallenge[]
-//   }
-// }
+import { IUsers, IUser } from '../../Utilities/interfaces';
+import { useState, useEffect } from 'react';
+import { getUsers, getUser } from '../../Utilities/api-calls';
 
 const App = () => {
-  // const [user, setUser] = useState({})
 
+  const initialUsers = {
+    data: []
+  }
+
+  const [users, setUsers] = useState<IUsers | null>(initialUsers)
+  const [user, setUser] = useState<IUser | null>(null)
+
+  const resetUser = () => {
+    setUser(null)
+  }
+
+  const setUserData = (userId: string) => {
+    getUser(userId)
+      .then(data=> setUser(data))
+  }
+
+  useEffect(() => {
+    getUsers()
+      .then(data => setUsers(data))
+  }, [])
 
   return (
     <>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Deniz/dashboard' element={<Dashboard />} />
+        <Route path='/' element={users !== null && <Home allUsers={users} setUserData={setUserData} resetUser={resetUser}/>} />
+        <Route path='/:userName/dashboard' element={user !== null && <Dashboard user={user}/>}/>
         <Route path='/Deniz/new-challenge' element={<Form />} />
         <Route path='/Deniz/feedback/:id' element={<Feedback />} />
       </Routes>

@@ -1,12 +1,26 @@
 // Deployed Backend Domain (waiting for CORS permission)
 // https://calm-thicket-75558.herokuapp.com/
 
-import { IPrompt } from "./interfaces";
+import { IUsers, IUser, IPrompt } from "./interfaces";
 
-export const getUsers: (userId?: string) => void = async (userId) => {
-  const endPath: string = userId ? `/${userId}` : '';
+export const getUsers: () => Promise<IUsers | null> = async () => {
 
-  return fetch(`https://calm-thicket-75558.herokuapp.com/api/v1/users${endPath}`)
+  return fetch('https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`${response.status}: ${response.statusText}`);
+      } else {
+        return response.json();
+      }
+    })
+    .catch(error => {
+      console.error('An error occurred:', error);
+    });
+}
+
+export const getUser: (userId: string) => Promise<IUser | null> = async (userId) => {
+
+  return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users/${userId}`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`${response.status}: ${response.statusText}`);
