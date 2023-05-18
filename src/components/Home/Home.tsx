@@ -15,7 +15,7 @@ const Home = ({ allUsers, setUserData, resetUser }: IProps) => {
 
   useEffect(() => {
     resetUser()
-  }, [])
+  }, [resetUser])
 
   useEffect(() => {
     if(allUsers.data.length) {
@@ -24,7 +24,7 @@ const Home = ({ allUsers, setUserData, resetUser }: IProps) => {
       })
       setUserCards(cards)
     }
-  }, [allUsers])
+  }, [allUsers, setUserData])
 
   return (
     <div>

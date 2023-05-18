@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { IUser } from '../../Utilities/interfaces';
 import { Link } from 'react-router-dom';
 import PastChallenges from '../PastChallenges/PastChallenges';
