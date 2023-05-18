@@ -1,16 +1,14 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from 'react';
 import './Header.css';
 
-// interface IProps {
-//   name: string
-// }
+interface IProps {
+  userName: string | undefined
+}
 
-const Header = () => {
+const Header = ({ userName}: IProps) => {
   return (
-    <div>
+    <div className='header'>
       <h1>ALPs</h1>
-      {/* <p>Welcome, {name}!</p> */}
+      {userName && <p className='welcome-msg'>Welcome, {userName}!</p>}
     </div>
   );
 }
