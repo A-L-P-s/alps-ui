@@ -35,30 +35,43 @@ const Form = () => {
   return (
     <form>
       <img alt={imgAlt} src={imgUrl} className='prompt-img'/>
-      <div className='form-container'>
-        <h2>{verb}</h2>
-        <h3>{engVerb}</h3>
-        <img src={infoIcon} alt='instructions icon' />
-        {grammarPoints.length && <label htmlFor='sent1'>{grammarPoints[0].grammar_point} | {grammarPoints[0].eng_grammar_point}</label>}
-        <input
-          id='sent1'
-          type='text'
-          value={sent1}
-          placeholder='Enter your sentence'
-          onChange={event => setSent1(event.target.value)}
-        />
-        {grammarPoints.length && <label htmlFor='sent2'>{grammarPoints[1].grammar_point} | {grammarPoints[1].eng_grammar_point}</label>}
-        <input
-          id='sent2'
-          type='text'
-          value={sent2}
-          placeholder='Enter your sentence'
-          onChange={event => setSent2(event.target.value)}
-        />
+      <div className='challenge-container'>
+        <div className='challenge-header-container'>
+          <img className='info-icon' src={infoIcon} alt='instructions icon' />
+          <h2 className='challenge-header'>Challenge</h2>
+        </div>
+        <div className='prompt-container'>
+          <div className='verb-container'>
+            <h3 className='prompt-verb'>{verb}</h3>
+            <h4 className='prompt-eng-verb'>{engVerb}</h4>
+          </div>
+          <div className='sentence-container'>
+          {grammarPoints.length && <label htmlFor='sent1'>{grammarPoints[0].grammar_point} | {grammarPoints[0].eng_grammar_point}</label>}
+            <input
+              id='sent1'
+              type='text'
+              value={sent1}
+              placeholder='Enter your sentence'
+              onChange={event => setSent1(event.target.value)}
+            />
+          </div>
+          <div className='sentence-container'>
+            {grammarPoints.length && <label htmlFor='sent2'>{grammarPoints[1].grammar_point} | {grammarPoints[1].eng_grammar_point}</label>}
+            <input
+              id='sent2'
+              type='text'
+              value={sent2}
+              placeholder='Enter your sentence'
+              onChange={event => setSent2(event.target.value)}
+            />
+          </div>
+        </div>
         {/* Will need to make this route dynamic in the future */}
-      <Link to={'/Deniz/feedback/1'}>
-        <button>Submit</button>
-      </Link>
+        <div className='submit-button-container'>
+          <Link to={'/Deniz/feedback/1'} className='submit-link'>
+            <button className='submit-button'>Submit</button>
+          </Link>
+        </div>
       </div>
     </form>
   );
