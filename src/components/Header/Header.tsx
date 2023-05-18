@@ -1,10 +1,14 @@
 import './Header.css';
 
-const Header = () => {
+interface IProps {
+  userName: string | undefined
+}
+
+const Header = ({ userName}: IProps) => {
   return (
     <div>
       <h1>ALPs</h1>
-      {/* <p>Welcome, {user.data.attributes.name}!</p> */}
+      {userName && <p>Welcome, {userName}!</p>}
     </div>
   );
 }
