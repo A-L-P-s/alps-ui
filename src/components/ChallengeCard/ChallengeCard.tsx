@@ -17,7 +17,7 @@ const ChallengeCard = ({ verb, eng_verb, id, image_url, image_alt_text, date }: 
     <div className='challenge-card'>
       <img src={image_url} alt={image_alt_text}></img>
       <div className='card-right-content'>
-        <h2>{date}</h2>
+        <h2 className='right-info'>{date}</h2>
         <h3>{verb}</h3>
         <p>({eng_verb})</p>
       </div>

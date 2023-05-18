@@ -12,3 +12,8 @@
   align-items: center;
   padding: 10px;
 }
+
+.challenge-card:hover {
+  cursor: pointer;
+  border: 1px solid blue;
+}
