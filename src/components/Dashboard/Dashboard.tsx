@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IUser } from '../../Utilities/interfaces';
 import { Link } from 'react-router-dom';
 import mockUser from '../../sampleData/user';
@@ -10,7 +10,11 @@ interface IProps {
 }
 
 const Dashboard = ({ user }: IProps) => {
-  const [userData] = useState<IUser>(user)
+  const [userData, setUserData] = useState<IUser>(user)
+
+  useEffect(() => {
+    setUserData(user)
+  }, [user])
 
   return (
     <div className='dashboard'>

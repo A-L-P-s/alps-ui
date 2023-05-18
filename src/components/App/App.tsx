@@ -19,6 +19,10 @@ const App = () => {
   const [users, setUsers] = useState<IUsers | null>(initialUsers)
   const [user, setUser] = useState<IUser | null>(null)
 
+  const resetUser = () => {
+    setUser(null)
+  }
+
   const setUserData = (userId: string) => {
     getUser(userId)
       .then(data=> setUser(data))
@@ -29,13 +33,12 @@ const App = () => {
       .then(data => setUsers(data))
   }, [])
 
-
   return (
     <>
       <Header />
       <Routes>
-        <Route path='/' element={users !== null && <Home allUsers={users} setUserData={setUserData}/>} />
-        <Route path='/:userName/dashboard' element={user !== null && <Dashboard user={user}/>} />
+        <Route path='/' element={users !== null && <Home allUsers={users} setUserData={setUserData} resetUser={resetUser}/>} />
+        <Route path='/:userName/dashboard' element={user !== null && <Dashboard user={user}/>}/>
         <Route path='/Deniz/new-challenge' element={<Form />} />
         <Route path='/Deniz/feedback/:id' element={<Feedback />} />
       </Routes>

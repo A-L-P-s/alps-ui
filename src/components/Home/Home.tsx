@@ -7,11 +7,15 @@ import { useEffect } from 'react';
 interface IProps {
   allUsers: IUsers
   setUserData: Function
+  resetUser: Function
 }
 
-const Home = ({ allUsers, setUserData }: IProps) => {
-  const [userCards, setUserCards] = useState<any>(null)
-  // ANY HERE WILL NEED TO BE UPDATED!
+const Home = ({ allUsers, setUserData, resetUser }: IProps) => {
+  const [userCards, setUserCards] = useState<JSX.Element[] | null >(null)
+
+  useEffect(() => {
+    resetUser()
+  }, [])
 
   useEffect(() => {
     if(allUsers.data.length) {
