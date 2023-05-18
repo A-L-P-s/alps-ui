@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ISentences } from '../../Utilities/interfaces';
+// import { ISentences } from '../../Utilities/interfaces';
 import './Feedback.css';
 import { getFeedback } from '../../Utilities/api-calls';
 import { IFeedback } from '../../Utilities/interfaces';
