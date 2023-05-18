@@ -48,7 +48,7 @@ const Form = ({ userId, userName, language }: IProps) => {
   }, []);
 
   // REMEMBER TO CHANGE ANY TO A TYPE
-  const handleClick: (event: React.MouseEvent<HTMLElement>) => any = (event) => {
+  const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {
     event.preventDefault();
     const submissionData = {
       language: language,
