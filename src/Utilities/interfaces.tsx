@@ -81,6 +81,6 @@ export interface IFeedbackData {
   image_url: string,
   image_alt_text: string,
   created_at: null,
-  grammar_points: IGrammarPoint[],
+  grammar_points: null,
   sentences: ISentences[]
 }

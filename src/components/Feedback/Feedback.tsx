@@ -27,8 +27,6 @@ const Feedback = () => {
     //fetch goes here someday
     getFeedback("1", "55")
       .then( feedbackData => {
-        console.log(feedbackData)
-
         setFeedback(feedbackData);
       })
       
