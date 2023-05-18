@@ -1,21 +1,35 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from 'react';
+import { useState } from 'react';
 import './Home.css';
 import User from '../User/User';
-import users from '../../sampleData/users';
+import { IUsers } from '../../Utilities/interfaces';
+import { useEffect } from 'react';
 
+interface IProps {
+  allUsers: IUsers
+  setUserData: Function
+  resetUser: Function
+}
 
-const userOne = users.data[0].attributes;
-const userTwo = users.data[1].attributes;
+const Home = ({ allUsers, setUserData, resetUser }: IProps) => {
+  const [userCards, setUserCards] = useState<JSX.Element[] | null >(null)
 
-const Home = () => {
+  useEffect(() => {
+    resetUser()
+  }, [resetUser])
+
+  useEffect(() => {
+    if(allUsers.data.length) {
+      let cards = allUsers.data.map(user => {
+      return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id} key={user.id} setUserData={setUserData}/>
+      })
+      setUserCards(cards)
+    }
+  }, [allUsers, setUserData])
+
   return (
     <div>
       <p className='choose-user'>Choose your user</p>
-      <div className='user-container'>
-        <User name={userOne.name} preferred_lang={userOne.preferred_lang} id={users.data[0].id}/>
-        <User name={userTwo.name} preferred_lang={userTwo.preferred_lang} id={users.data[1].id}/>
-      </div>
+      {allUsers.data.length ? <div className='user-container'>{userCards}</div> : <p>Loading</p>}
     </div>
   );
 }
