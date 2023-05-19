@@ -4,6 +4,8 @@ import './Form.css';
 import { IGrammarPoint } from '../../Utilities/interfaces';
 import { getPrompt } from '../../Utilities/api-calls';
 import infoIcon from '../../assets/info_icon.svg';
+import Modal from 'react-modal';
+import Instructions from '../Instructions/Instructions';
 
 const Form = () => {
   const [imgUrl, setImgUrl] = useState<string>('');
@@ -13,6 +15,11 @@ const Form = () => {
   const [grammarPoints, setGrammarPoints] = useState<IGrammarPoint[]>([]);
   const [sent1, setSent1] = useState<string>('');
   const [sent2, setSent2] = useState<string>('');
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    Modal.setAppElement('#root');
+  }, []);
 
   useEffect(() => {
     getPrompt()
@@ -32,12 +39,25 @@ const Form = () => {
       });
   }, []);
 
+  const openModal: () => void = () => {
+    setModalIsOpen(true);
+  }
+
+  const closeModal: () => void = () => {
+    setModalIsOpen(false);
+  }
+
   return (
     <form>
       <img alt={imgAlt} src={imgUrl} className='prompt-img'/>
       <div className='challenge-container'>
         <div className='challenge-header-container'>
-          <img className='info-icon' src={infoIcon} alt='instructions icon' />
+          <img
+            className='info-icon'
+            src={infoIcon}
+            alt='instructions icon'
+            onClick={openModal}
+          />
           <h2 className='challenge-header'>Challenge</h2>
         </div>
         <div className='prompt-container'>
@@ -73,6 +93,13 @@ const Form = () => {
           </Link>
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel='Instructions'
+      >
+        <Instructions />
+      </Modal>
     </form>
   );
 }
