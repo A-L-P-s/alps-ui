@@ -38,7 +38,7 @@ const Feedback = () => {
         <p>{sentences[0].ai_sent}</p>
         <p>{sentences[0].ai_explanation}</p>
         {/* Will need to make the username dynamic */}
-        <Link to={'/Deniz/dashboard'}>
+        <Link to={'/55/dashboard'}>
           <button>Home</button>
         </Link>
       </div>}

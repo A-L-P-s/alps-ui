@@ -15,7 +15,7 @@ const User: React.FC<IProps> = ({ name, preferred_lang, id, setUserData}) => {
     <div className='user'>
       <p>{name}</p>
       <p>{preferred_lang}</p>
-      <Link to={`/${name}/dashboard`}><button onClick={() => setUserData(id)}>{`Continue as ${name}`}</button></Link>
+      <Link to={`/${id}/dashboard`}><button onClick={() => setUserData(id)}>{`Continue as ${name}`}</button></Link>
     </div>
   );
 }
