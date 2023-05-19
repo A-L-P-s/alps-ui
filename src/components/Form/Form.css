@@ -84,3 +84,27 @@ input {
   padding: 0;
   cursor: pointer;
 }
+
+.my-modal {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  position: fixed;
+  margin: 5%;
+  width: 50%;
+  padding: 5%;
+  padding-top: 0;
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  border-radius: 10px;
+}
+
+.close-modal-button {
+  margin-right: -7%;
+  align-self: flex-end;
+  cursor: pointer;
+}

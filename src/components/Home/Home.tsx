@@ -6,11 +6,10 @@ import { useEffect } from 'react';
 
 interface IProps {
   allUsers: IUsers
-  setUserData: Function
   resetUser: Function
 }
 
-const Home = ({ allUsers, setUserData, resetUser }: IProps) => {
+const Home = ({ allUsers, resetUser }: IProps) => {
   const [userCards, setUserCards] = useState<JSX.Element[] | null >(null)
 
   useEffect(() => {
@@ -20,11 +19,11 @@ const Home = ({ allUsers, setUserData, resetUser }: IProps) => {
   useEffect(() => {
     if(allUsers.data.length) {
       let cards = allUsers.data.map(user => {
-      return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id} key={user.id} setUserData={setUserData}/>
+      return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id} key={user.id}/>
       })
       setUserCards(cards)
     }
-  }, [allUsers, setUserData])
+  }, [allUsers])
 
   return (
     <div>
