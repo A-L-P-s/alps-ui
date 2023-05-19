@@ -1,9 +1,8 @@
 import { IUser } from '../../Utilities/interfaces';
 import { Link, useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import PastChallenges from '../PastChallenges/PastChallenges';
 import './Dashboard.css';
-import { param } from 'cypress/types/jquery';
 
 interface IProps {
   user: IUser | null,
