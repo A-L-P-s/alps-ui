@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Form.css';
 import { IGrammarPoint } from '../../Utilities/interfaces';
-import { getPrompt } from '../../Utilities/api-calls';
+import { getPrompt, postSubmission } from '../../Utilities/api-calls';
 import infoIcon from '../../assets/info_icon.svg';
 import Modal from 'react-modal';
 import Instructions from '../Instructions/Instructions';
 
-const Form = () => {
+interface IProps {
+  userId: string | undefined,
+  userName: string | undefined,
+  language: string | undefined
+}
+
+const Form = ({ userId, userName, language }: IProps) => {
   const [imgUrl, setImgUrl] = useState<string>('');
   const [imgAlt, setImgAlt] = useState<string>('')
   const [verb, setVerb] = useState<string>('');
@@ -15,6 +21,15 @@ const Form = () => {
   const [grammarPoints, setGrammarPoints] = useState<IGrammarPoint[]>([]);
   const [sent1, setSent1] = useState<string>('');
   const [sent2, setSent2] = useState<string>('');
+  const [feedbackId, setFeedbackId] = useState<string>('');
+
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    if (feedbackId) {
+      navigate(`/${userName}/feedback/${feedbackId}`);
+    }
+  }, [feedbackId, navigate, userName]);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -45,6 +60,37 @@ const Form = () => {
 
   const closeModal: () => void = () => {
     setModalIsOpen(false);
+  }
+
+  // REMEMBER TO CHANGE ANY TO A TYPE
+  const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {
+    event.preventDefault();
+    const submissionData = {
+      language: language,
+      verb: verb,
+      eng_verb: engVerb,
+      image_url: imgUrl,
+      image_alt_text: imgAlt,
+      sentences: [
+        {
+          grammar_point: grammarPoints[0].grammar_point,
+          eng_grammar_point: grammarPoints[0].eng_grammar_point,
+          user_sent: sent1
+        },
+        {
+          grammar_point: grammarPoints[1].grammar_point,
+          eng_grammar_point: grammarPoints[1].eng_grammar_point,
+          user_sent: sent2
+        }
+      ]
+    }
+
+    postSubmission(userId, submissionData)
+      .then(responseData => {
+        if (responseData.data.id) {
+          setFeedbackId(responseData.data.id);
+        }
+      })
   }
 
   return (
@@ -86,10 +132,10 @@ const Form = () => {
             />
           </div>
         </div>
-        {/* Will need to make this route dynamic in the future */}
         <div className='submit-button-container'>
-          <Link to={'/Deniz/feedback/1'} className='submit-link'>
-            <button className='submit-button'>Submit</button>
+          {/* FIND WAY TO HANDLE LINK WHEN USERNAME IS UNDEFINED */}
+          <Link to={`/${userName}/feedback/1`} className='submit-link'>
+            <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>
           </Link>
         </div>
       </div>
