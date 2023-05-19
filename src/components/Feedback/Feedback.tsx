@@ -11,7 +11,10 @@ import { useParams } from 'react-router-dom';
 const Feedback = () => {
   const [feedback, setFeedback] = useState<IFeedback|undefined>();
   
-  const { userId, challengeId } = useParams();
+  const { userId, id } = useParams();
+  console.log(useParams())
+  console.log(id)
+  console.log(userId)
 
   // useEffect(() => {
   //   getUsers()
@@ -22,11 +25,11 @@ const Feedback = () => {
   // }, [userName]);
 
   useEffect(() => {
-    getFeedback(challengeId, userId)
+    getFeedback(id, userId)
       .then(feedbackData => {
         setFeedback(feedbackData);
       })
-  }, [userId, challengeId]);
+  }, [userId, id]);
 
   return (
     <>
