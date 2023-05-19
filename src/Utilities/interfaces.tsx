@@ -75,6 +75,17 @@ export interface IFeedback {
 }
 
 export interface IFeedbackData {
+  user_id: string,
+  language: string,
+  verb: string,
+  eng_verb: string,
+  image_url: string,
+  image_alt_text: string,
+  created_at: string,
+  grammar_points: null,
+  sentences: ISentences[]
+
+}
 
 export interface ISubmission {
   language: string | undefined,
