@@ -1,16 +1,15 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
-// interface IProps {
-//   name: string
-// }
+interface IProps {
+  userName: string | undefined
+}
 
-const Header = () => {
+const Header = ({ userName }: IProps) => {
   return (
-    <div>
-      <h1>ALPs</h1>
-      {/* <p>Welcome, {name}!</p> */}
+    <div className='header'>
+      <Link to='/' style={{textDecoration: 'none'}}><h1>ALPs</h1></Link>
+      {userName && <p className='welcome-msg'>Welcome, {userName}!</p>}
     </div>
   );
 }
