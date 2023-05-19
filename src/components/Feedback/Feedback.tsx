@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import './Feedback.css';
 import { getFeedback } from '../../Utilities/api-calls';
 import { IFeedback } from '../../Utilities/interfaces';
+import { useParams } from 'react-router-dom';
+import { getUsers } from '../../Utilities/api-calls';
 
 // const initialFeedback = {
 //   data: []
@@ -18,24 +20,30 @@ const Feedback = () => {
   // const [engVerb, setEngVerb] = useState<string>('');
   // const [sentences, setSentences] = useState<ISentences[]>([]);
 
+  const { userName, challengeId } = useParams()
+
+  const [userId, setUserId] = useState<string>('');
+
   useEffect(() => {
-    //get user by name from url
-    //pull the challenge id
-
-
-
-    //fetch goes here someday
-    getFeedback("1", "55")
-      .then( feedbackData => {
-        setFeedback(feedbackData);
+    //get user id from the user name
+    getUsers()
+      .then( users => {
+        const matchingUser = users?.data.find(user => user.attributes.name == userName)
+        setUserId(matchingUser?.id || "")
       })
-      
     // setImgUrl(mockData.image_url);
     // setImgAlt(mockData.image_alt_text);
     // setVerb(mockData.verb);
     // setEngVerb(mockData.eng_verb);
     // setSentences(mockData.sentences);
   }, []);
+
+  useEffect(() => {
+    getFeedback(challengeId, userId)
+      .then( feedbackData => {
+        setFeedback(feedbackData);
+      })
+  }, [userId])
 
   return (
     feedback ?
@@ -51,7 +59,7 @@ const Feedback = () => {
         <p>{feedback.data.attributes.sentences[0].ai_sent}</p>
         <p>{feedback.data.attributes.sentences[0].ai_explanation}</p>
         {/* Will need to make the username dynamic */}
-        <Link to={'/Deniz/dashboard'}>
+        <Link to={`/${userName}/dashboard`}>
           <button>Home</button>
         </Link>
       </div>}

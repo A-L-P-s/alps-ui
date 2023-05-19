@@ -40,7 +40,7 @@ const App = () => {
         <Route path='/' element={users !== null && <Home allUsers={users} setUserData={setUserData} resetUser={resetUser}/>} />
         <Route path='/:userName/dashboard' element={user !== null && <Dashboard user={user}/>}/>
         <Route path='/Deniz/new-challenge' element={<Form />} />
-        <Route path='/Deniz/feedback/:id' element={<Feedback />} />
+        <Route path='/:userName/feedback/:challengeId' element={<Feedback />} />
       </Routes>
     </>
   );

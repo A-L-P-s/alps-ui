@@ -39,7 +39,6 @@ export const getFeedback: (challengeId?:string, userId?:string) => Promise<any> 
 
   return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users${userPath}/challenges${challengePath}`)
   .then(response => {
-    console.log(response)
     if (!response.ok) {
       throw new Error(`${response.status}: ${response.statusText}`);
     } else {
