@@ -22,14 +22,14 @@ const Feedback = () => {
         const matchingUser = users?.data.find(user => user.attributes.name === userName)
         setUserId(matchingUser?.id || "")
       })
-  }, []);
+  }, [userName]);
 
   useEffect(() => {
     getFeedback(challengeId, userId)
       .then( feedbackData => {
         setFeedback(feedbackData);
       })
-  }, [userId]);
+  }, [userId, challengeId]);
 
   return (
     feedback ?
