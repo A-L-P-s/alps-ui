@@ -94,10 +94,13 @@ const Form = () => {
         </div>
       </div>
       <Modal
+        className='my-modal'
         isOpen={modalIsOpen}
+        shouldFocusAfterRender={false}
         onRequestClose={closeModal}
         contentLabel='Instructions'
       >
+        <button className='close-modal-button' onClick={closeModal}>X</button>
         <Instructions />
       </Modal>
     </form>
