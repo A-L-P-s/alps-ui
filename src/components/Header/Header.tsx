@@ -5,7 +5,7 @@ interface IProps {
   userName: string | undefined
 }
 
-const Header = ({ userName}: IProps) => {
+const Header = ({ userName }: IProps) => {
   return (
     <div className='header'>
       <Link to='/' style={{textDecoration: 'none'}}><h1>ALPs</h1></Link>
