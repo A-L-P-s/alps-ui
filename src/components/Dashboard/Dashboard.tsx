@@ -14,7 +14,7 @@ const Dashboard = ({ user, setUserData }: IProps) => {
 
   useEffect(() => {
     setUserData(paramsData.userId)
-  }, [paramsData.userId, setUserData])
+  }, [])
 
   return (
     <div className='dashboard'>
