@@ -38,17 +38,17 @@ const App = () => {
     <>
       <Header userName={user?.data.attributes.name}/>
       <Routes>
-        <Route path='/' element={users !== null && <Home allUsers={users} setUserData={setUserData} resetUser={resetUser}/>} />
-        <Route path='/:userName/dashboard' element={user !== null && <Dashboard user={user}/>}/>
+        <Route path='/' element={users !== null && <Home allUsers={users} resetUser={resetUser}/>} />
+        <Route path='/:userId/dashboard' element={<Dashboard user={user} setUserData={setUserData}/>}/>
         <Route
-          path='/:userName/new-challenge'
+          path='/:userId/new-challenge'
           element={<Form 
             userName={user?.data.attributes.name}
             language={user?.data.attributes.preferred_lang}
             userId={user?.data.id}
           />} 
         />
-        <Route path='/Deniz/feedback/:id' element={<Feedback />} />
+        <Route path='/:userId/feedback/:id' element={<Feedback />} />
       </Routes>
     </>
   );
