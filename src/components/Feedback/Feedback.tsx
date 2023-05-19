@@ -19,7 +19,7 @@ const Feedback = () => {
   useEffect(() => {
     getUsers()
       .then( users => {
-        const matchingUser = users?.data.find(user => user.attributes.name == userName)
+        const matchingUser = users?.data.find(user => user.attributes.name === userName)
         setUserId(matchingUser?.id || "")
       })
   }, []);
