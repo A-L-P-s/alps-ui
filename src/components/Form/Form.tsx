@@ -4,6 +4,8 @@ import './Form.css';
 import { IGrammarPoint } from '../../Utilities/interfaces';
 import { getPrompt, postSubmission } from '../../Utilities/api-calls';
 import infoIcon from '../../assets/info_icon.svg';
+import Modal from 'react-modal';
+import Instructions from '../Instructions/Instructions';
 
 interface IProps {
   userId: string | undefined,
@@ -28,6 +30,11 @@ const Form = ({ userId, userName, language }: IProps) => {
       navigate(`/${userName}/feedback/${feedbackId}`);
     }
   }, [feedbackId, navigate, userName]);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    Modal.setAppElement('#root');
+  }, []);
 
   useEffect(() => {
     getPrompt()
@@ -46,6 +53,14 @@ const Form = ({ userId, userName, language }: IProps) => {
         console.error('An error occurred:', error);
       });
   }, []);
+
+  const openModal: () => void = () => {
+    setModalIsOpen(true);
+  }
+
+  const closeModal: () => void = () => {
+    setModalIsOpen(false);
+  }
 
   // REMEMBER TO CHANGE ANY TO A TYPE
   const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {
@@ -83,7 +98,12 @@ const Form = ({ userId, userName, language }: IProps) => {
       <img alt={imgAlt} src={imgUrl} className='prompt-img'/>
       <div className='challenge-container'>
         <div className='challenge-header-container'>
-          <img className='info-icon' src={infoIcon} alt='instructions icon' />
+          <img
+            className='info-icon'
+            src={infoIcon}
+            alt='instructions icon'
+            onClick={openModal}
+          />
           <h2 className='challenge-header'>Challenge</h2>
         </div>
         <div className='prompt-container'>
@@ -119,6 +139,16 @@ const Form = ({ userId, userName, language }: IProps) => {
           </Link>
         </div>
       </div>
+      <Modal
+        className='my-modal'
+        isOpen={modalIsOpen}
+        shouldFocusAfterRender={false}
+        onRequestClose={closeModal}
+        contentLabel='Instructions'
+      >
+        <button className='close-modal-button' onClick={closeModal}>X</button>
+        <Instructions />
+      </Modal>
     </form>
   );
 }
