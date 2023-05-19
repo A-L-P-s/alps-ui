@@ -16,9 +16,10 @@ const App = () => {
     data: []
   }
 
+  
   const [users, setUsers] = useState<IUsers | null>(initialUsers)
   const [user, setUser] = useState<IUser | null>(null)
-
+  
   const resetUser = () => {
     setUser(null)
   }
@@ -39,7 +40,14 @@ const App = () => {
       <Routes>
         <Route path='/' element={users !== null && <Home allUsers={users} resetUser={resetUser}/>} />
         <Route path='/:userId/dashboard' element={<Dashboard user={user} setUserData={setUserData}/>}/>
-        <Route path='/:userId/new-challenge' element={<Form />} />
+        <Route
+          path='/:userId/new-challenge'
+          element={<Form 
+            userName={user?.data.attributes.name}
+            language={user?.data.attributes.preferred_lang}
+            userId={user?.data.id}
+          />} 
+        />
         <Route path='/:userId/feedback/:id' element={<Feedback />} />
       </Routes>
     </>
