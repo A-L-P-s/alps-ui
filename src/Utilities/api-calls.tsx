@@ -5,7 +5,7 @@ import { IUsers, IUser, IPrompt, ISubmission, ISubmissionResponse } from "./inte
 
 export const getUsers: () => Promise<IUsers | null> = async () => {
 
-  return fetch('https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users')
+  return fetch('https://calm-thicket-75558.herokuapp.com/api/v1/users')
     .then(response => {
       if (!response.ok) {
         throw new Error(`${response.status}: ${response.statusText}`);
@@ -20,7 +20,7 @@ export const getUsers: () => Promise<IUsers | null> = async () => {
 
 export const getUser: (userId: string) => Promise<IUser | null> = async (userId) => {
 
-  return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users/${userId}`)
+  return fetch(`https://calm-thicket-75558.herokuapp.com/api/v1/users/${userId}`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`${response.status}: ${response.statusText}`);
@@ -33,11 +33,12 @@ export const getUser: (userId: string) => Promise<IUser | null> = async (userId)
     });
 }
 
+// CHANGE ANY TYPE 
 export const getFeedback: (challengeId?:string, userId?:string) => Promise<any> = async (challengeId, userId) => {
   const userPath: string = userId ? `/${userId}` : '';
   const challengePath: string = challengeId ? `/${challengeId}` : '';
 
-  return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users${userPath}/challenges${challengePath}`)
+  return fetch(`https://calm-thicket-75558.herokuapp.com/api/v1/users${userPath}/challenges${challengePath}`)
   .then(response => {
     if (!response.ok) {
       throw new Error(`${response.status}: ${response.statusText}`);
@@ -50,8 +51,8 @@ export const getFeedback: (challengeId?:string, userId?:string) => Promise<any> 
   });
 }
 
-export const getPrompt: () => Promise<IPrompt | null> = async () => {
-  return fetch('https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users/55/challenges/new')
+export const getPrompt: (userId:string | undefined) => Promise<IPrompt | null> = async (userId) => {
+  return fetch(`https://calm-thicket-75558.herokuapp.com/api/v1/users/${userId}/challenges/new`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`${response.status}: ${response.statusText}`);
@@ -65,7 +66,7 @@ export const getPrompt: () => Promise<IPrompt | null> = async () => {
 }
 
 export const postSubmission: (userId: string | undefined, data: ISubmission) => Promise<ISubmissionResponse> = async (userId, data) => {
-  return fetch(`https://5178589b-c8d7-4c00-ae22-57e3d6493139.mock.pstmn.io/api/v1/users/${userId}/challenges`, {
+  return fetch(`https://calm-thicket-75558.herokuapp.com/api/v1/users/${userId}/challenges`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {

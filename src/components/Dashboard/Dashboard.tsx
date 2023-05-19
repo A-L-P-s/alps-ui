@@ -12,6 +12,8 @@ interface IProps {
 const Dashboard = ({ user, setUserData }: IProps) => {
   const paramsData = useParams()
 
+  console.log(user)
+
   useEffect(() => {
     setUserData(paramsData.userId)
       // eslint-disable-next-line react-hooks/exhaustive-deps

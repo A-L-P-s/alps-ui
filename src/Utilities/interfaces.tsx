@@ -23,7 +23,8 @@ export interface IUserData {
 }
 
 export interface IChallenge {
-  challenge_id: string,
+  id: number,
+  user_id: number,
   language: string,
   verb: string,
   eng_verb: string,
@@ -75,7 +76,7 @@ export interface IFeedback {
 }
 
 export interface IFeedbackData {
-  user_id: string,
+  user_id: number,
   language: string,
   verb: string,
   eng_verb: string,
@@ -105,19 +106,18 @@ export interface ISubmissionSentence {
 export interface ISubmissionResponse {
   data: {
     id: string,
-    type: string,
-    attributes: IResponseAttributes
+    type: string
   }
 }
 
-export interface IResponseAttributes {
-  user_id: string,
-  language: string,
-  verb: string,
-  eng_verb: string,
-  image_url: string,
-  image_alt_text: string,
-  created_at: string,
-  grammar_points: null,
-  sentences: ISentences[]
-}
+// export interface IResponseAttributes {
+//   user_id: string,
+//   language: string,
+//   verb: string,
+//   eng_verb: string,
+//   image_url: string,
+//   image_alt_text: string,
+//   created_at: string,
+//   grammar_points: null,
+//   sentences: ISentences[]
+// }

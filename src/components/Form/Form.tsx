@@ -22,22 +22,22 @@ const Form = ({ userId, userName, language }: IProps) => {
   const [sent1, setSent1] = useState<string>('');
   const [sent2, setSent2] = useState<string>('');
   const [feedbackId, setFeedbackId] = useState<string>('');
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const navigate = useNavigate();
   
   useEffect(() => {
     if (feedbackId) {
-      navigate(`/${userName}/feedback/${feedbackId}`);
+      navigate(`/${userId}/feedback/${feedbackId}`);
     }
   }, [feedbackId, navigate, userName]);
-  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     Modal.setAppElement('#root');
   }, []);
 
   useEffect(() => {
-    getPrompt()
+    getPrompt(userId)
       .then(prompt => {
         if (prompt) {
           const promptAttributes = prompt.data.attributes
@@ -47,6 +47,7 @@ const Form = ({ userId, userName, language }: IProps) => {
           setVerb(promptAttributes.verb);
           setEngVerb(promptAttributes.eng_verb);
           setGrammarPoints(promptAttributes.grammar_points);
+          console.log(promptAttributes)
         }
       })
       .catch(error => {
@@ -134,7 +135,7 @@ const Form = ({ userId, userName, language }: IProps) => {
         </div>
         <div className='submit-button-container'>
           {/* FIND WAY TO HANDLE LINK WHEN USERNAME IS UNDEFINED */}
-          <Link to={`/${userName}/feedback/1`} className='submit-link'>
+          <Link to={`/${userId}/feedback/1`} className='submit-link'>
             <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>
           </Link>
         </div>
