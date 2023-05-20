@@ -37,7 +37,7 @@ const Form = ({ userId, userName, language }: IProps) => {
   }, []);
 
   useEffect(() => {
-    getPrompt(userId)
+    userId && getPrompt(userId)
       .then(prompt => {
         if (prompt) {
           const promptAttributes = prompt.data.attributes
@@ -52,7 +52,7 @@ const Form = ({ userId, userName, language }: IProps) => {
       .catch(error => {
         console.error('An error occurred:', error);
       });
-  }, []);
+  }, [userId]);
 
   const openModal: () => void = () => {
     setModalIsOpen(true);
