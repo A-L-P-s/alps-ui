@@ -12,17 +12,6 @@ const Feedback = () => {
   const [feedback, setFeedback] = useState<IFeedback|undefined>();
   
   const { userId, id } = useParams();
-  console.log(useParams())
-  console.log(id)
-  console.log(userId)
-
-  // useEffect(() => {
-  //   getUsers()
-  //     .then( users => {
-  //       const matchingUser = users?.data.find(user => user.attributes.name === userName)
-  //       setUserId(matchingUser?.id || "")
-  //     })
-  // }, [userName]);
 
   useEffect(() => {
     getFeedback(id, userId)
