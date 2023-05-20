@@ -54,15 +54,6 @@ const Form = ({ userId, userName, language }: IProps) => {
       });
   }, [userId]);
 
-  const openModal: () => void = () => {
-    setModalIsOpen(true);
-  }
-
-  const closeModal: () => void = () => {
-    setModalIsOpen(false);
-  }
-
-  // REMEMBER TO CHANGE ANY TO A TYPE
   const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {
     event.preventDefault();
     const submissionData = {
@@ -85,12 +76,22 @@ const Form = ({ userId, userName, language }: IProps) => {
       ]
     }
 
-    postSubmission(userId, submissionData)
+    if (userId && postSubmission) {
+      postSubmission(userId, submissionData)
       .then(responseData => {
         if (responseData.data.id) {
           setFeedbackId(responseData.data.id);
         }
-      })
+      });
+    }
+  }
+
+  const openModal: () => void = () => {
+    setModalIsOpen(true);
+  }
+
+  const closeModal: () => void = () => {
+    setModalIsOpen(false);
   }
 
   return (

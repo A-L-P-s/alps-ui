@@ -109,15 +109,3 @@ export interface ISubmissionResponse {
     type: string
   }
 }
-
-// export interface IResponseAttributes {
-//   user_id: string,
-//   language: string,
-//   verb: string,
-//   eng_verb: string,
-//   image_url: string,
-//   image_alt_text: string,
-//   created_at: string,
-//   grammar_points: null,
-//   sentences: ISentences[]
-// }
