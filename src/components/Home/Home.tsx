@@ -18,7 +18,6 @@ const Home = ({ allUsers, resetUser }: IProps) => {
 
   useEffect(() => {
     if(allUsers.data.length) {
-      console.log(allUsers)
       let cards = allUsers.data.map(user => {
       return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id} key={user.id}/>
       })

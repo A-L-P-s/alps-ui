@@ -47,7 +47,6 @@ const Form = ({ userId, userName, language }: IProps) => {
           setVerb(promptAttributes.verb);
           setEngVerb(promptAttributes.eng_verb);
           setGrammarPoints(promptAttributes.grammar_points);
-          console.log(promptAttributes)
         }
       })
       .catch(error => {
