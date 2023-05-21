@@ -8,6 +8,12 @@ export interface ITruncUser {
   attributes: IUserData
 }
 
+export interface IUserData {
+  name: string,
+  preferred_lang: string,
+  challenges: IChallenge[] | null
+}
+
 export interface IUser {
   data: {
     id: string,
@@ -16,15 +22,9 @@ export interface IUser {
   }
 }
 
-export interface IUserData {
-  name: string,
-  preferred_lang: string,
-  challenges: IChallenge[] | null
-}
-
 export interface IChallenge {
-  id: number,
-  user_id: number,
+  challenge_id: string,
+  user_id: string,
   language: string,
   verb: string,
   eng_verb: string,
@@ -76,7 +76,7 @@ export interface IFeedback {
 }
 
 export interface IFeedbackData {
-  user_id: number,
+  user_id: string,
   language: string,
   verb: string,
   eng_verb: string,

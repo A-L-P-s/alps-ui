@@ -13,8 +13,8 @@ const PastChallenges = ({ challenges }: IProps) => {
   const challengeCards = pastChallenges.map(challenge => {
     return (
       <ChallengeCard
-        id={challenge.id}
-        key={challenge.id}
+        challenge_id={challenge.challenge_id}
+        key={challenge.challenge_id}
         userId={challenge.user_id}
         verb={challenge.verb}
         eng_verb={challenge.eng_verb}
