@@ -9,11 +9,10 @@ import Instructions from '../Instructions/Instructions';
 
 interface IProps {
   userId: string | undefined,
-  userName: string | undefined,
   language: string | undefined
 }
 
-const Form = ({ userId, userName, language }: IProps) => {
+const Form = ({ userId, language }: IProps) => {
   const [imgUrl, setImgUrl] = useState<string>('');
   const [imgAlt, setImgAlt] = useState<string>('')
   const [verb, setVerb] = useState<string>('');
@@ -30,12 +29,10 @@ const Form = ({ userId, userName, language }: IProps) => {
     if (feedbackId) {
       navigate(`/${userId}/feedback/${feedbackId}`);
     }
-  }, [feedbackId, navigate, userName]);
+  }, [feedbackId, navigate, userId]);
 
   useEffect(() => {
     Modal.setAppElement('#root');
-    // Adding userId to dependency array causes infinite loop
-    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {

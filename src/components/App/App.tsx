@@ -52,7 +52,6 @@ const App = () => {
         <Route
           path='/:userId/new-challenge'
           element={<Form 
-            userName={user?.data.attributes.name}
             language={user?.data.attributes.preferred_lang}
             userId={user?.data.id}
           />} 
