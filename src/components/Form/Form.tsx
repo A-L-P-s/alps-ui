@@ -34,6 +34,8 @@ const Form = ({ userId, userName, language }: IProps) => {
 
   useEffect(() => {
     Modal.setAppElement('#root');
+    // Adding userId to dependency array causes infinite loop
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
