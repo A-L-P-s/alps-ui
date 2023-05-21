@@ -24,7 +24,6 @@ export interface IUser {
 
 export interface IChallenge {
   challenge_id: string,
-  user_id: string,
   language: string,
   verb: string,
   eng_verb: string,

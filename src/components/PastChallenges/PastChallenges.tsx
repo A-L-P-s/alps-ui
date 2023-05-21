@@ -5,9 +5,10 @@ import './PastChallenges.css';
 
 interface IProps {
   challenges: IChallenge[],
+  userId: string
 }
 
-const PastChallenges = ({ challenges }: IProps) => {
+const PastChallenges = ({ challenges, userId }: IProps) => {
   const [pastChallenges] = useState(challenges)
 
   const challengeCards = pastChallenges.map(challenge => {
@@ -15,7 +16,7 @@ const PastChallenges = ({ challenges }: IProps) => {
       <ChallengeCard
         challenge_id={challenge.challenge_id}
         key={challenge.challenge_id}
-        userId={challenge.user_id}
+        userId={userId}
         verb={challenge.verb}
         eng_verb={challenge.eng_verb}
         image_url={challenge.image_url}
