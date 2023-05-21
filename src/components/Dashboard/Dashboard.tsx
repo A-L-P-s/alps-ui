@@ -1,6 +1,5 @@
 import { IUser } from '../../Utilities/interfaces';
-import { Link, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PastChallenges from '../PastChallenges/PastChallenges';
 import './Dashboard.css';
 
@@ -10,18 +9,12 @@ interface IProps {
 }
 
 const Dashboard = ({ user, setUserData }: IProps) => {
-  const paramsData = useParams()
-
-  useEffect(() => {
-    setUserData(paramsData.userId)
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <div className='dashboard'>
       { user &&
       <div className='past-challenges'>
-        { user.data.attributes.challenges && <PastChallenges challenges={user.data.attributes.challenges}/>}
+        { user.data.attributes.challenges && <PastChallenges challenges={user.data.attributes.challenges} userId={user.data.id} />}
         <Link to={`/${user.data.id}/new-challenge`}><button>New Challenge</button></Link>
       </div>
       }

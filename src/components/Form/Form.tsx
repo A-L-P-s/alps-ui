@@ -9,11 +9,10 @@ import Instructions from '../Instructions/Instructions';
 
 interface IProps {
   userId: string | undefined,
-  userName: string | undefined,
   language: string | undefined
 }
 
-const Form = ({ userId, userName, language }: IProps) => {
+const Form = ({ userId, language }: IProps) => {
   const [imgUrl, setImgUrl] = useState<string>('');
   const [imgAlt, setImgAlt] = useState<string>('')
   const [verb, setVerb] = useState<string>('');
@@ -22,22 +21,22 @@ const Form = ({ userId, userName, language }: IProps) => {
   const [sent1, setSent1] = useState<string>('');
   const [sent2, setSent2] = useState<string>('');
   const [feedbackId, setFeedbackId] = useState<string>('');
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const navigate = useNavigate();
   
   useEffect(() => {
     if (feedbackId) {
-      navigate(`/${userName}/feedback/${feedbackId}`);
+      navigate(`/${userId}/feedback/${feedbackId}`);
     }
-  }, [feedbackId, navigate, userName]);
-  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  }, [feedbackId, navigate, userId]);
 
   useEffect(() => {
     Modal.setAppElement('#root');
   }, []);
 
   useEffect(() => {
-    getPrompt()
+    userId && getPrompt(userId)
       .then(prompt => {
         if (prompt) {
           const promptAttributes = prompt.data.attributes
@@ -52,17 +51,8 @@ const Form = ({ userId, userName, language }: IProps) => {
       .catch(error => {
         console.error('An error occurred:', error);
       });
-  }, []);
+  }, [userId]);
 
-  const openModal: () => void = () => {
-    setModalIsOpen(true);
-  }
-
-  const closeModal: () => void = () => {
-    setModalIsOpen(false);
-  }
-
-  // REMEMBER TO CHANGE ANY TO A TYPE
   const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {
     event.preventDefault();
     const submissionData = {
@@ -85,12 +75,22 @@ const Form = ({ userId, userName, language }: IProps) => {
       ]
     }
 
-    postSubmission(userId, submissionData)
+    if (userId && postSubmission) {
+      postSubmission(userId, submissionData)
       .then(responseData => {
         if (responseData.data.id) {
           setFeedbackId(responseData.data.id);
         }
-      })
+      });
+    }
+  }
+
+  const openModal: () => void = () => {
+    setModalIsOpen(true);
+  }
+
+  const closeModal: () => void = () => {
+    setModalIsOpen(false);
   }
 
   return (
@@ -134,7 +134,7 @@ const Form = ({ userId, userName, language }: IProps) => {
         </div>
         <div className='submit-button-container'>
           {/* FIND WAY TO HANDLE LINK WHEN USERNAME IS UNDEFINED */}
-          <Link to={`/${userName}/feedback/1`} className='submit-link'>
+          <Link to={`/${userId}/feedback/1`} className='submit-link'>
             <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>
           </Link>
         </div>

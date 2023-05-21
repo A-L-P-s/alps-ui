@@ -8,18 +8,18 @@ export interface ITruncUser {
   attributes: IUserData
 }
 
+export interface IUserData {
+  name: string,
+  preferred_lang: string,
+  challenges: IChallenge[] | null
+}
+
 export interface IUser {
   data: {
     id: string,
     type: string,
     attributes: IUserData
   }
-}
-
-export interface IUserData {
-  name: string,
-  preferred_lang: string,
-  challenges: IChallenge[] | null
 }
 
 export interface IChallenge {
@@ -66,6 +66,27 @@ export interface IPromptData {
   sentences: null
 }
 
+export interface IFeedback {
+  data: {
+    id: string,
+    type: string,
+    attributes: IFeedbackData
+  }
+}
+
+export interface IFeedbackData {
+  user_id: string,
+  language: string,
+  verb: string,
+  eng_verb: string,
+  image_url: string,
+  image_alt_text: string,
+  created_at: string,
+  grammar_points: null,
+  sentences: ISentences[]
+
+}
+
 export interface ISubmission {
   language: string | undefined,
   verb: string,
@@ -84,19 +105,6 @@ export interface ISubmissionSentence {
 export interface ISubmissionResponse {
   data: {
     id: string,
-    type: string,
-    attributes: IResponseAttributes
+    type: string
   }
-}
-
-export interface IResponseAttributes {
-  user_id: string,
-  language: string,
-  verb: string,
-  eng_verb: string,
-  image_url: string,
-  image_alt_text: string,
-  created_at: string,
-  grammar_points: null,
-  sentences: ISentences[]
 }

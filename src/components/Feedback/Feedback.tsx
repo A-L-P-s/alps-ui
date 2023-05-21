@@ -1,48 +1,50 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ISentences } from '../../Utilities/interfaces';
 import './Feedback.css';
+import { getFeedback } from '../../Utilities/api-calls';
+import { IFeedback } from '../../Utilities/interfaces';
+import { useParams } from 'react-router-dom';
 
-// MOCK DATA
-import mockFeedback from '../../sampleData/feedback';
 
-// MOCK DATA PATH
-const mockData = mockFeedback.data.attributes;
 
 const Feedback = () => {
-  const [imgUrl, setImgUrl] = useState<string>('');
-  const [imgAlt, setImgAlt] = useState<string>('')
-  const [verb, setVerb] = useState<string>('');
-  const [engVerb, setEngVerb] = useState<string>('');
-  const [sentences, setSentences] = useState<ISentences[]>([]);
+  const [feedback, setFeedback] = useState<IFeedback|undefined>();
+  
+  const { userId, id } = useParams();
 
   useEffect(() => {
-    //fetch goes here someday
-    setImgUrl(mockData.image_url);
-    setImgAlt(mockData.image_alt_text);
-    setVerb(mockData.verb);
-    setEngVerb(mockData.eng_verb);
-    setSentences(mockData.sentences);
-  }, []);
+    getFeedback(id, userId)
+      .then(feedbackData => {
+        setFeedback(feedbackData);
+      })
+  }, [userId, id]);
 
   return (
-    <div className='feedback-container'>
-      <img src={imgUrl} alt={imgAlt} className='prompt-img'/>
-      {sentences.length && <div className='sentences-container'>
-        <h2>{verb}</h2>
-        <h3>{engVerb}</h3>
-        <h4>{sentences[0].grammar_point} | {sentences[0].eng_grammar_point}</h4>
-        <h5>Your Sentence</h5>
-        <p>{sentences[0].user_sent}</p>
-        <h5>Corrected Sentence</h5>
-        <p>{sentences[0].ai_sent}</p>
-        <p>{sentences[0].ai_explanation}</p>
-        {/* Will need to make the username dynamic */}
-        <Link to={'/55/dashboard'}>
-          <button>Home</button>
-        </Link>
+    <>
+      {feedback && <div className='feedback-container'>
+        <img src={feedback.data.attributes.image_url} alt={feedback.data.attributes.image_alt_text} className='prompt-img'/>
+        <div className='sentences-container'>
+          <h2>{feedback.data.attributes.verb}</h2>
+          <h3>{feedback.data.attributes.eng_verb}</h3>
+          <h4>{feedback.data.attributes.sentences[0].grammar_point} | {feedback.data.attributes.sentences[0].eng_grammar_point}</h4>
+          <h5>Sentence 1</h5>
+          <p>{feedback.data.attributes.sentences[0].user_sent}</p>
+          <h5>Feedback</h5>
+          <p>{feedback.data.attributes.sentences[0].ai_sent}</p>
+          <p>{feedback.data.attributes.sentences[0].ai_explanation}</p>
+          <h4>{feedback.data.attributes.sentences[0].grammar_point} | {feedback.data.attributes.sentences[1].eng_grammar_point}</h4>
+          <h5>Sentence 2</h5>
+          <p>{feedback.data.attributes.sentences[1].user_sent}</p>
+          <h5>Feedback</h5>
+          <p>{feedback.data.attributes.sentences[1].ai_sent}</p>
+          <p>{feedback.data.attributes.sentences[1].ai_explanation}</p>
+          <Link to={`/${userId}/dashboard`}>
+            <button>Home</button>
+          </Link>
+        </div>
       </div>}
-    </div>
+    </>
   );
 }
 
