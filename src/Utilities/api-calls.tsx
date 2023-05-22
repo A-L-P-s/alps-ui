@@ -1,6 +1,3 @@
-// Deployed Backend Domain (waiting for CORS permission)
-// https://calm-thicket-75558.herokuapp.com/
-
 import { IUsers, IUser, IPrompt, ISubmission, ISubmissionResponse, IFeedback } from "./interfaces";
 
 export const getUsers: () => Promise<IUsers | null> = async () => {

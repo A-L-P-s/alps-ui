@@ -9,7 +9,7 @@ interface IProps {
   resetUser: Function
 }
 
-const Home = ({ allUsers, resetUser }: IProps) => {
+const Home = ({ allUsers, resetUser }: IProps): JSX.Element => {
   const [userCards, setUserCards] = useState<JSX.Element[] | null >(null)
 
   useEffect(() => {

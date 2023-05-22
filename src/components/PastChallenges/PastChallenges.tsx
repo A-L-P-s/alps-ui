@@ -8,7 +8,7 @@ interface IProps {
   userId: string
 }
 
-const PastChallenges = ({ challenges, userId }: IProps) => {
+const PastChallenges = ({ challenges, userId }: IProps): JSX.Element => {
   const [pastChallenges] = useState(challenges)
 
   const challengeCards = pastChallenges.map(challenge => {

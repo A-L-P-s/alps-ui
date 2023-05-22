@@ -12,7 +12,7 @@ import { IUsers, IUser } from '../../Utilities/interfaces';
 import { useState, useEffect } from 'react';
 import { getUsers, getUser } from '../../Utilities/api-calls';
 
-const App = () => {
+const App = (): JSX.Element => {
 
   const location = useLocation();
   const initialUsers = {

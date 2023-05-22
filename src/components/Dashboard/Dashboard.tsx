@@ -7,7 +7,7 @@ interface IProps {
   user: IUser | null,
 }
 
-const Dashboard = ({ user }: IProps) => {
+const Dashboard = ({ user }: IProps): JSX.Element => {
 
   return (
     <div className='dashboard'>

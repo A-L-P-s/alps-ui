@@ -14,7 +14,7 @@ interface IProps {
   setError: Function
 }
 
-const Form = ({ userId, language, setError }: IProps) => {
+const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   const [imgUrl, setImgUrl] = useState<string>('');
   const [imgAlt, setImgAlt] = useState<string>('')
   const [verb, setVerb] = useState<string>('');
@@ -86,7 +86,6 @@ const Form = ({ userId, language, setError }: IProps) => {
       setLoading(true)
       postSubmission(userId, submissionData)
       .then(responseData => {
-        console.log(responseData)
         if (responseData.data.id) {
           setFeedbackId(responseData.data.id);
           setLoading(false)

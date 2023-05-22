@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import './NotFound.css'
 
-const NotFound = () => {
+const NotFound = (): JSX.Element => {
   return (
     <div className='not-found'>
       <h1>Uh oh!</h1>
