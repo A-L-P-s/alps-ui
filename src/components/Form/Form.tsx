@@ -9,10 +9,11 @@ import Instructions from '../Instructions/Instructions';
 
 interface IProps {
   userId: string | undefined,
-  language: string | undefined
+  language: string | undefined,
+  setError: Function
 }
 
-const Form = ({ userId, language }: IProps) => {
+const Form = ({ userId, language, setError }: IProps) => {
   const [imgUrl, setImgUrl] = useState<string>('');
   const [imgAlt, setImgAlt] = useState<string>('')
   const [verb, setVerb] = useState<string>('');
@@ -50,6 +51,7 @@ const Form = ({ userId, language }: IProps) => {
       })
       .catch(error => {
         console.error('An error occurred:', error);
+        setError(error.toString())
       });
   }, [userId]);
 
@@ -81,7 +83,11 @@ const Form = ({ userId, language }: IProps) => {
         if (responseData.data.id) {
           setFeedbackId(responseData.data.id);
         }
-      });
+      })
+      .catch(error => {
+        console.error('An error occurred:', error);
+        setError(error.toString())
+      })
     }
   }
 

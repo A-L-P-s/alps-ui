@@ -21,8 +21,8 @@ const Feedback = ( { setError }: IProps) => {
         setFeedback(feedbackData);
       })
       .catch(error => {
-        let errorMsg = error.toString()
-        setError(errorMsg)
+        console.error('An error occurred:', error);
+        setError(error.toString())
       })
   }, [userId, id]);
 

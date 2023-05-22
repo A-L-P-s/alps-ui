@@ -30,8 +30,8 @@ const App = () => {
     getUser(userId)
       .then(data=> setUser(data))
       .catch(error => {
-        let errorMsg = error.toString()
-        setError(errorMsg)
+        console.error('An error occurred:', error);
+        setError(error.toString())
       })
   }
 
@@ -51,8 +51,8 @@ const App = () => {
       getUser(userId)
         .then(data=> setUser(data))
         .catch(error => {
-          let errorMsg = error.toString()
-          setError(errorMsg)
+          console.error('An error occurred:', error);
+          setError(error.toString())
         })
         
     }
@@ -70,6 +70,7 @@ const App = () => {
           element={<Form 
             language={user?.data.attributes.preferred_lang}
             userId={user?.data.id}
+            setError={setError}
           />} 
         />
         <Route path='/:userId/feedback/:id' element={<Feedback setError={setError}/>} />
