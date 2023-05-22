@@ -129,9 +129,8 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
           </div>
           <div className='sentence-container'>
           {grammarPoints.length && <label htmlFor='sent1'>{grammarPoints[0].grammar_point} | {grammarPoints[0].eng_grammar_point}</label>}
-            <input
+            <textarea
               id='sent1'
-              type='text'
               value={sent1}
               placeholder='Enter your sentence'
               onChange={event => {
@@ -140,13 +139,12 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
               }}
               maxLength={400}
             />
-          <p>{`${sent1Chars} character remaining`}</p>
+          <p>{`${sent1Chars} characters remaining`}</p>
           </div>
           <div className='sentence-container'>
             {grammarPoints.length && <label htmlFor='sent2'>{grammarPoints[1].grammar_point} | {grammarPoints[1].eng_grammar_point}</label>}
-            <input
+            <textarea
               id='sent2'
-              type='text'
               value={sent2}
               placeholder='Enter your sentence'
               onChange={event => {
@@ -155,7 +153,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
               }}
               maxLength={400}
             />
-          <p>{`${sent2Chars} character remaining`}</p>
+          <p>{`${sent2Chars} characters remaining`}</p>
           </div>
         </div>
         <div className='submit-button-container'>
