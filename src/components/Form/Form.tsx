@@ -37,22 +37,24 @@ const Form = ({ userId, language, setError }: IProps) => {
   }, []);
 
   useEffect(() => {
-    userId && getPrompt(userId)
-      .then(prompt => {
-        if (prompt) {
-          const promptAttributes = prompt.data.attributes
-
-          setImgUrl(promptAttributes.image_url);
-          setImgAlt(promptAttributes.image_alt_text);
-          setVerb(promptAttributes.verb);
-          setEngVerb(promptAttributes.eng_verb);
-          setGrammarPoints(promptAttributes.grammar_points);
-        }
-      })
-      .catch(error => {
-        console.error('An error occurred:', error);
-        setError(error.toString())
-      });
+    if (userId) {
+      getPrompt(userId)
+        .then(prompt => {
+          if (prompt) {
+            const promptAttributes = prompt.data.attributes
+  
+            setImgUrl(promptAttributes.image_url);
+            setImgAlt(promptAttributes.image_alt_text);
+            setVerb(promptAttributes.verb);
+            setEngVerb(promptAttributes.eng_verb);
+            setGrammarPoints(promptAttributes.grammar_points);
+          }
+        })
+        .catch(error => {
+          console.error('An error occurred:', error);
+          setError(error.toString())
+        });
+    }
   }, [userId]);
 
   const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {

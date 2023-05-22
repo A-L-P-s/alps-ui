@@ -22,61 +22,50 @@ const App = () => {
   const [users, setUsers] = useState<IUsers | null>(initialUsers)
   const [user, setUser] = useState<IUser | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [loading, setLoading] = useState<Boolean>(false)
   
   const resetUser = () => {
     setUser(null)
   }
 
   const setUserData = (userId: string) => {
-    setLoading(true)
     getUser(userId)
       .then(data=> {
         setUser(data)
-        setLoading(false)
       })
       .catch(error => {
         console.error('An error occurred:', error);
         setError(error.toString())
-        setLoading(false)
       })
   }
 
   useEffect(() => {
-    if(!users?.data.length) {
-      setLoading(true)
-      getUsers()
+    !users?.data.length && getUsers()
         .then(data => {
           setUsers(data)
-          setLoading(false)
         })
         .catch(error => {
           let errorMsg = error.toString()
           setError(errorMsg)
-          setLoading(false)
         })
-    }
   }, [users?.data.length])
 
   useEffect(() => {
     const userId = location.pathname.split('/')[1];
 
     if (userId) {
-      setLoading(true)
       getUser(userId)
         .then(data=> setUser(data))
         .catch(error => {
           console.error('An error occurred:', error);
           setError(error.toString())
         })
-      setLoading(false)  
     }
   }, [location])
 
   return (
     <>
       <Header userName={user?.data.attributes.name}/>
-        {!error && !loading ?
+      {!error ?
       <Routes>
         <Route path='/' element={users !== null && <Home allUsers={users} resetUser={resetUser}/>} />
         <Route path='/:userId/dashboard' element={<Dashboard user={user} setUserData={setUserData}/>}/>
@@ -90,7 +79,7 @@ const App = () => {
         />
         <Route path='/:userId/feedback/:id' element={<Feedback setError={setError}/>} />
         <Route path='*' element={<NotFound/>}/>
-      </Routes> : error ? <h1>{error}</h1> : <Loading />}
+      </Routes> : <h1>{error}</h1>}
     </>
   );
 }

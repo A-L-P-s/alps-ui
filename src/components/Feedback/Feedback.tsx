@@ -7,7 +7,7 @@ import { IFeedback } from '../../Utilities/interfaces';
 import { useParams } from 'react-router-dom';
 
 interface IProps {
-  setError: Function
+  setError: Function,
 }
 
 const Feedback = ( { setError }: IProps) => {
