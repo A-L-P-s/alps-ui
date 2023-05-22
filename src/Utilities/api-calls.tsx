@@ -5,7 +5,7 @@ import { IUsers, IUser, IPrompt, ISubmission, ISubmissionResponse } from "./inte
 
 export const getUsers: () => Promise<IUsers | null> = async () => {
 
-  return fetch('https://calm-thicket-75558.herokuapp.com/api/v1/uers')
+  return fetch('https://calm-thicket-75558.herokuapp.com/api/v1/users')
     .then(response => {
       if (!response.ok) {
         throw new Error(`${response.status}: ${response.statusText}`);

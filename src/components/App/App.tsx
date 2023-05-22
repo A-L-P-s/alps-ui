@@ -1,6 +1,7 @@
 // import React, { useState } from 'react';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
+import NotFound from '../NotFound/NotFound';
 import Dashboard from '../Dashboard/Dashboard';
 import Form from '../Form/Form';
 import Feedback from '../Feedback/Feedback';
@@ -63,6 +64,7 @@ const App = () => {
           />} 
         />
         <Route path='/:userId/feedback/:id' element={<Feedback />} />
+        <Route path='*' element={<NotFound/>}/>
       </Routes>}
     </>
   );
