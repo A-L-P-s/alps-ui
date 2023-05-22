@@ -19,6 +19,7 @@ const App = () => {
 
   const [users, setUsers] = useState<IUsers | null>(initialUsers)
   const [user, setUser] = useState<IUser | null>(null)
+  const [error, setError] = useState<string | null>(null)
   
   const resetUser = () => {
     setUser(null)
@@ -32,6 +33,10 @@ const App = () => {
   useEffect(() => {
     !users?.data.length && getUsers()
       .then(data => setUsers(data))
+      .catch(error => {
+        let errorMsg = error.toString()
+        setError(errorMsg)
+      })
   }, [users?.data.length])
 
   useEffect(() => {
@@ -46,7 +51,8 @@ const App = () => {
   return (
     <>
       <Header userName={user?.data.attributes.name}/>
-      <Routes>
+        {error && <h1>{error}</h1>}
+        {!error && <Routes>
         <Route path='/' element={users !== null && <Home allUsers={users} resetUser={resetUser}/>} />
         <Route path='/:userId/dashboard' element={<Dashboard user={user} setUserData={setUserData}/>}/>
         <Route
@@ -57,7 +63,7 @@ const App = () => {
           />} 
         />
         <Route path='/:userId/feedback/:id' element={<Feedback />} />
-      </Routes>
+      </Routes>}
     </>
   );
 }

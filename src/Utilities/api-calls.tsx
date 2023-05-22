@@ -5,7 +5,7 @@ import { IUsers, IUser, IPrompt, ISubmission, ISubmissionResponse } from "./inte
 
 export const getUsers: () => Promise<IUsers | null> = async () => {
 
-  return fetch('https://calm-thicket-75558.herokuapp.com/api/v1/users')
+  return fetch('https://calm-thicket-75558.herokuapp.com/api/v1/uers')
     .then(response => {
       if (!response.ok) {
         throw new Error(`${response.status}: ${response.statusText}`);
@@ -13,9 +13,9 @@ export const getUsers: () => Promise<IUsers | null> = async () => {
         return response.json();
       }
     })
-    .catch(error => {
-      console.error('An error occurred:', error);
-    });
+    // .catch(error => {
+    //   console.error('An error occurred:', error);
+    // });
 }
 
 export const getUser: (userId: string) => Promise<IUser | null> = async (userId) => {
