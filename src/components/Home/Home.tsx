@@ -28,7 +28,7 @@ const Home = ({ allUsers, resetUser }: IProps) => {
   return (
     <div>
       <p className='choose-user'>Choose your user</p>
-      {allUsers.data.length ? <div className='user-container'>{userCards}</div> : <p>Loading</p>}
+       <div className='user-container'>{userCards}</div>
     </div>
   );
 }
