@@ -1,10 +1,10 @@
+import PastChallenges from '../PastChallenges/PastChallenges';
 import { IUser } from '../../Utilities/interfaces';
 import { Link } from 'react-router-dom';
-import PastChallenges from '../PastChallenges/PastChallenges';
 import './Dashboard.css';
 
 interface IProps {
-  user: IUser | null,
+  user: IUser | null
 }
 
 const Dashboard = ({ user }: IProps): JSX.Element => {

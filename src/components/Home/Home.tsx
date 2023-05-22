@@ -1,7 +1,6 @@
 import User from '../User/User';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IUsers } from '../../Utilities/interfaces';
-import { useEffect } from 'react';
 import './Home.css';
 
 interface IProps {
@@ -10,10 +9,10 @@ interface IProps {
 }
 
 const Home = ({ allUsers, resetUser }: IProps): JSX.Element => {
-  const [userCards, setUserCards] = useState<JSX.Element[] | null >(null)
+  const [userCards, setUserCards] = useState<JSX.Element[] | null >(null);
 
   useEffect(() => {
-    resetUser()
+    resetUser();
   }, [resetUser])
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const Home = ({ allUsers, resetUser }: IProps): JSX.Element => {
       let cards = allUsers.data.map(user => {
       return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id} key={user.id}/>
       })
-      setUserCards(cards)
+      setUserCards(cards);
     }
   }, [allUsers])
 

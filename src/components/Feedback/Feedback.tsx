@@ -1,12 +1,11 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getFeedback } from '../../Utilities/api-calls';
 import { IFeedback } from '../../Utilities/interfaces';
 import './Feedback.css';
 
 interface IProps {
-  setError: Function,
+  setError: Function
 }
 
 const Feedback = ( { setError }: IProps): JSX.Element => {
@@ -17,15 +16,15 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
   useEffect(() => {
     getFeedback(id, userId)
       .then(feedbackData => {
-        setFeedback(feedbackData)
+        setFeedback(feedbackData);
+        
         if (!feedbackData.data.attributes.sentences.length) {
-          setError('It looks like we were unable to save this challenge data.')
+          setError('It looks like we were unable to save this challenge data.');
         }
-      }
-      )
+      })
       .catch(error => {
         console.error('An error occurred:', error);
-        setError(error.toString())
+        setError(error.toString());
       })
   }, [userId, id]);
 

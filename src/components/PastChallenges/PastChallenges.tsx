@@ -1,6 +1,6 @@
+import ChallengeCard from '../ChallengeCard/ChallengeCard';
 import { useState } from 'react';
 import { IChallenge } from '../../Utilities/interfaces';
-import ChallengeCard from '../ChallengeCard/ChallengeCard';
 import './PastChallenges.css';
 
 interface IProps {
@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const PastChallenges = ({ challenges, userId }: IProps): JSX.Element => {
-  const [pastChallenges] = useState(challenges)
+  const [pastChallenges] = useState(challenges);
 
   const challengeCards = pastChallenges.map(challenge => {
     return (

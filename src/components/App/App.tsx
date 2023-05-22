@@ -1,20 +1,19 @@
-// import React, { useState } from 'react';
+import Dashboard from '../Dashboard/Dashboard';
+import Feedback from '../Feedback/Feedback';
+import Form from '../Form/Form';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
 import NotFound from '../NotFound/NotFound';
-import Loading from '../Loading/Loading';
-import Dashboard from '../Dashboard/Dashboard';
-import Form from '../Form/Form';
-import Feedback from '../Feedback/Feedback';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import './App.css';
 import { IUsers, IUser } from '../../Utilities/interfaces';
 import { useState, useEffect } from 'react';
 import { getUsers, getUser } from '../../Utilities/api-calls';
+import './App.css';
 
 const App = (): JSX.Element => {
 
   const location = useLocation();
+
   const initialUsers = {
     data: []
   }
@@ -78,7 +77,7 @@ const App = (): JSX.Element => {
         <Route path='*' element={<NotFound/>}/>
       </Routes> 
       : <div>
-          <h3>Sorry! It looks like an error occurred. Please try again later!</h3>
+          <h3>It looks like an error occurred. Please try again.</h3>
           <h4>{error}</h4>
         </div>}
     </>

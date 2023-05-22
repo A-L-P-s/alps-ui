@@ -1,11 +1,11 @@
+import Instructions from '../Instructions/Instructions';
+import Modal from 'react-modal';
+import Loading from '../Loading/Loading';
+import infoIcon from '../../assets/info_icon.svg';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { IGrammarPoint } from '../../Utilities/interfaces';
 import { getPrompt, postSubmission } from '../../Utilities/api-calls';
-import infoIcon from '../../assets/info_icon.svg';
-import Modal from 'react-modal';
-import Instructions from '../Instructions/Instructions';
-import Loading from '../Loading/Loading';
 import './Form.css';
 
 interface IProps {
@@ -24,8 +24,8 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   const [sent2, setSent2] = useState<string>('');
   const [feedbackId, setFeedbackId] = useState<string>('');
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-  const [loading, setLoading] = useState<Boolean>(false)
-  const [inputError, setInputError] = useState<Boolean>(false)
+  const [loading, setLoading] = useState<Boolean>(false);
+  const [inputError, setInputError] = useState<Boolean>(false);
 
   const navigate = useNavigate();
   
@@ -44,7 +44,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
       getPrompt(userId)
         .then(prompt => {
           if (prompt) {
-            const promptAttributes = prompt.data.attributes
+            const promptAttributes = prompt.data.attributes;
   
             setImgUrl(promptAttributes.image_url);
             setImgAlt(promptAttributes.image_alt_text);
@@ -55,7 +55,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
         })
         .catch(error => {
           console.error('An error occurred:', error);
-          setError(error.toString())
+          setError(error.toString());
         });
     }
   }, [userId]);
@@ -88,16 +88,16 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
       .then(responseData => {
         if (responseData.data.id) {
           setFeedbackId(responseData.data.id);
-          setLoading(false)
+          setLoading(false);
         }
       })
       .catch(error => {
         console.error('An error occurred:', error);
-        setError(error.toString())
-        setLoading(false)
+        setError(error.toString());
+        setLoading(false);
       })
     } else if (!sent1 || !sent2) {
-      setInputError(true)
+      setInputError(true);
     }
   }
 
@@ -149,7 +149,6 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
           </div>
         </div>
         <div className='submit-button-container'>
-          {/* FIND WAY TO HANDLE LINK WHEN USERNAME IS UNDEFINED */}
           {inputError && <p>Please complete both sentences to receive feedback for your work!</p>}
           <Link to={`/${userId}/feedback/1`} className='submit-link'>
             <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>

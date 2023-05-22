@@ -1,5 +1,5 @@
-import { SyncLoader } from "react-spinners"
-import './Loading.css'
+import { SyncLoader } from "react-spinners";
+import './Loading.css';
 
 const Loading = (): JSX.Element => {
   return (
