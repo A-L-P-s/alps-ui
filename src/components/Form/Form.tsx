@@ -85,6 +85,7 @@ const Form = ({ userId, language, setError }: IProps) => {
     if (userId && postSubmission) {
       postSubmission(userId, submissionData)
       .then(responseData => {
+        console.log(responseData)
         if (responseData.data.id) {
           setFeedbackId(responseData.data.id);
           setLoading(false)

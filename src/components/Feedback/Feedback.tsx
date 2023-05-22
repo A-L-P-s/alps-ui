@@ -18,8 +18,11 @@ const Feedback = ( { setError }: IProps) => {
   useEffect(() => {
     getFeedback(id, userId)
       .then(feedbackData => {
-        setFeedback(feedbackData);
-      })
+        setFeedback(feedbackData)
+        if (!feedbackData.data.sentences) {
+          setError('It looks like we were unable to save this challenge data.')
+        }}
+      )
       .catch(error => {
         console.error('An error occurred:', error);
         setError(error.toString())
