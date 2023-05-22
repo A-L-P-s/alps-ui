@@ -1,8 +1,9 @@
-
+import { SyncLoader } from "react-spinners"
 
 const Loading = () => {
   return (
-    <h1>LOADING</h1>
+    <SyncLoader 
+      size={15}/>
   )
 }
 

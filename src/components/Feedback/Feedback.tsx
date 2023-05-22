@@ -19,9 +19,11 @@ const Feedback = ( { setError }: IProps) => {
     getFeedback(id, userId)
       .then(feedbackData => {
         setFeedback(feedbackData)
-        if (!feedbackData.data.sentences) {
+        console.log(feedbackData.data.attributes.sentences)
+        if (!feedbackData.data.attributes.sentences.length) {
           setError('It looks like we were unable to save this challenge data.')
-        }}
+        }
+      }
       )
       .catch(error => {
         console.error('An error occurred:', error);
