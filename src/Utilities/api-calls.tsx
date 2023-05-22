@@ -1,7 +1,7 @@
 // Deployed Backend Domain (waiting for CORS permission)
 // https://calm-thicket-75558.herokuapp.com/
 
-import { IUsers, IUser, IPrompt, ISubmission, ISubmissionResponse } from "./interfaces";
+import { IUsers, IUser, IPrompt, ISubmission, ISubmissionResponse, IFeedback } from "./interfaces";
 
 export const getUsers: () => Promise<IUsers | null> = async () => {
 
@@ -27,8 +27,7 @@ export const getUser: (userId: string) => Promise<IUser | null> = async (userId)
     })
 }
 
-// CHANGE ANY TYPE 
-export const getFeedback: (challengeId?:string, userId?:string) => Promise<any> = async (challengeId, userId) => {
+export const getFeedback: (challengeId?:string, userId?:string) => Promise<IFeedback> = async (challengeId, userId) => {
   const userPath: string = userId ? `/${userId}` : '';
   const challengePath: string = challengeId ? `/${challengeId}` : '';
 

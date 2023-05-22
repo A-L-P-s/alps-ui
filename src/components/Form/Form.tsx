@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Form.css';
 import { IGrammarPoint } from '../../Utilities/interfaces';
 import { getPrompt, postSubmission } from '../../Utilities/api-calls';
 import infoIcon from '../../assets/info_icon.svg';
 import Modal from 'react-modal';
 import Instructions from '../Instructions/Instructions';
 import Loading from '../Loading/Loading';
+import './Form.css';
 
 interface IProps {
   userId: string | undefined,

@@ -5,10 +5,9 @@ import './Dashboard.css';
 
 interface IProps {
   user: IUser | null,
-  setUserData: Function
 }
 
-const Dashboard = ({ user, setUserData }: IProps) => {
+const Dashboard = ({ user }: IProps) => {
 
   return (
     <div className='dashboard'>

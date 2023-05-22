@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import './Home.css';
 import User from '../User/User';
+import { useState } from 'react';
 import { IUsers } from '../../Utilities/interfaces';
 import { useEffect } from 'react';
+import './Home.css';
 
 interface IProps {
   allUsers: IUsers

@@ -40,35 +40,32 @@ const App = () => {
 
   useEffect(() => {
     !users?.data.length && getUsers()
-        .then(data => {
-          setUsers(data)
-        })
-        .catch(error => {
-          let errorMsg = error.toString()
-          setError(errorMsg)
-        })
+      .then(data => {
+        setUsers(data)
+      })
+      .catch(error => {
+        let errorMsg = error.toString()
+        setError(errorMsg)
+      })
   }, [users?.data.length])
 
   useEffect(() => {
     const userId = location.pathname.split('/')[1];
 
-    if (userId) {
-      getUser(userId)
-        .then(data=> setUser(data))
-        .catch(error => {
-          console.error('An error occurred:', error);
-          setError(error.toString())
-        })
-    }
+    userId && getUser(userId)
+      .then(data=> setUser(data))
+      .catch(error => {
+        console.error('An error occurred:', error);
+        setError(error.toString())
+      })
   }, [location])
 
   return (
     <>
       <Header userName={user?.data.attributes.name}/>
-      {!error ?
-      <Routes>
+      {!error ? <Routes>
         <Route path='/' element={users !== null && <Home allUsers={users} resetUser={resetUser}/>} />
-        <Route path='/:userId/dashboard' element={<Dashboard user={user} setUserData={setUserData}/>}/>
+        <Route path='/:userId/dashboard' element={<Dashboard user={user} />}/>
         <Route
           path='/:userId/new-challenge'
           element={<Form 
@@ -79,12 +76,12 @@ const App = () => {
         />
         <Route path='/:userId/feedback/:id' element={<Feedback setError={setError}/>} />
         <Route path='*' element={<NotFound/>}/>
-      </Routes> : 
-      <div>
-        <h3>Sorry! It looks like an error occurred. Please try again later!</h3>
-        <h4>{error}</h4>
-      </div>}
-  </>
+      </Routes> 
+      : <div>
+          <h3>Sorry! It looks like an error occurred. Please try again later!</h3>
+          <h4>{error}</h4>
+        </div>}
+    </>
   );
 }
 
