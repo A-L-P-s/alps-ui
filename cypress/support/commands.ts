@@ -14,6 +14,12 @@ declare namespace Cypress {
     interceptSubmissionFeedback_1(): Chainable<Subject>;
     interceptSubmissionFeedback_55(): Chainable<Subject>;
     interceptAll(): Chainable<Subject>;
+    intercept404Users(): Chainable<Subject>;
+    intercept404Dashboard_1(): Chainable<Subject>;
+    intercept404PastFeedback_1_1(): Chainable<Subject>;
+    intercept404Prompt_1(): Chainable<Subject>;
+    intercept400PostSubmission_1(): Chainable<Subject>;
+    intercept500SubmissionFeedback_2(): Chainable<Subject>;
   }
 }
 
@@ -36,7 +42,6 @@ Cypress.Commands.add('interceptDashboard_1', () => {
 Cypress.Commands.add('interceptDashboard_55', () => {
   cy.intercept('GET', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/55', {
     statusCode: 200,
-    fixture: 'mock_dashboard_55',
   })
   .as('getDashboard_55');
 });
@@ -133,4 +138,58 @@ Cypress.Commands.add('interceptAll', () => {
   cy.interceptPostSubmission_55();
   cy.interceptSubmissionFeedback_1();
   cy.interceptSubmissionFeedback_55();
+});
+
+Cypress.Commands.add('intercept404Users', () => {
+  cy.intercept('https://calm-thicket-75558.herokuapp.com/api/v1/users', {
+    status: 404,
+  })
+  .as('get404Users');
+});
+
+Cypress.Commands.add('intercept404Dashboard_1', () => {
+  cy.intercept('GET', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/1', {
+    statusCode: 404,
+  })
+  .as('get404Dashboard_1');
+});
+
+Cypress.Commands.add('intercept404PastFeedback_1_1', () => {
+  cy.intercept('GET', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/1/challenges/1', {
+    statusCode: 404,
+  })
+  .as('get404PastFeedback_1_1');
+});
+
+Cypress.Commands.add('intercept404Prompt_1', () => {
+  cy.intercept('GET', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/1/challenges/new', {
+    statusCode: 404,
+  })
+  .as('get404Prompt_1');
+});
+
+Cypress.Commands.add('intercept400PostSubmission_1', () => {
+  cy.intercept('POST', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/1/challenges', {
+    statusCode: 400,
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: {
+      errors: [
+        {
+          status: "400",
+          title: "Invalid Request",
+          detail: "Couldn't find Challenge with id=1"
+        }
+      ]
+    }
+  })
+  .as('post400Submission_1');
+});
+
+Cypress.Commands.add('intercept500SubmissionFeedback_2', () => {
+  cy.intercept('GET', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/1/challenges/2', {
+    statusCode: 500,
+  })
+  .as('get500SubmissionFeedback_1');
 });
