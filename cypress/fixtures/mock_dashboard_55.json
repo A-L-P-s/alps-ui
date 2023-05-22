@@ -1,0 +1,66 @@
+{
+  "data": {
+    "id": "55",
+    "type": "user",
+    "attributes": {
+      "name": "Deniz",
+      "preferred_lang": "Turkish",
+      "challenges": [
+        {
+          "challenge_id": "1", 
+          "language": "Turkish", 
+          "verb": "gitmek",
+          "eng_verb": "to go", 
+          "image_url": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80",
+          "image_alt_text": "selective focus photography of orange and white cat on brown table", 
+          "created_at": "05/19/2023"
+        },
+        {
+          "challenge_id": "2", 
+          "language": "Turkish", 
+          "verb": "işlemek",
+          "eng_verb": "to work", 
+          "image_url": "https://images.unsplash.com/photo-1437964706703-40b90bdf563b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80",
+          "image_alt_text": "man under tree during daytime", 
+          "created_at": "04/30/2023"
+        },
+        {
+          "challenge_id": "3", 
+          "language": "Turkish", 
+          "verb": "yemek",
+          "eng_verb": "to eat", 
+          "image_url": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=788&q=80",
+          "image_alt_text": "short-coated brown and white puppy", 
+          "created_at": "05/01/2023"
+        },
+        {
+          "challenge_id": "4", 
+          "language": "Turkish", 
+          "verb": "uyumak",
+          "eng_verb": "to sleep", 
+          "image_url": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1844&q=80",
+          "image_alt_text": "white and brown city buildings during daytime", 
+          "created_at": "05/09/2023"
+        },
+        {
+          "challenge_id": "5", 
+          "language": "Turkish", 
+          "verb": "okumak",
+          "eng_verb": "to read", 
+          "image_url": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
+          "image_alt_text": "person holding sticky note", 
+          "created_at": "05/09/2023"
+        },
+        {
+          "challenge_id": "6", 
+          "language": "Turkish", 
+          "verb": "görmek",
+          "eng_verb": "to see", 
+          "image_url": "https://images.unsplash.com/photo-1578885136359-16c8bd4d3a8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+          "image_alt_text": "red and blue fire digital wallpaper", 
+          "created_at": "05/19/2023"
+        }
+      ]
+    }  
+  }
+}
