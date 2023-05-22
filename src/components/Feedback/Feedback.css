@@ -5,3 +5,9 @@
 .prompt-img {
   width: 40%;
 }
+
+.sentences-container {
+  background-color: #2875ba;
+  color: white;
+  border-radius: 10px;
+}
