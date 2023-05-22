@@ -30,9 +30,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   const navigate = useNavigate();
   
   useEffect(() => {
-    if (feedbackId) {
-      navigate(`/${userId}/feedback/${feedbackId}`);
-    }
+    feedbackId && navigate(`/${userId}/feedback/${feedbackId}`);
   }, [feedbackId, navigate, userId]);
 
   useEffect(() => {
@@ -40,24 +38,23 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    if (userId) {
-      getPrompt(userId)
-        .then(prompt => {
-          if (prompt) {
-            const promptAttributes = prompt.data.attributes;
-  
-            setImgUrl(promptAttributes.image_url);
-            setImgAlt(promptAttributes.image_alt_text);
-            setVerb(promptAttributes.verb);
-            setEngVerb(promptAttributes.eng_verb);
-            setGrammarPoints(promptAttributes.grammar_points);
-          }
-        })
-        .catch(error => {
-          console.error('An error occurred:', error);
-          setError(error.toString());
-        });
-    }
+    userId && getPrompt(userId)
+      .then(prompt => {
+        if (prompt) {
+          const promptAttributes = prompt.data.attributes;
+
+          setImgUrl(promptAttributes.image_url);
+          setImgAlt(promptAttributes.image_alt_text);
+          setVerb(promptAttributes.verb);
+          setEngVerb(promptAttributes.eng_verb);
+          setGrammarPoints(promptAttributes.grammar_points);
+        }
+      })
+      .catch(error => {
+        console.error('An error occurred:', error);
+        setError(error.toString());
+      });
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
@@ -136,6 +133,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
               value={sent1}
               placeholder='Enter your sentence'
               onChange={event => setSent1(event.target.value)}
+              maxLength={400}
             />
           </div>
           <div className='sentence-container'>
@@ -146,6 +144,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
               value={sent2}
               placeholder='Enter your sentence'
               onChange={event => setSent2(event.target.value)}
+              maxLength={400}
             />
           </div>
         </div>
