@@ -7,6 +7,8 @@ describe('template spec', () => {
     cy.interceptDashboard_55();
     cy.interceptPastFeedback_1_1();
     cy.interceptPastFeedback_55_3();
+    cy.interceptPrompt_1();
+    cy.interceptPrompt_55();
   });
 
   it('passes', () => {
@@ -18,11 +20,15 @@ describe('template spec', () => {
 
     cy.get('button').click();
 
+    cy.get('button').click();
+
     cy.get('h1').click();
 
     cy.get('button').eq(1).click();
 
     cy.get('[href="/1/feedback/1"]').click();
+
+    cy.get('button').click();
 
     cy.get('button').click();
   });
