@@ -26,6 +26,7 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
         console.error('An error occurred:', error);
         setError(error.toString());
       })
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, id]);
 
   return (

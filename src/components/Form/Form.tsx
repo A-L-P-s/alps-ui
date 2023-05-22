@@ -58,6 +58,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
           setError(error.toString());
         });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
   const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {

@@ -26,17 +26,6 @@ const App = (): JSX.Element => {
     setUser(null)
   }
 
-  const setUserData = (userId: string) => {
-    getUser(userId)
-      .then(data=> {
-        setUser(data)
-      })
-      .catch(error => {
-        console.error('An error occurred:', error);
-        setError(error.toString())
-      })
-  }
-
   useEffect(() => {
     !users?.data.length && getUsers()
       .then(data => {
