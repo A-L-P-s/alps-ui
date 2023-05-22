@@ -89,7 +89,8 @@ input {
 .my-modal {
   display: flex;
   flex-direction: column;
-  background-color: bisque;
+  color: white;
+  background-color: #2875ba;
   position: fixed;
   margin: 5%;
   width: 50%;
