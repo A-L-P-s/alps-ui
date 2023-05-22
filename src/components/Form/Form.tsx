@@ -25,6 +25,7 @@ const Form = ({ userId, language, setError }: IProps) => {
   const [feedbackId, setFeedbackId] = useState<string>('');
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<Boolean>(false)
+  const [inputError, setInputError] = useState<Boolean>(false)
 
   const navigate = useNavigate();
   
@@ -60,7 +61,6 @@ const Form = ({ userId, language, setError }: IProps) => {
   }, [userId]);
 
   const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {
-    setLoading(true)
     event.preventDefault();
     const submissionData = {
       language: language,
@@ -82,7 +82,8 @@ const Form = ({ userId, language, setError }: IProps) => {
       ]
     }
 
-    if (userId && postSubmission) {
+    if (userId && postSubmission && sent1 && sent2) {
+      setLoading(true)
       postSubmission(userId, submissionData)
       .then(responseData => {
         console.log(responseData)
@@ -96,6 +97,8 @@ const Form = ({ userId, language, setError }: IProps) => {
         setError(error.toString())
         setLoading(false)
       })
+    } else if (!sent1 || !sent2) {
+      setInputError(true)
     }
   }
 
@@ -148,6 +151,7 @@ const Form = ({ userId, language, setError }: IProps) => {
         </div>
         <div className='submit-button-container'>
           {/* FIND WAY TO HANDLE LINK WHEN USERNAME IS UNDEFINED */}
+          {inputError && <p>Please complete both sentences to receive feedback for your work!</p>}
           <Link to={`/${userId}/feedback/1`} className='submit-link'>
             <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>
           </Link>

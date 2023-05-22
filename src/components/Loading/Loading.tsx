@@ -3,7 +3,7 @@ import { SyncLoader } from "react-spinners"
 const Loading = () => {
   return (
     <SyncLoader 
-      size={15}/>
+       size={15}/>
   )
 }
 
