@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ALPs-UI/static/css/main.7ee259b2.css",
-    "main.js": "/ALPs-UI/static/js/main.4cd2b7c7.js",
-    "static/js/787.90b6e096.chunk.js": "/ALPs-UI/static/js/787.90b6e096.chunk.js",
-    "static/media/info_icon.svg": "/ALPs-UI/static/media/info_icon.84a9a5b07174114dbcf6a547aff20a1d.svg",
-    "index.html": "/ALPs-UI/index.html",
-    "main.7ee259b2.css.map": "/ALPs-UI/static/css/main.7ee259b2.css.map",
-    "main.4cd2b7c7.js.map": "/ALPs-UI/static/js/main.4cd2b7c7.js.map",
-    "787.90b6e096.chunk.js.map": "/ALPs-UI/static/js/787.90b6e096.chunk.js.map"
+    "main.css": "/alps-ui/static/css/main.7ee259b2.css",
+    "main.js": "/alps-ui/static/js/main.a8cb736c.js",
+    "static/js/787.90b6e096.chunk.js": "/alps-ui/static/js/787.90b6e096.chunk.js",
+    "static/media/info_icon.svg": "/alps-ui/static/media/info_icon.84a9a5b07174114dbcf6a547aff20a1d.svg",
+    "index.html": "/alps-ui/index.html",
+    "main.7ee259b2.css.map": "/alps-ui/static/css/main.7ee259b2.css.map",
+    "main.a8cb736c.js.map": "/alps-ui/static/js/main.a8cb736c.js.map",
+    "787.90b6e096.chunk.js.map": "/alps-ui/static/js/787.90b6e096.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7ee259b2.css",
-    "static/js/main.4cd2b7c7.js"
+    "static/js/main.a8cb736c.js"
   ]
 }
