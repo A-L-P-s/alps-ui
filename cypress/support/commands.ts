@@ -9,6 +9,10 @@ declare namespace Cypress {
     interceptPastFeedback_55_3(): Chainable<Subject>;
     interceptPrompt_1(): Chainable<Subject>;
     interceptPrompt_55(): Chainable<Subject>;
+    interceptPostSubmission_1(): Chainable<Subject>;
+    interceptPostSubmission_55(): Chainable<Subject>;
+    interceptSubmissionFeedback_1(): Chainable<Subject>;
+    interceptSubmissionFeedback_55(): Chainable<Subject>;
   }
 }
 
@@ -66,4 +70,52 @@ Cypress.Commands.add('interceptPrompt_55', () => {
     fixture: 'mock_prompt_55',
   })
   .as('getPrompt_55');
+});
+
+Cypress.Commands.add('interceptPostSubmission_1', () => {
+  cy.intercept('POST', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/1/challenges', {
+    statusCode: 201,
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: {
+      data: {
+        id: '2',
+        type: 'challenge'
+      }
+    }
+  })
+  .as('postSubmission_1');
+});
+
+Cypress.Commands.add('interceptPostSubmission_55', () => {
+  cy.intercept('POST', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/55/challenges', {
+    statusCode: 201,
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: {
+      data: {
+        id: '7',
+        type: 'challenge'
+      }
+    }
+  })
+  .as('postSubmission_55');
+});
+
+Cypress.Commands.add('interceptSubmissionFeedback_1', () => {
+  cy.intercept('GET', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/1/challenges/2', {
+    statusCode: 200,
+    fixture: 'mock_submission_feedback_1',
+  })
+  .as('getSubmissionFeedback_1');
+});
+
+Cypress.Commands.add('interceptSubmissionFeedback_55', () => {
+  cy.intercept('GET', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/55/challenges/7', {
+    statusCode: 200,
+    fixture: 'mock_submission_feedback_55',
+  })
+  .as('getSubmissionFeedback_55');
 });

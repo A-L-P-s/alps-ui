@@ -9,6 +9,10 @@ describe('template spec', () => {
     cy.interceptPastFeedback_55_3();
     cy.interceptPrompt_1();
     cy.interceptPrompt_55();
+    cy.interceptPostSubmission_1();
+    cy.interceptPostSubmission_55();
+    cy.interceptSubmissionFeedback_1();
+    cy.interceptSubmissionFeedback_55();
   });
 
   it('passes', () => {
@@ -29,6 +33,12 @@ describe('template spec', () => {
     cy.get('[href="/1/feedback/1"]').click();
 
     cy.get('button').click();
+
+    cy.get('button').click();
+
+    cy.get('#sent1').type('El gato escuchaba el agua correr en la bañera.')
+
+    cy.get('#sent2').type('El gato escuchará el agua correr en la bañera.')
 
     cy.get('button').click();
   });
