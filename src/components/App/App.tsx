@@ -29,6 +29,10 @@ const App = () => {
   const setUserData = (userId: string) => {
     getUser(userId)
       .then(data=> setUser(data))
+      .catch(error => {
+        let errorMsg = error.toString()
+        setError(errorMsg)
+      })
   }
 
   useEffect(() => {
@@ -45,7 +49,12 @@ const App = () => {
 
     if (userId) {
       getUser(userId)
-        .then(data=> setUser(data));
+        .then(data=> setUser(data))
+        .catch(error => {
+          let errorMsg = error.toString()
+          setError(errorMsg)
+        })
+        
     }
   }, [location])
 
@@ -63,7 +72,7 @@ const App = () => {
             userId={user?.data.id}
           />} 
         />
-        <Route path='/:userId/feedback/:id' element={<Feedback />} />
+        <Route path='/:userId/feedback/:id' element={<Feedback setError={setError}/>} />
         <Route path='*' element={<NotFound/>}/>
       </Routes>}
     </>

@@ -13,9 +13,6 @@ export const getUsers: () => Promise<IUsers | null> = async () => {
         return response.json();
       }
     })
-    // .catch(error => {
-    //   console.error('An error occurred:', error);
-    // });
 }
 
 export const getUser: (userId: string) => Promise<IUser | null> = async (userId) => {
@@ -28,9 +25,6 @@ export const getUser: (userId: string) => Promise<IUser | null> = async (userId)
         return response.json();
       }
     })
-    .catch(error => {
-      console.error('An error occurred:', error);
-    });
 }
 
 // CHANGE ANY TYPE 
@@ -38,7 +32,7 @@ export const getFeedback: (challengeId?:string, userId?:string) => Promise<any> 
   const userPath: string = userId ? `/${userId}` : '';
   const challengePath: string = challengeId ? `/${challengeId}` : '';
 
-  return fetch(`https://calm-thicket-75558.herokuapp.com/api/v1/users${userPath}/challenges${challengePath}`)
+  return fetch(`https://calm-thicket-75558.herokuapp.com/api/v1/users${userPath}/challenes${challengePath}`)
   .then(response => {
     if (!response.ok) {
       throw new Error(`${response.status}: ${response.statusText}`);
@@ -46,9 +40,6 @@ export const getFeedback: (challengeId?:string, userId?:string) => Promise<any> 
       return response.json();
     }
   })
-  .catch(error => {
-    console.error('An error occurred:', error);
-  });
 }
 
 export const getPrompt: (userId:string | undefined) => Promise<IPrompt | null> = async (userId) => {

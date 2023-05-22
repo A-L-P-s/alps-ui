@@ -6,9 +6,11 @@ import { getFeedback } from '../../Utilities/api-calls';
 import { IFeedback } from '../../Utilities/interfaces';
 import { useParams } from 'react-router-dom';
 
+interface IProps {
+  setError: Function
+}
 
-
-const Feedback = () => {
+const Feedback = ( { setError }: IProps) => {
   const [feedback, setFeedback] = useState<IFeedback|undefined>();
   
   const { userId, id } = useParams();
@@ -17,6 +19,10 @@ const Feedback = () => {
     getFeedback(id, userId)
       .then(feedbackData => {
         setFeedback(feedbackData);
+      })
+      .catch(error => {
+        let errorMsg = error.toString()
+        setError(errorMsg)
       })
   }, [userId, id]);
 
