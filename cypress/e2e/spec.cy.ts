@@ -1,7 +1,11 @@
 /// <reference types="Cypress" />
 
 describe('template spec', () => {
+  beforeEach('visit and intercept home', () => {
+    cy.interceptAll();
+  });
+
   it('passes', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+    
+  });
+});

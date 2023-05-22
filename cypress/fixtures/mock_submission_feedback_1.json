@@ -1,0 +1,34 @@
+{
+  "data": {
+    "id": "2",
+    "type": "challenge",
+    "attributes": {
+      "user_id": "1",
+      "language": "Spanish", 
+      "verb": "escuchar",
+      "eng_verb": "to listen", 
+      "image_url": "https://plus.unsplash.com/premium_photo-1661888521670-7dc228bcd78b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_alt_text": "a cat that is sitting in a bath tub", 
+      "created_at": "05/20/2023",
+      "grammar_points": null,
+      "sentences": [
+        {
+          "id": "1",
+          "grammar_point": "pretérito",
+          "eng_grammar_point": "preterite tense",
+          "user_sent": "El gato escuchó un ruido y saltó dentro de la bañera.",
+          "ai_sent": "El gato escuchó un ruido y saltó dentro de la bañera.",
+          "ai_explanation": "Your sentence is correct! Great job!"
+        }, 
+        {
+          "id": "2",
+          "grammar_point": "imperfecto",
+          "eng_grammar_point": "imperfect tense",
+          "user_sent": "El gato escuchará el agua correr en la bañera.",
+          "ai_sent": "El gato escuchaba el agua correr en la bañera.",
+          "ai_explanation": "Your sentence incorrectly uses the future tense (escuchará), indicating a future action."
+        }
+      ]
+    }  
+  }  
+}

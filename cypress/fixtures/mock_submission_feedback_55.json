@@ -1,0 +1,34 @@
+{
+  "data": {
+    "id": "7",
+    "type": "challenge",
+    "attributes": {
+      "user_id": "55",
+      "language": "Turkish", 
+      "verb": "konuşmak",
+      "eng_verb": "to speak", 
+      "image_url": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+      "image_alt_text": "Russian blue cat wearing yellow sunglasses", 
+      "created_at": "05/20/2023",
+      "grammar_points": null,
+      "sentences": [
+        {
+          "id": "1",
+          "grammar_point": "şimdiki zaman (-iyor)",
+          "eng_grammar_point": "present continuous tense",
+          "user_sent": "Rus mavi kedisi, sarı güneş gözlüğünü takarken konuşuyor,",
+          "ai_sent": "Rus mavi kedi, sarı güneş gözlüğünü takar ve konuşmak.",
+          "ai_explanation": "Congratulations! You used the verb correctly."
+        }, 
+        {
+          "id": "2",
+          "grammar_point": "geniş zaman (-ir/-er)",
+          "eng_grammar_point": "simple present tense",
+          "user_sent": "Rus mavi kedi, sarı güneş gözlüğünü takar ve konuşmak.",
+          "ai_sent": "Rus mavi kedi, sarı güneş gözlüğünü takar ve konuşur.",
+          "ai_explanation": "The sentence is incorrect because it uses the verb konuşmak in its infinitive form."
+        }
+      ]
+    }  
+  }  
+}
