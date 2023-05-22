@@ -21,7 +21,9 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   const [engVerb, setEngVerb] = useState<string>('');
   const [grammarPoints, setGrammarPoints] = useState<IGrammarPoint[]>([]);
   const [sent1, setSent1] = useState<string>('');
+  const [sent1Chars, setSent1Chars] = useState<Number>(400)
   const [sent2, setSent2] = useState<string>('');
+  const [sent2Chars, setSent2Chars] = useState<Number>(400)
   const [feedbackId, setFeedbackId] = useState<string>('');
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<Boolean>(false);
@@ -30,9 +32,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   const navigate = useNavigate();
   
   useEffect(() => {
-    if (feedbackId) {
-      navigate(`/${userId}/feedback/${feedbackId}`);
-    }
+    feedbackId && navigate(`/${userId}/feedback/${feedbackId}`);
   }, [feedbackId, navigate, userId]);
 
   useEffect(() => {
@@ -40,24 +40,23 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    if (userId) {
-      getPrompt(userId)
-        .then(prompt => {
-          if (prompt) {
-            const promptAttributes = prompt.data.attributes;
-  
-            setImgUrl(promptAttributes.image_url);
-            setImgAlt(promptAttributes.image_alt_text);
-            setVerb(promptAttributes.verb);
-            setEngVerb(promptAttributes.eng_verb);
-            setGrammarPoints(promptAttributes.grammar_points);
-          }
-        })
-        .catch(error => {
-          console.error('An error occurred:', error);
-          setError(error.toString());
-        });
-    }
+    userId && getPrompt(userId)
+      .then(prompt => {
+        if (prompt) {
+          const promptAttributes = prompt.data.attributes;
+
+          setImgUrl(promptAttributes.image_url);
+          setImgAlt(promptAttributes.image_alt_text);
+          setVerb(promptAttributes.verb);
+          setEngVerb(promptAttributes.eng_verb);
+          setGrammarPoints(promptAttributes.grammar_points);
+        }
+      })
+      .catch(error => {
+        console.error('An error occurred:', error);
+        setError(error.toString());
+      });
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
@@ -130,23 +129,31 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
           </div>
           <div className='sentence-container'>
           {grammarPoints.length && <label htmlFor='sent1'>{grammarPoints[0].grammar_point} | {grammarPoints[0].eng_grammar_point}</label>}
-            <input
+            <textarea
               id='sent1'
-              type='text'
               value={sent1}
               placeholder='Enter your sentence'
-              onChange={event => setSent1(event.target.value)}
+              onChange={event => {
+                setSent1(event.target.value)
+                setSent1Chars(400 - event.target.value.length)
+              }}
+              maxLength={400}
             />
+          <p>{`${sent1Chars} characters remaining`}</p>
           </div>
           <div className='sentence-container'>
             {grammarPoints.length && <label htmlFor='sent2'>{grammarPoints[1].grammar_point} | {grammarPoints[1].eng_grammar_point}</label>}
-            <input
+            <textarea
               id='sent2'
-              type='text'
               value={sent2}
               placeholder='Enter your sentence'
-              onChange={event => setSent2(event.target.value)}
+              onChange={event => {
+                setSent2(event.target.value)
+                setSent2Chars(400 - event.target.value.length)
+              }}
+              maxLength={400}
             />
+          <p>{`${sent2Chars} characters remaining`}</p>
           </div>
         </div>
         <div className='submit-button-container'>
