@@ -1,19 +1,18 @@
-import { useState } from 'react';
-import './Home.css';
 import User from '../User/User';
+import { useState, useEffect } from 'react';
 import { IUsers } from '../../Utilities/interfaces';
-import { useEffect } from 'react';
+import './Home.css';
 
 interface IProps {
   allUsers: IUsers
   resetUser: Function
 }
 
-const Home = ({ allUsers, resetUser }: IProps) => {
-  const [userCards, setUserCards] = useState<JSX.Element[] | null >(null)
+const Home = ({ allUsers, resetUser }: IProps): JSX.Element => {
+  const [userCards, setUserCards] = useState<JSX.Element[] | null >(null);
 
   useEffect(() => {
-    resetUser()
+    resetUser();
   }, [resetUser])
 
   useEffect(() => {
@@ -21,14 +20,14 @@ const Home = ({ allUsers, resetUser }: IProps) => {
       let cards = allUsers.data.map(user => {
       return <User name={user.attributes.name} preferred_lang={user.attributes.preferred_lang} id={user.id} key={user.id}/>
       })
-      setUserCards(cards)
+      setUserCards(cards);
     }
   }, [allUsers])
 
   return (
     <div>
       <p className='choose-user'>Choose your user</p>
-      {allUsers.data.length ? <div className='user-container'>{userCards}</div> : <p>Loading</p>}
+       <div className='user-container'>{userCards}</div>
     </div>
   );
 }

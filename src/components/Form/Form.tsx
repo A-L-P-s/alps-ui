@@ -1,18 +1,20 @@
+import Instructions from '../Instructions/Instructions';
+import Modal from 'react-modal';
+import Loading from '../Loading/Loading';
+import infoIcon from '../../assets/info_icon.svg';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Form.css';
 import { IGrammarPoint } from '../../Utilities/interfaces';
 import { getPrompt, postSubmission } from '../../Utilities/api-calls';
-import infoIcon from '../../assets/info_icon.svg';
-import Modal from 'react-modal';
-import Instructions from '../Instructions/Instructions';
+import './Form.css';
 
 interface IProps {
   userId: string | undefined,
-  language: string | undefined
+  language: string | undefined,
+  setError: Function
 }
 
-const Form = ({ userId, language }: IProps) => {
+const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   const [imgUrl, setImgUrl] = useState<string>('');
   const [imgAlt, setImgAlt] = useState<string>('')
   const [verb, setVerb] = useState<string>('');
@@ -22,6 +24,8 @@ const Form = ({ userId, language }: IProps) => {
   const [sent2, setSent2] = useState<string>('');
   const [feedbackId, setFeedbackId] = useState<string>('');
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [loading, setLoading] = useState<Boolean>(false);
+  const [inputError, setInputError] = useState<Boolean>(false);
 
   const navigate = useNavigate();
   
@@ -36,21 +40,25 @@ const Form = ({ userId, language }: IProps) => {
   }, []);
 
   useEffect(() => {
-    userId && getPrompt(userId)
-      .then(prompt => {
-        if (prompt) {
-          const promptAttributes = prompt.data.attributes
-
-          setImgUrl(promptAttributes.image_url);
-          setImgAlt(promptAttributes.image_alt_text);
-          setVerb(promptAttributes.verb);
-          setEngVerb(promptAttributes.eng_verb);
-          setGrammarPoints(promptAttributes.grammar_points);
-        }
-      })
-      .catch(error => {
-        console.error('An error occurred:', error);
-      });
+    if (userId) {
+      getPrompt(userId)
+        .then(prompt => {
+          if (prompt) {
+            const promptAttributes = prompt.data.attributes;
+  
+            setImgUrl(promptAttributes.image_url);
+            setImgAlt(promptAttributes.image_alt_text);
+            setVerb(promptAttributes.verb);
+            setEngVerb(promptAttributes.eng_verb);
+            setGrammarPoints(promptAttributes.grammar_points);
+          }
+        })
+        .catch(error => {
+          console.error('An error occurred:', error);
+          setError(error.toString());
+        });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
   const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {
@@ -75,13 +83,22 @@ const Form = ({ userId, language }: IProps) => {
       ]
     }
 
-    if (userId && postSubmission) {
+    if (userId && postSubmission && sent1 && sent2) {
+      setLoading(true)
       postSubmission(userId, submissionData)
       .then(responseData => {
         if (responseData.data.id) {
           setFeedbackId(responseData.data.id);
+          setLoading(false);
         }
-      });
+      })
+      .catch(error => {
+        console.error('An error occurred:', error);
+        setError(error.toString());
+        setLoading(false);
+      })
+    } else if (!sent1 || !sent2) {
+      setInputError(true);
     }
   }
 
@@ -94,7 +111,7 @@ const Form = ({ userId, language }: IProps) => {
   }
 
   return (
-    <form>
+    <>{!loading ? <form>
       <img alt={imgAlt} src={imgUrl} className='prompt-img'/>
       <div className='challenge-container'>
         <div className='challenge-header-container'>
@@ -133,7 +150,7 @@ const Form = ({ userId, language }: IProps) => {
           </div>
         </div>
         <div className='submit-button-container'>
-          {/* FIND WAY TO HANDLE LINK WHEN USERNAME IS UNDEFINED */}
+          {inputError && <p>Please complete both sentences to receive feedback for your work!</p>}
           <Link to={`/${userId}/feedback/1`} className='submit-link'>
             <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>
           </Link>
@@ -149,7 +166,8 @@ const Form = ({ userId, language }: IProps) => {
         <button className='close-modal-button' onClick={closeModal}>X</button>
         <Instructions />
       </Modal>
-    </form>
+    </form> : <Loading/>}
+    </>
   );
 }
 

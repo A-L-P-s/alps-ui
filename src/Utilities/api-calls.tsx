@@ -1,7 +1,4 @@
-// Deployed Backend Domain (waiting for CORS permission)
-// https://calm-thicket-75558.herokuapp.com/
-
-import { IUsers, IUser, IPrompt, ISubmission, ISubmissionResponse } from "./interfaces";
+import { IUsers, IUser, IPrompt, ISubmission, ISubmissionResponse, IFeedback } from "./interfaces";
 
 export const getUsers: () => Promise<IUsers | null> = async () => {
 
@@ -13,9 +10,6 @@ export const getUsers: () => Promise<IUsers | null> = async () => {
         return response.json();
       }
     })
-    .catch(error => {
-      console.error('An error occurred:', error);
-    });
 }
 
 export const getUser: (userId: string) => Promise<IUser | null> = async (userId) => {
@@ -28,13 +22,9 @@ export const getUser: (userId: string) => Promise<IUser | null> = async (userId)
         return response.json();
       }
     })
-    .catch(error => {
-      console.error('An error occurred:', error);
-    });
 }
 
-// CHANGE ANY TYPE 
-export const getFeedback: (challengeId?:string, userId?:string) => Promise<any> = async (challengeId, userId) => {
+export const getFeedback: (challengeId?:string, userId?:string) => Promise<IFeedback> = async (challengeId, userId) => {
   const userPath: string = userId ? `/${userId}` : '';
   const challengePath: string = challengeId ? `/${challengeId}` : '';
 
@@ -46,9 +36,6 @@ export const getFeedback: (challengeId?:string, userId?:string) => Promise<any> 
       return response.json();
     }
   })
-  .catch(error => {
-    console.error('An error occurred:', error);
-  });
 }
 
 export const getPrompt: (userId:string | undefined) => Promise<IPrompt | null> = async (userId) => {
@@ -60,9 +47,6 @@ export const getPrompt: (userId:string | undefined) => Promise<IPrompt | null> =
         return response.json();
       }
     })
-    .catch(error => {
-      console.error('An error occurred:', error);
-    });
 }
 
 export const postSubmission: (userId: string | undefined, data: ISubmission) => Promise<ISubmissionResponse> = async (userId, data) => {
@@ -80,7 +64,4 @@ export const postSubmission: (userId: string | undefined, data: ISubmission) => 
         return response.json();
       }
     })
-    .catch(error => {
-      console.error('An error occurred:', error);
-    });
 }

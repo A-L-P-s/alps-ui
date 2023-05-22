@@ -1,7 +1,6 @@
-import React from 'react';
 import './Instructions.css';
 
-const Instructions = () => {
+const Instructions = (): JSX.Element => {
   return (
     <div>
       <h2>Let's Summit this Challenge!</h2>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './ChallengeCard.css';
 
@@ -12,7 +11,7 @@ interface IProps {
   userId: string
 }
 
-const ChallengeCard = ({ verb, userId, eng_verb, challenge_id, image_url, image_alt_text, date }: IProps) => {
+const ChallengeCard = ({ verb, userId, eng_verb, challenge_id, image_url, image_alt_text, date }: IProps): JSX.Element => {
   return (
     <Link to={`/${userId}/feedback/${challenge_id}`} style={{textDecoration: 'none'}}>
     <div className='challenge-card'>

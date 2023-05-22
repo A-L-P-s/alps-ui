@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './User.css';
 
@@ -8,7 +7,7 @@ interface IProps {
   id: string
 }
 
-const User: React.FC<IProps> = ({ name, preferred_lang, id }) => {
+const User = ({ name, preferred_lang, id }: IProps): JSX.Element => {
 
   return (
     <div className='user'>

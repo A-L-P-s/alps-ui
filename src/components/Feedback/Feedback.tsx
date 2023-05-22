@@ -1,14 +1,14 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import './Feedback.css';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { getFeedback } from '../../Utilities/api-calls';
 import { IFeedback } from '../../Utilities/interfaces';
-import { useParams } from 'react-router-dom';
+import './Feedback.css';
 
+interface IProps {
+  setError: Function
+}
 
-
-const Feedback = () => {
+const Feedback = ( { setError }: IProps): JSX.Element => {
   const [feedback, setFeedback] = useState<IFeedback|undefined>();
   
   const { userId, id } = useParams();
@@ -17,7 +17,16 @@ const Feedback = () => {
     getFeedback(id, userId)
       .then(feedbackData => {
         setFeedback(feedbackData);
+        
+        if (!feedbackData.data.attributes.sentences.length) {
+          setError('It looks like we were unable to save this challenge data.');
+        }
       })
+      .catch(error => {
+        console.error('An error occurred:', error);
+        setError(error.toString());
+      })
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, id]);
 
   return (
