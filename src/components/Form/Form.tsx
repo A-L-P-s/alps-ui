@@ -6,6 +6,7 @@ import { getPrompt, postSubmission } from '../../Utilities/api-calls';
 import infoIcon from '../../assets/info_icon.svg';
 import Modal from 'react-modal';
 import Instructions from '../Instructions/Instructions';
+import Loading from '../Loading/Loading';
 
 interface IProps {
   userId: string | undefined,
@@ -23,6 +24,7 @@ const Form = ({ userId, language, setError }: IProps) => {
   const [sent2, setSent2] = useState<string>('');
   const [feedbackId, setFeedbackId] = useState<string>('');
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [loading, setLoading] = useState<Boolean>(false)
 
   const navigate = useNavigate();
   
@@ -58,6 +60,7 @@ const Form = ({ userId, language, setError }: IProps) => {
   }, [userId]);
 
   const handleClick: (event: React.MouseEvent<HTMLElement>) => void = (event) => {
+    setLoading(true)
     event.preventDefault();
     const submissionData = {
       language: language,
@@ -84,11 +87,13 @@ const Form = ({ userId, language, setError }: IProps) => {
       .then(responseData => {
         if (responseData.data.id) {
           setFeedbackId(responseData.data.id);
+          setLoading(false)
         }
       })
       .catch(error => {
         console.error('An error occurred:', error);
         setError(error.toString())
+        setLoading(false)
       })
     }
   }
@@ -102,7 +107,7 @@ const Form = ({ userId, language, setError }: IProps) => {
   }
 
   return (
-    <form>
+    <>{!loading ? <form>
       <img alt={imgAlt} src={imgUrl} className='prompt-img'/>
       <div className='challenge-container'>
         <div className='challenge-header-container'>
@@ -157,7 +162,8 @@ const Form = ({ userId, language, setError }: IProps) => {
         <button className='close-modal-button' onClick={closeModal}>X</button>
         <Instructions />
       </Modal>
-    </form>
+    </form> : <Loading/>}
+    </>
   );
 }
 

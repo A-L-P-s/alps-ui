@@ -79,8 +79,12 @@ const App = () => {
         />
         <Route path='/:userId/feedback/:id' element={<Feedback setError={setError}/>} />
         <Route path='*' element={<NotFound/>}/>
-      </Routes> : <h1>{error}</h1>}
-    </>
+      </Routes> : 
+      <div>
+        <h3>Sorry! It looks like an error occurred. Please try again later!</h3>
+        <h4>{error}</h4>
+      </div>}
+  </>
   );
 }
 
