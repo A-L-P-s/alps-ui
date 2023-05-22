@@ -1,0 +1,34 @@
+{
+  "data": {
+    "id": "1",
+    "type": "challenge",
+    "attributes": {
+      "user_id": "1",
+      "language": "Spanish", 
+      "verb": "hablar",
+      "eng_verb": "to listen", 
+      "image_url": "https://images.unsplash.com/photo-1496070242169-b672c576566b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1643&q=80",
+      "image_alt_text": "closeup photography of a frog", 
+      "created_at": "05/18/2023",
+      "grammar_points": null,
+      "sentences": [
+        {
+          "id": "1",
+          "grammar_point": "condicional",
+          "eng_grammar_point": "conditional tense",
+          "user_sent": "Si la rana pudiera hablar, contaría historias fascinantes.",
+          "ai_sent": "Si la rana pudiera hablar, contaría historias fascinantes.",
+          "ai_explanation": "Your sentence is correct! Great job!"
+        }, 
+        {
+          "id": "2",
+          "grammar_point": "pretérito",
+          "eng_grammar_point": "preterite tense",
+          "user_sent": "La rana habló con los otros animales en el estanque.",
+          "ai_sent": "La rana habló con los otros animales en el estanque.",
+          "ai_explanation": "The sentence is correct! Nice work!"
+        }
+      ]
+    }  
+  }  
+}
