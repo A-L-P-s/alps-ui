@@ -13,6 +13,7 @@ declare namespace Cypress {
     interceptPostSubmission_55(): Chainable<Subject>;
     interceptSubmissionFeedback_1(): Chainable<Subject>;
     interceptSubmissionFeedback_55(): Chainable<Subject>;
+    interceptAll(): Chainable<Subject>;
   }
 }
 
@@ -118,4 +119,18 @@ Cypress.Commands.add('interceptSubmissionFeedback_55', () => {
     fixture: 'mock_submission_feedback_55',
   })
   .as('getSubmissionFeedback_55');
+});
+
+Cypress.Commands.add('interceptAll', () => {
+  cy.interceptUsers();
+  cy.interceptDashboard_1();
+  cy.interceptDashboard_55();
+  cy.interceptPastFeedback_1_1();
+  cy.interceptPastFeedback_55_3();
+  cy.interceptPrompt_1();
+  cy.interceptPrompt_55();
+  cy.interceptPostSubmission_1();
+  cy.interceptPostSubmission_55();
+  cy.interceptSubmissionFeedback_1();
+  cy.interceptSubmissionFeedback_55();
 });
