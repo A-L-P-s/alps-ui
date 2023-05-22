@@ -1,10 +1,13 @@
 import { SyncLoader } from "react-spinners"
+import './Loading.css'
 
 const Loading = () => {
   return (
-    <SyncLoader 
-       size={15}/>
+    <div className='loading-msg'>
+      <SyncLoader size={15}/>
+      <p>Checking your work...</p>
+    </div>
   )
 }
 
-export default Loading
+export default Loading;
