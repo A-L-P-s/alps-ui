@@ -1,3 +1,4 @@
+/// <reference types="Cypress" />
 describe('template spec', () => {
   beforeEach('intercept all endpoints', () => {
     cy.interceptAll();
