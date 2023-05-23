@@ -8,3 +8,9 @@
   text-align: center;
   font-size: 3vh;
 }
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

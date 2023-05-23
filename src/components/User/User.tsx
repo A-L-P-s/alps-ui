@@ -17,8 +17,7 @@ const User = ({ name, preferred_lang, id }: IProps): JSX.Element => {
     <div className='user'>
       <img src={avatar} alt={`${avatar} icon`} className='avatar-icons'></img>
       <p className='user-name'>{name}</p>
-      <p>{`Practice ${preferred_lang}!`}</p>
-      <Link to={`/${id}/dashboard`}><button>{`Continue as ${name}`}</button></Link>
+      <Link to={`/${id}/dashboard`}><button>{`Practice ${preferred_lang}!`}</button></Link>
     </div>
   );
 }
