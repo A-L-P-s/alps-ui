@@ -1,13 +1,27 @@
-button {
-  cursor:pointer;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 1.5vh;
-  width: 9vh;
-  height: 4vh;
-}
-
 body {
   background-color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+button {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  width: fit-content;
+  background-color: white;
+  color: #2D8CFF;
+  border: 1px solid #2D8CFF;
+  border-radius: 5px;
+  padding: 1vh;
+  font-size: medium;
+  text-align: center;
+}
 
+button:hover {
+  background-color: aliceblue;
+  cursor:pointer;
+}
+
+.feedback-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

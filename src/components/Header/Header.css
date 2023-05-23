@@ -12,6 +12,22 @@ h1 {
 
 .welcome-msg {
   margin-right: 3vh;
-  font-size: 3vh;
+  font-size: 2.2vh;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  width:15vw;
+  height: 13vh;
+}
+
+.material-symbols-outlined {
+  margin-right: 5px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }

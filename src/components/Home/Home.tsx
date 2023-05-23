@@ -25,9 +25,9 @@ const Home = ({ allUsers, resetUser }: IProps): JSX.Element => {
   }, [allUsers])
 
   return (
-    <div>
-      <p className='choose-user'>Choose your user</p>
-       <div className='user-container'>{userCards}</div>
+    <div className='home-page'>
+      <h2>Select a user to continue</h2>
+      <div className='user-container'>{userCards}</div>
     </div>
   );
 }
