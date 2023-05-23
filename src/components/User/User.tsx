@@ -11,7 +11,7 @@ const User = ({ name, preferred_lang, id }: IProps): JSX.Element => {
 
   return (
     <div className='user'>
-      <p>{name}</p>
+      <p className='user-name'>{name}</p>
       <p>{preferred_lang}</p>
       <Link to={`/${id}/dashboard`}><button>{`Continue as ${name}`}</button></Link>
     </div>
