@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import Loading from '../Loading/Loading';
 import infoIcon from '../../assets/info_icon.svg';
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { IGrammarPoint } from '../../Utilities/interfaces';
 import { getPrompt, postSubmission } from '../../Utilities/api-calls';
 import './Form.css';
@@ -158,9 +158,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
         </div>
         <div className='submit-button-container'>
           {inputError && <p>Please complete both sentences to receive feedback for your work!</p>}
-          <Link to={`/${userId}/feedback/1`} className='submit-link'>
-            <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>
-          </Link>
+          <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>
         </div>
       </div>
       <Modal
