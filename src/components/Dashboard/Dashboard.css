@@ -8,3 +8,9 @@
 button {
   margin-top: 2vh;
 }
+
+.past-challenges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
