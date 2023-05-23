@@ -1,24 +1,31 @@
 .challenge-card {
-  border: 0.2vh solid black;
+  /* border: 0.2vh solid black; */
   display: flex;
-  height: 25vh;
-  width: 35vh;
-  background-color: #2875ba;
+  flex-direction: column;
+  padding: 1vh;
+  /* height: 25vh;
+  width: 35vh; */
+  /* background-color: #2875ba; */
+  background-color: white;
   border-radius: 1.5vh;
+  margin: 1vw;
+  box-shadow: 0 0 8px #ccc;
 }
 
 .card-right-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
   padding: 1.5vh;
-  color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* color: white; */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
 }
 
 .challenge-card:hover {
   cursor: pointer;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+  /* border: .3px solid #2D8CFF; */
 }
 
 

@@ -3,10 +3,10 @@ form {
   justify-content: center;
 }
 
-h2, h3, h4, label {
+/* h2, h3, h4, label {
   margin: 0;
   color: white;
-}
+} */
 
 .prompt-img {
   width: auto;
