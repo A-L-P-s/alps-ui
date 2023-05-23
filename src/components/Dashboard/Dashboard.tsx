@@ -14,7 +14,7 @@ const Dashboard = ({ user }: IProps): JSX.Element => {
       { user &&
       <div className='past-challenges'>
         { user.data.attributes.challenges && <PastChallenges challenges={user.data.attributes.challenges} userId={user.data.id} />}
-        <Link to={`/${user.data.id}/new-challenge`}><button>New Challenge</button></Link>
+        <Link to={`/alps-ui/${user.data.id}/new-challenge`}><button>New Challenge</button></Link>
       </div>
       }
     </div>

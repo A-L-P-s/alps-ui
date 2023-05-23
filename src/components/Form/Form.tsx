@@ -32,7 +32,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   const navigate = useNavigate();
   
   useEffect(() => {
-    feedbackId && navigate(`/${userId}/feedback/${feedbackId}`);
+    feedbackId && navigate(`/alps-ui/${userId}/feedback/${feedbackId}`);
   }, [feedbackId, navigate, userId]);
 
   useEffect(() => {
@@ -158,7 +158,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
         </div>
         <div className='submit-button-container'>
           {inputError && <p>Please complete both sentences to receive feedback for your work!</p>}
-          <Link to={`/${userId}/feedback/1`} className='submit-link'>
+          <Link to={`/alps-ui/${userId}/feedback/1`} className='submit-link'>
             <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>
           </Link>
         </div>

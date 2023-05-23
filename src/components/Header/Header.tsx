@@ -8,7 +8,7 @@ interface IProps {
 const Header = ({ userName }: IProps): JSX.Element => {
   return (
     <div className='header'>
-      <Link to='/' style={{textDecoration: 'none'}}><h1>ALPs</h1></Link>
+      <Link to='/alps-ui/' style={{textDecoration: 'none'}}><h1>ALPs</h1></Link>
       {userName && <p className='welcome-msg'>Welcome, {userName}!</p>}
     </div>
   );

@@ -52,17 +52,17 @@ const App = (): JSX.Element => {
     <>
       <Header userName={user?.data.attributes.name}/>
       {!error ? <Routes>
-        <Route path='/' element={users !== null && <Home allUsers={users} resetUser={resetUser}/>} />
-        <Route path='/:userId/dashboard' element={<Dashboard user={user} />}/>
+        <Route path='/alps-ui/' element={users !== null && <Home allUsers={users} resetUser={resetUser}/>} />
+        <Route path='/alps-ui/:userId/dashboard' element={<Dashboard user={user} />}/>
         <Route
-          path='/:userId/new-challenge'
+          path='/alps-ui/:userId/new-challenge'
           element={<Form 
             language={user?.data.attributes.preferred_lang}
             userId={user?.data.id}
             setError={setError}
           />} 
         />
-        <Route path='/:userId/feedback/:id' element={<Feedback setError={setError}/>} />
+        <Route path='/alps-ui/:userId/feedback/:id' element={<Feedback setError={setError}/>} />
         <Route path='*' element={<NotFound/>}/>
       </Routes> 
       : <div>

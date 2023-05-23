@@ -13,7 +13,7 @@ const User = ({ name, preferred_lang, id }: IProps): JSX.Element => {
     <div className='user'>
       <p>{name}</p>
       <p>{preferred_lang}</p>
-      <Link to={`/${id}/dashboard`}><button>{`Continue as ${name}`}</button></Link>
+      <Link to={`/alps-ui/${id}/dashboard`}><button>{`Continue as ${name}`}</button></Link>
     </div>
   );
 }

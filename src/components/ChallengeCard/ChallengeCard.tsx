@@ -13,7 +13,7 @@ interface IProps {
 
 const ChallengeCard = ({ verb, userId, eng_verb, challenge_id, image_url, image_alt_text, date }: IProps): JSX.Element => {
   return (
-    <Link to={`/${userId}/feedback/${challenge_id}`} style={{textDecoration: 'none'}}>
+    <Link to={`/alps-ui/${userId}/feedback/${challenge_id}`} style={{textDecoration: 'none'}}>
     <div className='challenge-card'>
       <img src={image_url} alt={image_alt_text}></img>
       <div className='card-right-content'>
