@@ -38,7 +38,8 @@ const App = (): JSX.Element => {
   }, [users?.data.length])
 
   useEffect(() => {
-    const userId = location.pathname.split('/')[1];
+    const userId = location.pathname.split('/')[2];
+    console.log('userId', userId);
 
     userId && getUser(userId)
       .then(data=> setUser(data))

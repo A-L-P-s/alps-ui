@@ -11,7 +11,7 @@ export interface ITruncUser {
 export interface IUserData {
   name: string,
   preferred_lang: string,
-  challenges: IChallenge[] | null
+  challenges: IChallenge[] | [] | null
 }
 
 export interface IUser {
