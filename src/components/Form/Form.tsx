@@ -139,7 +139,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
               }}
               maxLength={400}
             />
-          <p>{`${sent1Chars} characters remaining`}</p>
+          <p className='chars-remaining'>{`${sent1Chars} characters remaining`}</p>
           </div>
           <div className='sentence-container'>
             {grammarPoints.length && <label htmlFor='sent2'>{grammarPoints[1].grammar_point} | {grammarPoints[1].eng_grammar_point}</label>}
@@ -153,7 +153,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
               }}
               maxLength={400}
             />
-          <p>{`${sent2Chars} characters remaining`}</p>
+          <p className='chars-remaining'>{`${sent2Chars} characters remaining`}</p>
           </div>
         </div>
         <div className='submit-button-container'>
