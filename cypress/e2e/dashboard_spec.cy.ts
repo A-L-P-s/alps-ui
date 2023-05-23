@@ -1,11 +1,26 @@
+/// <reference types="Cypress" />
+
 describe('template spec', () => {
   beforeEach('intercept all endpoints', () => {
     cy.interceptAll();
     cy.visit('http://localhost:3000');
   });
 
-  it('should let you view Deniz\'s dashboard', () => {
+  it('should have a homepage with two users', () => {
     cy.url().should('eq', 'http://localhost:3000/')
+
+    cy.get('h1').contains('ALPs')
+      cy.get('.choose-user').contains('p', 'Choose your user')
+      .get('.user').should('have.length', 2)
+      .get('.user').eq(0).contains('p', 'Deniz')
+      .get('.user').eq(0).contains('p', 'Turkish')
+      .get('.user').eq(0).contains('button', 'Continue as Deniz')
+      .get('.user').eq(1).contains('p', 'Alexis')
+      .get('.user').eq(1).contains('p', 'Spanish')
+      .get('.user').eq(1).contains('button', 'Continue as Alexis');
+  });
+
+  it('should let you view Deniz\'s dashboard', () => {
 
     cy.get('button').eq(0).click();
 
@@ -53,5 +68,23 @@ describe('template spec', () => {
       .get('.challenge-card').contains('h2', '05/18/2023')
       .get('.challenge-card').contains('h3', 'hablar')
       .get('.challenge-card').contains('p', '(to speak)')
+  });
+
+  it('should let you click the header title and return to the home page and select another user', () => {
+    cy.get('button').eq(0).click();
+
+    cy.url().should('eq', 'http://localhost:3000/55/dashboard');
+    
+    cy.contains('p', 'Welcome, Deniz!')
+      .get('h1').click();
+
+    cy.url().should('eq', 'http://localhost:3000/');
+
+    cy.get('.user').should('have.length', 2)
+      .get('button').eq(1).click();
+
+    cy.url().should('eq', 'http://localhost:3000/1/dashboard');
+
+    cy.contains('p', 'Welcome, Alexis!')
   });
 });
