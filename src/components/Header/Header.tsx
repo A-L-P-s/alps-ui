@@ -9,7 +9,7 @@ interface IProps {
 const Header = ({ userName }: IProps): JSX.Element => {
   return (
     <div className='header'>
-      <Link to='/' style={{textDecoration: 'none'}}><img className='header-logo'src={headerLogo}></img></Link>
+      <Link to='/' style={{textDecoration: 'none'}}><img className='header-logo'src={headerLogo} alt='User account icon'></img></Link>
       {userName && <p className='welcome-msg'><span className="material-symbols-outlined">account_circle</span>Welcome, {userName}!</p>}
     </div>
   );
