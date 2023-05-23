@@ -1,6 +1,7 @@
 img {
   height: 34vh;
   width: 15vw;
+  border-radius: 1.5vh;
 }
 
 .challenge-card-container {
