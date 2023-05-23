@@ -19,3 +19,9 @@ button:hover {
   background-color: aliceblue;
   cursor:pointer;
 }
+
+.feedback-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

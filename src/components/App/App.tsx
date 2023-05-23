@@ -3,8 +3,8 @@ import Feedback from '../Feedback/Feedback';
 import Form from '../Form/Form';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
-import NotFound from '../NotFound/NotFound';
-import { Routes, Route, useLocation } from 'react-router-dom';
+// import NotFound from '../NotFound/NotFound';
+import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { IUsers, IUser } from '../../Utilities/interfaces';
 import { useState, useEffect } from 'react';
 import { getUsers, getUser } from '../../Utilities/api-calls';
@@ -63,11 +63,12 @@ const App = (): JSX.Element => {
           />} 
         />
         <Route path='/:userId/feedback/:id' element={<Feedback setError={setError}/>} />
-        <Route path='*' element={<NotFound/>}/>
+        {/* <Route path='*' element={<NotFound setError={setError} />}/> */}
       </Routes> 
-      : <div>
-          <h3>It looks like an error occurred. Please try again.</h3>
-          <h4>{error}</h4>
+      : <div className='feedback-error'>
+          <h3>{error}</h3>
+          <h4>Here's a handy button to return Home!</h4>
+          <Link to={`/`} onClick={() => setError(null)}><button>Home</button></Link>
         </div>}
     </>
   );
