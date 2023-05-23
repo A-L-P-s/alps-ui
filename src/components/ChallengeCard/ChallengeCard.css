@@ -1,9 +1,11 @@
 .challenge-card {
-  border: 0.1vh solid black;
+  border: 0.2vh solid black;
   display: flex;
   margin: 4vh;
-  height: fit-content;
-  width: fit-content;
+  height: 25vh;
+  width: 35vh;
+  /* height: fit-content;
+  width: fit-content; */
   background-color: #2875ba;
   border-radius: 1.5vh;
 }
@@ -19,14 +21,14 @@
 
 .challenge-card:hover {
   cursor: pointer;
-  border: 0.2vh solid white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 1);
 }
 
-.img {
+/* .img {
   border-radius: 5px;
   width: auto;
   height: auto;
-}
+} */
 
 
 
