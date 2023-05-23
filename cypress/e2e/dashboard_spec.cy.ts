@@ -9,7 +9,7 @@ describe('template spec', () => {
   it('should have a homepage with two users', () => {
     cy.url().should('eq', 'http://localhost:3000/')
 
-    cy.get('h1').contains('ALPs')
+    cy.get('.header-logo').should('have.attr', 'src', '/static/media/logo.0f8a2904ccc5b34d346e.png')
       cy.get('.choose-user').contains('p', 'Choose your user')
       .get('.user').should('have.length', 2)
       .get('.user').eq(0).contains('p', 'Deniz')
@@ -26,7 +26,7 @@ describe('template spec', () => {
 
     cy.url().should('eq', 'http://localhost:3000/55/dashboard')
     
-    cy.get('h1').contains('ALPs')
+    cy.get('.header-logo').should('have.attr', 'src', '/static/media/logo.0f8a2904ccc5b34d346e.png')
       .get('.header').contains('.welcome-msg', 'Welcome, Deniz!')
       .get('.challenge-card')
       .should('have.length', 6)

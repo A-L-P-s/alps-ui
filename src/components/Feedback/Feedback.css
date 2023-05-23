@@ -1,35 +1,70 @@
 .feedback-container {
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
-  margin: 20px;
+  height: 80vh;
+}
+
+.right-content {
+  height: 80vh;
+}
+
+.feedback-header {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+}
+
+.verb-assigned {
+  display: flex;
+  align-items: center;
+  font-size: larger;
+  margin: 0;
+  font-size: medium;
+  margin-left: 20vw;
+  border: 1px solid #2D8CFF;
+  width: fit-content;
+  padding: 1vh;
+
+}
+
+.verb {
+  margin: 0;
+  margin-left: 5px;
+  color: #2D8CFF;
+  font-size: larger;
+}
+
+.challenge-title {
+  display: flex;
+  align-items: center;
+}
+
+.sentence-feedback {
+ border-radius: 6px;
+ padding: 1vh;
 }
 
 .sentences-container {
-  border-radius: 10px;
-  padding: 5vh;
-  border: 2px solid #2D8CFF;
+  background-color: aliceblue;
+  border-radius: 6px;
+  overflow-y: scroll;
+  height: 60vh;
+  width: 54vw;
+  box-shadow: 0 0 8px #ccc;
+  padding: 2vw;
 }
 
+.feedback-section-title {
+  background-color: lightyellow;
+  width: fit-content;
+}
+
+.grammar-point {
+  font-style: italic;
+  padding-bottom: 1vh;
+  border-bottom: 1px solid #2D8CFF;
+}
 .sentence {
   font-family: 'Roboto Mono', monospace;
 }
-
-.sentences-container h4 {
-  border-width: 0px;
-  padding-top: .5vh;
-  margin-top: 2vh;
-  margin-bottom: 1.5vh;
-  border-top-width: 1px;
-  border-style: solid;
-}
-
-.sentences-container h5 {
-  margin: 0px;
-  font-size: 1.75vh;
-}
-
-.sentences-container p {
-  padding-left: 2vh;
-}
-
