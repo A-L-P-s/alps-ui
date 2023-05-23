@@ -65,7 +65,7 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
               <p>{feedback.data.attributes.sentences[1].ai_explanation}</p>
             </div>
           </div>
-            {/* <Link to={`/${userId}/dashboard`}><button>←</button></Link> */}
+            <Link to={`/${userId}/dashboard`}><button>Back</button></Link>
         </div>
       </div>}
     </>
