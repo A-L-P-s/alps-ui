@@ -1,11 +1,8 @@
 .challenge-card {
   border: 0.2vh solid black;
   display: flex;
-  /* margin: 4vh; */
   height: 25vh;
   width: 35vh;
-  /* height: fit-content;
-  width: fit-content; */
   background-color: #2875ba;
   border-radius: 1.5vh;
 }
@@ -23,12 +20,6 @@
   cursor: pointer;
   box-shadow: 0 0 8px rgba(0, 0, 0, 1);
 }
-
-/* .img {
-  border-radius: 5px;
-  width: auto;
-  height: auto;
-} */
 
 
 
