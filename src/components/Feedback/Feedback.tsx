@@ -38,15 +38,15 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
           <h3>{feedback.data.attributes.eng_verb}</h3>
           <h4>{feedback.data.attributes.sentences[0].grammar_point} | {feedback.data.attributes.sentences[0].eng_grammar_point}</h4>
           <h5>Sentence 1</h5>
-          <p>{feedback.data.attributes.sentences[0].user_sent}</p>
+          <p className='sentence'>{feedback.data.attributes.sentences[0].user_sent}</p>
           <h5>Feedback</h5>
-          <p>{feedback.data.attributes.sentences[0].ai_sent}</p>
+          <p className='sentence'>{feedback.data.attributes.sentences[0].ai_sent}</p>
           <p>{feedback.data.attributes.sentences[0].ai_explanation}</p>
           <h4>{feedback.data.attributes.sentences[0].grammar_point} | {feedback.data.attributes.sentences[1].eng_grammar_point}</h4>
           <h5>Sentence 2</h5>
-          <p>{feedback.data.attributes.sentences[1].user_sent}</p>
+          <p className='sentence'>{feedback.data.attributes.sentences[1].user_sent}</p>
           <h5>Feedback</h5>
-          <p>{feedback.data.attributes.sentences[1].ai_sent}</p>
+          <p className='sentence'>{feedback.data.attributes.sentences[1].ai_sent}</p>
           <p>{feedback.data.attributes.sentences[1].ai_explanation}</p>
           <Link to={`/${userId}/dashboard`}>
             <button>Home</button>

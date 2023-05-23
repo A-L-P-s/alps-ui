@@ -1,16 +1,18 @@
 .feedback-container {
   display: flex;
-}
-
-.prompt-img {
-  width: 40%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px;
 }
 
 .sentences-container {
-  background-color: #2875ba;
-  color: white;
   border-radius: 10px;
   padding: 5vh;
+  border: 2px solid #2D8CFF;
+}
+
+.sentence {
+  font-family: 'Roboto Mono', monospace;
 }
 
 .sentences-container h4 {
@@ -19,7 +21,6 @@
   margin-top: 2vh;
   margin-bottom: 1.5vh;
   border-top-width: 1px;
-  border-color: white;
   border-style: solid;
 }
 
