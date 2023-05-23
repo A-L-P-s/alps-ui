@@ -1,30 +1,18 @@
 img {
-  height: 34vh;
-  width: 15vw;
+  height: 25vh;
+  width: 15vh;
+  border-radius: 1.5vh;
 }
 
 .challenge-card-container {
-  display: grid;
+  display: flex;
+  flex-direction: row;
   overflow-y: scroll;
   height: 75vh;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5vh;
-  grid-auto-rows: minmax(250px, auto);
+  gap: 1vh;
+  padding: 1vh;
   border: 1px solid black;
-}
-
-@media screen and (max-width: 1200px) {
-  .challenge-card-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  img {
-    height: 25vh;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .challenge-card-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  background-color: #e3ecf3;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

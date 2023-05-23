@@ -1,19 +1,27 @@
 .challenge-card {
-  border: 1px solid black;
+  border: 0.2vh solid black;
   display: flex;
-  margin: 4vh;
-  height: fit-content;
-  width: fit-content;
+  height: 25vh;
+  width: 35vh;
+  background-color: #2875ba;
+  border-radius: 1.5vh;
 }
 
 .card-right-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 1.5vh;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .challenge-card:hover {
   cursor: pointer;
-  border: 1px solid blue;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 1);
 }
+
+
+
+
+

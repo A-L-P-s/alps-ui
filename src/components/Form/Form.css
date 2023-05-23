@@ -3,8 +3,9 @@ form {
   justify-content: center;
 }
 
-h2, h3, h4 {
+h2, h3, h4, label {
   margin: 0;
+  color: white;
 }
 
 .prompt-img {
@@ -21,6 +22,7 @@ h2, h3, h4 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #2875ba;
 }
 
 .challenge-header-container {
@@ -30,6 +32,7 @@ h2, h3, h4 {
 
 .challenge-header {
   align-self: center;
+  color: white;
 }
 
 .prompt-container {
@@ -88,7 +91,8 @@ input {
 .my-modal {
   display: flex;
   flex-direction: column;
-  background-color: bisque;
+  color: white;
+  background-color: #2875ba;
   position: fixed;
   margin: 5%;
   width: 50%;
