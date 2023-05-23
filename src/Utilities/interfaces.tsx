@@ -5,7 +5,12 @@ export interface IUsers {
 export interface ITruncUser {
   id: string,
   type: string,
-  attributes: IUserData
+  attributes: ITruncUserData
+}
+
+export interface ITruncUserData {
+  name: string,
+  preferred_lang: string
 }
 
 export interface IUserData {
