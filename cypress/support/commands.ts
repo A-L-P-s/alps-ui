@@ -42,6 +42,7 @@ Cypress.Commands.add('interceptDashboard_1', () => {
 Cypress.Commands.add('interceptDashboard_55', () => {
   cy.intercept('GET', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/55', {
     statusCode: 200,
+    fixture: 'mock_dashboard_55',
   })
   .as('getDashboard_55');
 });
