@@ -1,11 +1,7 @@
 .challenge-card {
-  /* border: 0.2vh solid black; */
   display: flex;
   flex-direction: column;
   padding: 1vh;
-  /* height: 25vh;
-  width: 35vh; */
-  /* background-color: #2875ba; */
   background-color: white;
   border-radius: 1.5vh;
   margin: 1vw;
@@ -18,14 +14,12 @@
   align-items: center;
   color: black;
   padding: 1.5vh;
-  /* color: white; */
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 12px;
 }
 
 .challenge-card:hover {
   cursor: pointer;
-  /* border: .3px solid #2D8CFF; */
 }
 
 
