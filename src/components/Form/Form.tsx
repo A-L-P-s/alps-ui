@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import Loading from '../Loading/Loading';
 import infoIcon from '../../assets/info_icon.svg';
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { IGrammarPoint } from '../../Utilities/interfaces';
 import { getPrompt, postSubmission } from '../../Utilities/api-calls';
 import './Form.css';
