@@ -34,6 +34,15 @@ describe ('Feedback flow', () => {
       .and('contain', 'Si la rana pudiera hablar, contaría historias fascinantes.')
       .and('contain', 'Feedback')
       .and('contain', 'Si la rana pudiera hablar, contaría historias fascinantes.')
+
+      .and('contain', 'Sentence #2')
+      .and('contain', 'pretérito ✴ preterite tense')
+      .and('contain', 'Your response')
+      .and('contain', 'La rana habló con los otros animales en el estanque.')
+      .and('contain', 'Corrected Sentence')
+      .and('contain', 'La rana habló con los otros animales en el estanque.')
+      .and('contain', 'Feedback')
+      .and('contain', 'The sentence is correct! Nice work!');
     })
 
     it('should return to dashboard view when user clicks back button from feedback view', () => {
