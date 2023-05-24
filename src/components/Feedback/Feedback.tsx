@@ -20,7 +20,7 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
         setFeedback(feedbackData);
         
         if (!feedbackData.data.attributes.sentences.length) {
-          setError('It looks like we were unable to save this challenge data.');
+          setError('Whoops! It looks like we were unable to save this challenge data.');
         }
       })
       .catch(error => {
