@@ -160,9 +160,7 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
         </div>
         <div className='submit-button-container'>
           {inputError && <p>Please complete both sentences to receive feedback for your work!</p>}
-          <Link to={`/alps-ui/${userId}/feedback/1`} className='submit-link'>
             <button className='submit-button' onClick={event => handleClick(event)}>Submit</button>
-          </Link>
         </div>
       </div>
       <Modal
