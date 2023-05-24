@@ -41,6 +41,7 @@ const App = (): JSX.Element => {
 
   useEffect(() => {
     const userId = location.pathname.split('/')[2];
+    console.log('USER ID', userId)
 
     userId && getUser(userId)
       .then(data => {
