@@ -5,7 +5,7 @@ form {
 }
 
 .prompt-img {
-  max-width: 80%;
+  max-width: 45vw;
   height: auto;
   margin: 5%;
   border-radius: 10px;
@@ -21,7 +21,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  height: 80vh;
   border: 2px solid #2D8CFF;
   border-radius: 10px;
   background-color: aliceblue;
