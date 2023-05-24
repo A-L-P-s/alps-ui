@@ -67,4 +67,25 @@ describe('sad path tests', () => {
     cy.url().should('eq', 'http://localhost:3000/')
       .get('.user').should('have.length', 2);
   });
+
+  it('should show an error with a successful submission but a poor feedback request and allow them to return Home', () => {
+    cy.intercept500SubmissionFeedback_2();
+
+    cy.get('button').first().click();
+
+    cy.get('button').contains('New Challenge').click();
+
+    cy.get('textarea').first().type('Example sentence 1');
+    
+    cy.get('textarea').last().type('Example sentence 2');
+
+    cy.get('button').contains('Submit').click();
+
+    cy.get('h3').contains('Error: 500: Internal Server Error')
+      .get('h4').contains('Here\'s a handy button to return Home!')
+      .get('button').contains('Home').click()
+
+    cy.url().should('eq', 'http://localhost:3000/')
+      .get('.user').should('have.length', 2);
+  });
 });
