@@ -31,4 +31,19 @@ describe('sad path tests', () => {
     cy.url().should('eq', 'http://localhost:3000/')
       .get('.user').should('have.length', 2);
   });
+
+  it('should show an error when the user clicks "New Challenge" with a bad network request and allow them to return Home', () => {
+    cy.intercept404Prompt_1();
+
+    cy.get('button').first().click();
+
+    cy.get('button').contains('New Challenge').click();
+
+    cy.get('h3').contains('Error: 404: Not Found')
+      .get('h4').contains('Here\'s a handy button to return Home!')
+      .get('button').contains('Home').click()
+
+    cy.url().should('eq', 'http://localhost:3000/')
+      .get('.user').should('have.length', 2);
+  });
 });
