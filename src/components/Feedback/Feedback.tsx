@@ -10,15 +10,19 @@ interface IProps {
 
 const Feedback = ( { setError }: IProps): JSX.Element => {
   const [feedback, setFeedback] = useState<IFeedback|undefined>();
-  
-  console.log(feedback)
+
   const { userId, id } = useParams();
 
   useEffect(() => {
+    // DELETE CONSOLE.LOG BEFORE PRODUCTION
+    console.log('id: ', id);
+    console.log('userId: ', userId);
+
     getFeedback(id, userId)
       .then(feedbackData => {
+        // DELETE CONSOLE.LOG BEFORE PRODUCTION
+        console.log('feedback fetch data: ', feedbackData);
         setFeedback(feedbackData);
-        
         if (!feedbackData.data.attributes.sentences.length) {
           setError('Whoops! It looks like we were unable to save this challenge data.');
         }

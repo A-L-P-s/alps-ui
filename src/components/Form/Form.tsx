@@ -43,6 +43,8 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
     userId && getPrompt(userId)
       .then(prompt => {
         if (prompt) {
+          // DELETE CONSOLE.LOG BEFORE PRODUCTION
+          console.log('prompt fetch data: ', prompt)
           const promptAttributes = prompt.data.attributes;
 
           setImgUrl(promptAttributes.image_url);

@@ -29,6 +29,8 @@ const App = (): JSX.Element => {
   useEffect(() => {
     !users?.data.length && getUsers()
       .then(data => {
+        // DELETE CONSOLE.LOG BEFORE PRODUCTION
+        console.log('users fetch data: ', data);
         setUsers(data)
       })
       .catch(error => {
@@ -39,10 +41,12 @@ const App = (): JSX.Element => {
 
   useEffect(() => {
     const userId = location.pathname.split('/')[2];
-    console.log('userId', userId);
 
     userId && getUser(userId)
-      .then(data=> setUser(data))
+      .then(data => {
+        console.log('user fetch data: ', data);
+        setUser(data)
+      })
       .catch(error => {
         console.error('An error occurred:', error);
         setError(error.toString())
