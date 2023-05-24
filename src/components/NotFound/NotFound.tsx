@@ -14,5 +14,3 @@ const NotFound = ({ setError }: IProps): JSX.Element => {
     </div>
   )
 }
-
-export default NotFound;

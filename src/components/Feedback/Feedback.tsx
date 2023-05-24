@@ -37,8 +37,6 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
   return (
     <>
       {feedback &&
-      
-
         <div className='feedback-container'>
           <img src={feedback.data.attributes.image_url} alt={feedback.data.attributes.image_alt_text} className='prompt-img'/>
           <div className='right-content'>
@@ -46,7 +44,7 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
               <h2>{`Your challenge from ${feedback.data.attributes.created_at}`}</h2>
             </div>
           <div className='sentences-container'>
-            <h3 className='verb-assigned'>Verb assigned → <h4 className='verb'>{feedback.data.attributes.verb}</h4></h3>
+            <h3 className='verb-assigned'>Verb assigned → <p className='verb'>{feedback.data.attributes.verb}</p></h3>
             <h4 >Sentence #1</h4>
             <h4 className='grammar-point'>{feedback.data.attributes.sentences[0].grammar_point} ✴ {feedback.data.attributes.sentences[0].eng_grammar_point}</h4>
             <div className='sentence-feedback'>
@@ -59,7 +57,7 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
             </div>
 
             <h4>Sentence #2</h4>
-            <h4 className='grammar-point'>{feedback.data.attributes.sentences[0].grammar_point} ✴ {feedback.data.attributes.sentences[1].eng_grammar_point}</h4>
+            <h4 className='grammar-point'>{feedback.data.attributes.sentences[1].grammar_point} ✴ {feedback.data.attributes.sentences[1].eng_grammar_point}</h4>
             <div className='sentence-feedback'>
               <h5 className='feedback-section-title'>Your response</h5>
               <p className='sentence'>{feedback.data.attributes.sentences[1].user_sent}</p>
