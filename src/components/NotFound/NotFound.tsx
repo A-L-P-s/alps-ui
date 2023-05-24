@@ -10,7 +10,7 @@ const NotFound = ({ setError }: IProps): JSX.Element => {
     <div className='not-found'>
       <h1>Uh oh!</h1>
       <h3>It looks like this page no longer exists. Please return home and try again!</h3>
-      <Link to='/' onClick={() => setError(null)}><button>Home</button></Link>
+      <Link to='/alps-ui/' onClick={() => setError(null)}><button>Home</button></Link>
     </div>
   )
 }

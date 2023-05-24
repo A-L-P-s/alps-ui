@@ -69,7 +69,7 @@ const App = (): JSX.Element => {
       : <div className='feedback-error'>
           <h3>{error}</h3>
           <h4>Here's a handy button to return Home!</h4>
-          <Link to={`/`} onClick={() => setError(null)}><button>Home</button></Link>
+          <Link to={`/alps-ui/`} onClick={() => setError(null)}><button>Home</button></Link>
         </div>}
     </>
   );
