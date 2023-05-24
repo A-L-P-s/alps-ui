@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import panda from '../../assets/panda.png'
 import dog from '../../assets/dog.png'
+import koala from '../../assets/koala.png'
 import './User.css';
 
 interface IProps {
@@ -11,7 +12,7 @@ interface IProps {
 
 const User = ({ name, preferred_lang, id }: IProps): JSX.Element => {
 
-  const avatar = name === 'Deniz' ? panda : dog
+  const avatar = name === 'Deniz' ? panda : name === 'Hai' ? koala : dog
 
   return (
     <div className='user'>

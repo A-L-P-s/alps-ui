@@ -1,0 +1,30 @@
+{
+  "data": {
+    "id": "1",
+    "type": "user",
+    "attributes": {
+      "name": "Alexis",
+      "preferred_lang": "Spanish",
+      "challenges": [
+        {
+          "challenge_id": "1", 
+          "language": "Spanish", 
+          "verb": "hablar",
+          "eng_verb": "to speak", 
+          "image_url": "https://images.unsplash.com/photo-1496070242169-b672c576566b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1643&q=80",
+          "image_alt_text": "closeup photography of a frog", 
+          "created_at": "05/18/2023"
+        },
+        {
+          "challenge_id": "7", 
+          "language": "Spanish", 
+          "verb": "escuchar",
+          "eng_verb": "to hear", 
+          "image_url": "https://plus.unsplash.com/premium_photo-1661888521670-7dc228bcd78b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          "image_alt_text": "a cat that is sitting in a bath tub", 
+          "created_at": "05/20/2023"
+        }
+      ]
+    }  
+  }
+}
