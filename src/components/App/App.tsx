@@ -3,7 +3,6 @@ import Feedback from '../Feedback/Feedback';
 import Form from '../Form/Form';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
-import NotFound from '../NotFound/NotFound';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { IUsers, IUser } from '../../Utilities/interfaces';
 import { useState, useEffect } from 'react';
@@ -63,7 +62,6 @@ const App = (): JSX.Element => {
           />} 
         />
         <Route path='/:userId/feedback/:id' element={<Feedback setError={setError}/>} />
-        <Route path='*' element={<NotFound/>}/>
       </Routes> 
       : <div>
           <h3>It looks like an error occurred. Please try again.</h3>
