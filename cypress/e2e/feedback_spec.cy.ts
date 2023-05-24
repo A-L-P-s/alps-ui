@@ -32,4 +32,12 @@ describe ('Feedback flow', () => {
       .and('contain', 'Feedback')
       .and('contain', 'This sentence is correct. Nice work rockstar!');
     })
+
+    it('should return to dashboard view when user clicks back button from feedback view', () => {
+        cy.visit('http://localhost:3000/1/feedback/100');
+     
+        cy.get('button').click();
+        cy.url().should('include', '/dashboard');
+        cy.get('.challenge-card-container').should('be.visible');
+      })
 })
