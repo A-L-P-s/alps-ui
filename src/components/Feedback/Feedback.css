@@ -42,11 +42,6 @@
   align-items: center;
 }
 
-.sentence-feedback {
- border-radius: 6px;
- padding: 1vh;
-}
-
 .sentences-container {
   box-sizing: border-box;
   background-color: aliceblue;
@@ -60,8 +55,9 @@
 }
 
 .feedback-section-title {
+  margin-bottom: 0;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: bold;
   width: fit-content;
 }
 
@@ -71,7 +67,10 @@
   border-bottom: 1px solid #2D8CFF;
 }
 .sentence {
+  margin: 0;
+  margin-top: 5px;
   font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
