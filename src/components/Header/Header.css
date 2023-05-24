@@ -4,23 +4,17 @@
   justify-content: space-between;
 }
 
-h1 {
-  margin-left: 20px;
-  color: black;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
 .welcome-msg {
-  margin-right: 3vh;
+  margin-right: 5vh;
   font-size: 2.2vh;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   display: flex;
   align-items: center;
 }
 
 .header-logo {
-  width:15vw;
-  height: 13vh;
+  width:16vw;
+  height: 14.5vh;
 }
 
 .material-symbols-outlined {
