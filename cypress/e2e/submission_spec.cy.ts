@@ -1,5 +1,4 @@
-/// <reference types="Cypress" />
-
+/// <reference types='Cypress' />
 describe('template spec', () => {
   beforeEach('intercept all endpoints', () => {
     cy.interceptAll();
@@ -7,8 +6,8 @@ describe('template spec', () => {
     .wait('@getUsers');
     cy.get(':nth-child(1) > a > button').click()
     cy.get('button').click()
-    cy.get('#sent1').type("El gato escuchó un ruido y saltó dentro de la bañera.")
-    cy.get('#sent2').type("El gato escuchará el agua correr en la bañera.")
+    cy.get('#sent1').type('El gato escuchó un ruido y saltó dentro de la bañera.')
+    cy.get('#sent2').type('El gato escuchará el agua correr en la bañera.')
   });
 
   it('Should display the form page when a user clicks new challenge', () => {
@@ -32,10 +31,10 @@ describe('template spec', () => {
   })
 
   it('Should allow the user to type a sentence into the text boxes and see the amount of characters they have remaining', () => {
-    cy.get('#sent1').should('have.value', "El gato escuchó un ruido y saltó dentro de la bañera.")
+    cy.get('#sent1').should('have.value', 'El gato escuchó un ruido y saltó dentro de la bañera.')
     cy.get(':nth-child(2) > .chars-remaining').contains(347)
 
-    cy.get('#sent2').should('have.value', "El gato escuchará el agua correr en la bañera.")
+    cy.get('#sent2').should('have.value', 'El gato escuchará el agua correr en la bañera.')
     cy.get(':nth-child(3) > .chars-remaining').contains(354)
   })
 
@@ -53,13 +52,13 @@ describe('template spec', () => {
     cy.get('.sentences-container > :nth-child(3)').should('be.visible').contains('pretérito ✴ preterite tense')
 
     cy.get(':nth-child(4) > :nth-child(1)').should('be.visible').contains('Your response')
-    cy.get(':nth-child(4) > :nth-child(2)').should('be.visible').contains("El gato escuchó un ruido y saltó dentro de la bañera.")
+    cy.get(':nth-child(4) > :nth-child(2)').should('be.visible').contains('El gato escuchó un ruido y saltó dentro de la bañera.')
 
     cy.get(':nth-child(4) > :nth-child(3)').should('be.visible').contains('Corrected Sentence')
-    cy.get(':nth-child(4) > :nth-child(4)').should('be.visible').contains("El gato escuchó un ruido y saltó dentro de la bañera.")
+    cy.get(':nth-child(4) > :nth-child(4)').should('be.visible').contains('El gato escuchó un ruido y saltó dentro de la bañera.')
 
-    cy.get(':nth-child(4) > :nth-child(5)').should('be.visible').contains("Feedback")
-    cy.get(':nth-child(4) > :nth-child(6)').should('be.visible').contains("Your sentence is correct! Great job!")
+    cy.get(':nth-child(4) > :nth-child(5)').should('be.visible').contains('Feedback')
+    cy.get(':nth-child(4) > :nth-child(6)').should('be.visible').contains('Your sentence is correct! Great job!')
 
     cy.get('.sentences-container').scrollTo('bottom')
 
@@ -70,7 +69,7 @@ describe('template spec', () => {
     cy.get(':nth-child(7) > :nth-child(2)').should('be.visible').contains('El gato escuchará el agua correr en la bañera.')
 
     cy.get(':nth-child(7) > :nth-child(3)').should('be.visible').contains('Corrected Sentence')
-    cy.get(':nth-child(7) > :nth-child(4)').should('be.visible').contains("El gato escuchaba el agua correr en la bañera.")
+    cy.get(':nth-child(7) > :nth-child(4)').should('be.visible').contains('El gato escuchaba el agua correr en la bañera.')
 
     cy.get(':nth-child(7) > :nth-child(5)').should('be.visible').contains('Feedback')
     cy.get(':nth-child(7) > :nth-child(6)').should('be.visible').contains('Your sentence incorrectly uses the future tense (escuchará), indicating a future action.')
