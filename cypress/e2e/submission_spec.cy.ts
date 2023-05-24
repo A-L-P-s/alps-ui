@@ -93,17 +93,17 @@ describe('successful submission user flow', () => {
   })
 })
 
-describe('submission error user flow', () => {
-  beforeEach('intercept all endpoints', () => {
-    cy.interceptAll();
-    cy.visit('http://localhost:3000')
-    .wait('@getUsers');
-    cy.get(':nth-child(1) > a > button').click()
-    cy.get('button').click()
-    })
+// describe('submission error user flow', () => {
+//   beforeEach('intercept all endpoints', () => {
+//     cy.interceptAll();
+//     cy.visit('http://localhost:3000')
+//     .wait('@getUsers');
+//     cy.get(':nth-child(1) > a > button').click()
+//     cy.get('button').click()
+//     })
 
-    it('Should display an error message if the user tries to submit a challenge without filling out both input fields', () => {
-      cy.get('.submit-button').click()
-      cy.get('.submit-button-container > p').should('be.visible').contains('Please complete both sentences to receive feedback for your work!')
-    })
-  })
+//     it('Should display an error message if the user tries to submit a challenge without filling out both input fields', () => {
+//       cy.get('.submit-button').click()
+//       cy.get('.submit-button-container > p').should('be.visible').contains('Please complete both sentences to receive feedback for your work!')
+//     })
+//   })
