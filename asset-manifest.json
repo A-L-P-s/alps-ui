@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/alps-ui/static/css/main.49273371.css",
-    "main.js": "/alps-ui/static/js/main.6483df37.js",
+    "main.css": "/alps-ui/static/css/main.0a5e55f9.css",
+    "main.js": "/alps-ui/static/js/main.c7ad2e0a.js",
     "static/js/787.90b6e096.chunk.js": "/alps-ui/static/js/787.90b6e096.chunk.js",
-    "static/media/info_icon.svg": "/alps-ui/static/media/info_icon.84a9a5b07174114dbcf6a547aff20a1d.svg",
+    "static/media/panda.png": "/alps-ui/static/media/panda.080ab83cb62cb7195149.png",
+    "static/media/dog.png": "/alps-ui/static/media/dog.c4840e7af1b9d1c0b55a.png",
+    "static/media/logo.png": "/alps-ui/static/media/logo.0f8a2904ccc5b34d346e.png",
     "index.html": "/alps-ui/index.html",
-    "main.49273371.css.map": "/alps-ui/static/css/main.49273371.css.map",
-    "main.6483df37.js.map": "/alps-ui/static/js/main.6483df37.js.map",
+    "static/media/info_icon.svg": "/alps-ui/static/media/info_icon.84a9a5b07174114dbcf6a547aff20a1d.svg",
+    "main.0a5e55f9.css.map": "/alps-ui/static/css/main.0a5e55f9.css.map",
+    "main.c7ad2e0a.js.map": "/alps-ui/static/js/main.c7ad2e0a.js.map",
     "787.90b6e096.chunk.js.map": "/alps-ui/static/js/787.90b6e096.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.49273371.css",
-    "static/js/main.6483df37.js"
+    "static/css/main.0a5e55f9.css",
+    "static/js/main.c7ad2e0a.js"
   ]
 }
