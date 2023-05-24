@@ -55,7 +55,7 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
             </div>
 
             <h4>Sentence #2</h4>
-            <h4 className='grammar-point'>{feedback.data.attributes.sentences[0].grammar_point} ✴ {feedback.data.attributes.sentences[1].eng_grammar_point}</h4>
+            <h4 className='grammar-point'>{feedback.data.attributes.sentences[1].grammar_point} ✴ {feedback.data.attributes.sentences[1].eng_grammar_point}</h4>
             <div className='sentence-feedback'>
               <h5 className='feedback-section-title'>Your response</h5>
               <p className='sentence'>{feedback.data.attributes.sentences[1].user_sent}</p>
