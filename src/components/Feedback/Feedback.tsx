@@ -33,8 +33,6 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
   return (
     <>
       {feedback &&
-      
-
         <div className='feedback-container'>
           <img src={feedback.data.attributes.image_url} alt={feedback.data.attributes.image_alt_text} className='prompt-img'/>
           <div className='right-content'>
