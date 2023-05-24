@@ -65,6 +65,7 @@ const App = (): JSX.Element => {
       </Routes> 
       : <div className='feedback-error'>
           <h3>{error}</h3>
+          <p>If you are seeing a 500 Internal Server error, this if often because the server has reached its submission limit. Please try again later!</p>
           <h4>Here's a handy button to return Home!</h4>
           <Link to={`/`} onClick={() => setError(null)}><button>Home</button></Link>
         </div>}

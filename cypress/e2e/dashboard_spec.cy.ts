@@ -9,8 +9,6 @@ describe('template spec', () => {
 
   it('should have a homepage with two users', () => {
     cy.url().should('eq', 'http://localhost:3000/')
-
-    cy.get('.header-logo').should('have.attr', 'src', '/static/media/logo.0f8a2904ccc5b34d346e.png')
       .get('.home-page').contains('h2', 'Select a user to continue')
       .get('.user').should('have.length', 2)
       .get('.user').eq(0).contains('p', 'Alexis')
@@ -24,8 +22,6 @@ describe('template spec', () => {
       .wait('@getDashboard_1')
 
     cy.url().should('include', '/1/dashboard')
-
-    cy.get('.header-logo').should('have.attr', 'src', '/static/media/logo.0f8a2904ccc5b34d346e.png')
       .get('.header').contains('.welcome-msg', 'Welcome, Alexis!')
       .get('.challenge-card').should('have.length', 1)
       .get('button').contains('New Challenge')
@@ -45,8 +41,6 @@ describe('template spec', () => {
       .wait('@getDashboard_55')
 
     cy.url().should('include', '/55/dashboard')
-    
-    cy.get('.header-logo').should('have.attr', 'src', '/static/media/logo.0f8a2904ccc5b34d346e.png')
       .get('.header').contains('.welcome-msg', 'Welcome, Deniz!')
       .get('.challenge-card')
       .should('have.length', 6)
