@@ -80,4 +80,15 @@ describe('template spec', () => {
     cy.get('button').click()
     cy.url().should('eq', 'http://localhost:3000/1/dashboard')
   })
+
+  it('Should show the newly completed challenge in the users dashboard', () => {
+    cy.intercept('GET', 'https://calm-thicket-75558.herokuapp.com/api/v1/users/1', {
+      statusCode: 200,
+      fixture: 'posted_mock_dashboard_1.json'
+    })
+    
+    cy.get('.submit-button').click()
+    cy.get('button').click()
+    cy.get('[href="/1/feedback/7"] > .challenge-card').should('be.visible')
+  })
 })
