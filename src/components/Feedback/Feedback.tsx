@@ -42,7 +42,7 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
               <h2>{`Your challenge from ${feedback.data.attributes.created_at}`}</h2>
             </div>
           <div className='sentences-container'>
-            <h3 className='verb-assigned'>Verb assigned → <h4 className='verb'>{feedback.data.attributes.verb}</h4></h3>
+            <h3 className='verb-assigned'>Verb assigned → <p className='verb'>{feedback.data.attributes.verb}</p></h3>
             <h4 >Sentence #1</h4>
             <h4 className='grammar-point'>{feedback.data.attributes.sentences[0].grammar_point} ✴ {feedback.data.attributes.sentences[0].eng_grammar_point}</h4>
             <div className='sentence-feedback'>
