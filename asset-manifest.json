@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/alps-ui/static/css/main.0a5e55f9.css",
-    "main.js": "/alps-ui/static/js/main.8470135b.js",
+    "main.css": "/alps-ui/static/css/main.48d557cc.css",
+    "main.js": "/alps-ui/static/js/main.a72ec605.js",
     "static/js/787.90b6e096.chunk.js": "/alps-ui/static/js/787.90b6e096.chunk.js",
-    "static/media/panda.png": "/alps-ui/static/media/panda.080ab83cb62cb7195149.png",
-    "static/media/dog.png": "/alps-ui/static/media/dog.c4840e7af1b9d1c0b55a.png",
+    "static/media/turkey.png": "/alps-ui/static/media/turkey.1dc2c680f5074339abdc.png",
+    "static/media/mexico.png": "/alps-ui/static/media/mexico.c214bfa06ebd622fdaf5.png",
+    "static/media/vietnam.png": "/alps-ui/static/media/vietnam.8faaddaae6323f7bb741.png",
     "static/media/logo.png": "/alps-ui/static/media/logo.0f8a2904ccc5b34d346e.png",
     "index.html": "/alps-ui/index.html",
     "static/media/info_icon.svg": "/alps-ui/static/media/info_icon.84a9a5b07174114dbcf6a547aff20a1d.svg",
-    "main.0a5e55f9.css.map": "/alps-ui/static/css/main.0a5e55f9.css.map",
-    "main.8470135b.js.map": "/alps-ui/static/js/main.8470135b.js.map",
+    "main.48d557cc.css.map": "/alps-ui/static/css/main.48d557cc.css.map",
+    "main.a72ec605.js.map": "/alps-ui/static/js/main.a72ec605.js.map",
     "787.90b6e096.chunk.js.map": "/alps-ui/static/js/787.90b6e096.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a5e55f9.css",
-    "static/js/main.8470135b.js"
+    "static/css/main.48d557cc.css",
+    "static/js/main.a72ec605.js"
   ]
 }
