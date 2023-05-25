@@ -9,7 +9,7 @@ export const getUsers: () => Promise<IUsers | null> = async () => {
       } else {
         return response.json();
       }
-    })
+    });
 }
 
 export const getUser: (userId: string) => Promise<IUser | null> = async (userId) => {
@@ -21,7 +21,7 @@ export const getUser: (userId: string) => Promise<IUser | null> = async (userId)
       } else {
         return response.json();
       }
-    })
+    });
 }
 
 export const getFeedback: (challengeId?:string, userId?:string) => Promise<IFeedback> = async (challengeId, userId) => {
@@ -35,7 +35,7 @@ export const getFeedback: (challengeId?:string, userId?:string) => Promise<IFeed
     } else {
       return response.json();
     }
-  })
+  });
 }
 
 export const getPrompt: (userId:string | undefined) => Promise<IPrompt | null> = async (userId) => {
@@ -46,7 +46,7 @@ export const getPrompt: (userId:string | undefined) => Promise<IPrompt | null> =
       } else {
         return response.json();
       }
-    })
+    });
 }
 
 export const postSubmission: (userId: string | undefined, data: ISubmission) => Promise<ISubmissionResponse> = async (userId, data) => {
@@ -63,5 +63,5 @@ export const postSubmission: (userId: string | undefined, data: ISubmission) => 
       } else {
         return response.json();
       }
-    })
+    });
 }

@@ -7,8 +7,8 @@
   padding-bottom: 2.5vh;
   background-color: white;
   border-radius: 1.5vh;
-  margin: 1vw;
   box-shadow: 0 0 8px #ccc;
+  background-color: white;
 }
 
 .challenge-card img {
@@ -24,7 +24,20 @@
   align-items: center;
   color: black;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
+}
+
+.card-content > * {
+  margin: 0.5vh 0;
+}
+
+.card-content > h3 {
+  font-size: 24px;
+  font-weight: bold
+}
+
+.card-info {
+  margin-top: 0;
+  align-self: flex-end;
 }
 
 .card-content > * {

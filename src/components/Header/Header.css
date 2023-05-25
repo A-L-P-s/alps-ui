@@ -6,16 +6,16 @@
 
 h1 {
   margin-left: 20px;
-  color: black;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black;
 }
 
 .welcome-msg {
+  display: flex;
+  align-items: center;
   margin-right: 3vh;
   font-size: 2.2vh;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  display: flex;
-  align-items: center;
 }
 
 .header-logo {

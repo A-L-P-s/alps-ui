@@ -10,13 +10,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80vh;
 }
 
 .feedback-header {
   display: flex;
   flex-direction: column;
-  font-family: 'Plus Jakarta Sans', sans-serif;
   margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .verb-assigned {
@@ -33,8 +34,8 @@
 .verb {
   margin: 0;
   margin-left: 5px;
-  color: #2D8CFF;
   font-size: larger;
+  color: #2D8CFF;
 }
 
 .challenge-title {
@@ -62,8 +63,8 @@
 }
 
 .grammar-point {
-  font-style: italic;
   padding-bottom: 1vh;
+  font-style: italic;
   border-bottom: 1px solid #2D8CFF;
 }
 .sentence {

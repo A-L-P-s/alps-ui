@@ -21,9 +21,9 @@ const Form = ({ userId, language, setError }: IProps): JSX.Element => {
   const [engVerb, setEngVerb] = useState<string>('');
   const [grammarPoints, setGrammarPoints] = useState<IGrammarPoint[]>([]);
   const [sent1, setSent1] = useState<string>('');
-  const [sent1Chars, setSent1Chars] = useState<Number>(400)
+  const [sent1Chars, setSent1Chars] = useState<Number>(400);
   const [sent2, setSent2] = useState<string>('');
-  const [sent2Chars, setSent2Chars] = useState<Number>(400)
+  const [sent2Chars, setSent2Chars] = useState<Number>(400);
   const [feedbackId, setFeedbackId] = useState<string>('');
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<Boolean>(false);

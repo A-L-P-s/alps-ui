@@ -1,9 +1,14 @@
 body {
-  background-color: white;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: white;
 }
 
 button {
+  text-align: center;
+  width: fit-content;
+  padding: 1vh;
+  font-size: medium;
+  border-radius: 5px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   width: fit-content;
   background-color: #2D8CFF;
