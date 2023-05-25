@@ -18,7 +18,6 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
     getFeedback(id, userId)
       .then(feedbackData => {
         setFeedback(feedbackData);
-        
         if (!feedbackData.data.attributes.sentences.length) {
           setError('Whoops! It looks like we were unable to save this challenge data.');
         }
@@ -51,7 +50,6 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
               <h5 className='feedback-section-title'>Feedback</h5>
               <p>{feedback.data.attributes.sentences[0].ai_explanation}</p>
             </div>
-
             <h4>Sentence #2</h4>
             <h4 className='grammar-point'>{feedback.data.attributes.sentences[1].grammar_point} ✴ {feedback.data.attributes.sentences[1].eng_grammar_point}</h4>
             <div className='sentence-feedback'>

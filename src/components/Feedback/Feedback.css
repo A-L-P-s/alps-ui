@@ -5,36 +5,36 @@
 }
 
 .right-content {
-  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80vh;
 }
 
 .feedback-header {
   display: flex;
   flex-direction: column;
-  font-family: 'Plus Jakarta Sans', sans-serif;
   margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .verb-assigned {
   display: flex;
   align-items: center;
+  width: fit-content;
   font-size: larger;
   margin: 0;
   font-size: medium;
   margin-left: 20vw;
-  border: 1px solid #2D8CFF;
-  width: fit-content;
   padding: 1vh;
+  border: 1px solid #2D8CFF;
 }
 
 .verb {
   margin: 0;
   margin-left: 5px;
-  color: #2D8CFF;
   font-size: larger;
+  color: #2D8CFF;
 }
 
 .challenge-title {
@@ -48,13 +48,13 @@
 }
 
 .sentences-container {
-  background-color: aliceblue;
-  border-radius: 6px;
-  overflow-y: scroll;
   height: 60vh;
   width: 54vw;
-  box-shadow: 0 0 8px #ccc;
+  border-radius: 6px;
   padding: 2vw;
+  overflow-y: scroll;
+  box-shadow: 0 0 8px #ccc;
+  background-color: aliceblue;
 }
 
 .feedback-section-title {
@@ -63,8 +63,8 @@
 }
 
 .grammar-point {
-  font-style: italic;
   padding-bottom: 1vh;
+  font-style: italic;
   border-bottom: 1px solid #2D8CFF;
 }
 .sentence {

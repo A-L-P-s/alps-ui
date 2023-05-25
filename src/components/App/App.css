@@ -1,18 +1,18 @@
 body {
-  background-color: white;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: white;
 }
 
 button {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-align: center;
   width: fit-content;
-  background-color: white;
-  color: #2D8CFF;
-  border: 1px solid #2D8CFF;
-  border-radius: 5px;
   padding: 1vh;
   font-size: medium;
-  text-align: center;
+  border-radius: 5px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border: 1px solid #2D8CFF;
+  background-color: white;
+  color: #2D8CFF;
 }
 
 button:hover {

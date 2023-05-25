@@ -1,5 +1,3 @@
-import './Instructions.css';
-
 const Instructions = (): JSX.Element => {
   return (
     <div className='instructions'>

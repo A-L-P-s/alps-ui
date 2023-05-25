@@ -10,31 +10,29 @@ import { getUsers, getUser } from '../../Utilities/api-calls';
 import './App.css';
 
 const App = (): JSX.Element => {
-
   const location = useLocation();
-
   const initialUsers = {
     data: []
   }
 
-  const [users, setUsers] = useState<IUsers | null>(initialUsers)
-  const [user, setUser] = useState<IUser | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const [users, setUsers] = useState<IUsers | null>(initialUsers);
+  const [user, setUser] = useState<IUser | null>(null);
+  const [error, setError] = useState<string | null>(null);
   
   const resetUser = () => {
-    setUser(null)
+    setUser(null);
   }
 
   useEffect(() => {
     !users?.data.length && getUsers()
       .then(data => {
-        setUsers(data)
+        setUsers(data);
       })
       .catch(error => {
-        let errorMsg = error.toString()
-        setError(errorMsg)
+        let errorMsg = error.toString();
+        setError(errorMsg);
       })
-  }, [users?.data.length])
+  }, [users?.data.length]);
 
   useEffect(() => {
     const userId = location.pathname.split('/')[1];
@@ -43,9 +41,9 @@ const App = (): JSX.Element => {
       .then(data=> setUser(data))
       .catch(error => {
         console.error('An error occurred:', error);
-        setError(error.toString())
+        setError(error.toString());
       })
-  }, [location])
+  }, [location]);
 
   return (
     <>
