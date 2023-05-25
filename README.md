@@ -15,13 +15,16 @@
       <hr><br>
       Now that you've "climbed the mountain" of learning another language, keep your skills fresh with regular practice! Language output (speaking & writing) is key but can get dull with routine drills, plus you may never know if it's entirely correct. <br><span>🔸</span><br> With ALPs, every writing challenge comes with an inspiring image to ignite your imagination, a random verb & grammar points to help focus your language, and immediate feedback with the help of AI!
     </p><br>
-      <a href="https://a-l-p-s.github.io/alps-ui/">Visit ALPs deployed site!</a>
+      <a href="https://a-l-p-s.github.io/alps-ui/">Visit the ALPs website!</a>
 </div>
 <hr>
 
 <br>
 
+<div align="center">
+  
 ![Video Presentation](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWJjY2JlNTgxYWQzYzE5NzkyNTQ0YTgwZmUzYWU1ZGFhMGNlMWRkMyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/MxWCnzsPZWuvaQ3FGw/giphy.gif)
+  </div>
 
 <!-- TABLE OF CONTENTS -->
 ### Table of Contents
@@ -34,7 +37,6 @@
       <a href="#getting-started">Getting Started</a>
     </li>
     <li><a href="#wireframes">WireFrames</a></li>
-    <li><a href="#technologies">Stretch Technologies</a></li>
     <li><a href="#refactor">Future Iterations</a></li>
     <li><a href="#contact">Contributors</a></li>
   </ol>
