@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/alps-ui/static/css/main.b500f04f.css",
-    "main.js": "/alps-ui/static/js/main.1c223aca.js",
+    "main.js": "/alps-ui/static/js/main.83b65986.js",
     "static/js/787.90b6e096.chunk.js": "/alps-ui/static/js/787.90b6e096.chunk.js",
     "static/media/turkey.png": "/alps-ui/static/media/turkey.1dc2c680f5074339abdc.png",
     "static/media/mexico.png": "/alps-ui/static/media/mexico.c214bfa06ebd622fdaf5.png",
@@ -10,11 +10,11 @@
     "index.html": "/alps-ui/index.html",
     "static/media/info_icon.svg": "/alps-ui/static/media/info_icon.84a9a5b07174114dbcf6a547aff20a1d.svg",
     "main.b500f04f.css.map": "/alps-ui/static/css/main.b500f04f.css.map",
-    "main.1c223aca.js.map": "/alps-ui/static/js/main.1c223aca.js.map",
+    "main.83b65986.js.map": "/alps-ui/static/js/main.83b65986.js.map",
     "787.90b6e096.chunk.js.map": "/alps-ui/static/js/787.90b6e096.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b500f04f.css",
-    "static/js/main.1c223aca.js"
+    "static/js/main.83b65986.js"
   ]
 }
