@@ -1,20 +1,13 @@
-img {
-  height: 20vh;
-  width: 16vw;
-  border-radius: 1.5vh;
-}
-
 .challenge-card-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   overflow-y: scroll;
   height: 70vh;
   width: 80vw;
-  gap: 1vh;
   padding: 1.3vh;
   border-radius: 15px;
-  background-color: aliceblue;
-  flex-wrap: wrap;
-  justify-content: space-around;
   box-shadow: 0 0 8px #ccc;
+  background-color: aliceblue;
 }

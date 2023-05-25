@@ -1,4 +1,5 @@
 /// <reference types='Cypress' />
+
 describe('successful submission user flow', () => {
   beforeEach('intercept all endpoints', () => {
     cy.interceptAll();
@@ -53,16 +54,18 @@ describe('successful submission user flow', () => {
 
     cy.get(':nth-child(4) > :nth-child(1)').should('be.visible').contains('Your response')
     cy.get(':nth-child(4) > :nth-child(2)').should('be.visible').contains('El gato escuchó un ruido y saltó dentro de la bañera.')
-
+    
     cy.get(':nth-child(4) > :nth-child(3)').should('be.visible').contains('Corrected Sentence')
+    cy.get(':nth-child(4) > :nth-child(4)').scrollIntoView()
     cy.get(':nth-child(4) > :nth-child(4)').should('be.visible').contains('El gato escuchó un ruido y saltó dentro de la bañera.')
-
+    
+    cy.get(':nth-child(4) > :nth-child(5)').scrollIntoView()
     cy.get(':nth-child(4) > :nth-child(5)').should('be.visible').contains('Feedback')
     cy.get(':nth-child(4) > :nth-child(6)').should('be.visible').contains('Your sentence is correct! Great job!')
-
-    cy.get('.sentences-container').scrollTo('bottom')
-
+    
+    
     cy.get('.sentences-container > :nth-child(5)').should('be.visible').contains('Sentence #2')
+    cy.get(':nth-child(4) > :nth-child(6)').scrollIntoView()
     cy.get('.sentences-container > :nth-child(6)').should('be.visible').contains('imperfecto ✴ imperfect tense')
 
     cy.get(':nth-child(7) > :nth-child(1)').should('be.visible').contains('Your response')

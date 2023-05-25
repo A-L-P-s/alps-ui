@@ -1,40 +1,41 @@
 .feedback-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 80vh;
 }
 
 .right-content {
   height: 80vh;
+  padding-right: 2vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80vh;
 }
 
 .feedback-header {
   display: flex;
   flex-direction: column;
-  font-family: 'Plus Jakarta Sans', sans-serif;
   margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .verb-assigned {
   display: flex;
   align-items: center;
-  font-size: larger;
   margin: 0;
   font-size: medium;
-  margin-left: 20vw;
-  border: 1px solid #2D8CFF;
-  width: fit-content;
+  text-align: center;
+  border: 2px solid #2D8CFF;
+  border-radius: 1.5vh;
   padding: 1vh;
 }
 
 .verb {
   margin: 0;
   margin-left: 5px;
-  color: #2D8CFF;
   font-size: larger;
+  color: #2D8CFF;
 }
 
 .challenge-title {
@@ -42,31 +43,46 @@
   align-items: center;
 }
 
-.sentence-feedback {
- border-radius: 6px;
- padding: 1vh;
-}
-
 .sentences-container {
+  box-sizing: border-box;
   background-color: aliceblue;
   border-radius: 6px;
   overflow-y: scroll;
   height: 60vh;
-  width: 54vw;
+  width: 40vw;
   box-shadow: 0 0 8px #ccc;
-  padding: 2vw;
+  padding: 2%;
+  margin: 5%;
 }
 
 .feedback-section-title {
-  background-color: lightyellow;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: bold;
   width: fit-content;
 }
 
 .grammar-point {
-  font-style: italic;
   padding-bottom: 1vh;
+  font-style: italic;
   border-bottom: 1px solid #2D8CFF;
 }
 .sentence {
+  margin: 0;
+  margin-top: 5px;
   font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .feedback-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .sentences-container {
+    width: 90vw;
+    margin-bottom: 5vh;
+  }
 }

@@ -10,19 +10,17 @@ import { getUsers, getUser } from '../../Utilities/api-calls';
 import './App.css';
 
 const App = (): JSX.Element => {
-
   const location = useLocation();
-
   const initialUsers = {
     data: []
   }
 
-  const [users, setUsers] = useState<IUsers | null>(initialUsers)
-  const [user, setUser] = useState<IUser | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const [users, setUsers] = useState<IUsers | null>(initialUsers);
+  const [user, setUser] = useState<IUser | null>(null);
+  const [error, setError] = useState<string | null>(null);
   
   const resetUser = () => {
-    setUser(null)
+    setUser(null);
   }
 
   useEffect(() => {
@@ -33,10 +31,10 @@ const App = (): JSX.Element => {
         setUsers(data)
       })
       .catch(error => {
-        let errorMsg = error.toString()
-        setError(errorMsg)
+        let errorMsg = error.toString();
+        setError(errorMsg);
       })
-  }, [users?.data.length])
+  }, [users?.data.length]);
 
   useEffect(() => {
     const userId = location.pathname.split('/')[2];
@@ -49,9 +47,9 @@ const App = (): JSX.Element => {
       })
       .catch(error => {
         console.error('An error occurred:', error);
-        setError(error.toString())
+        setError(error.toString());
       })
-  }, [location])
+  }, [location]);
 
   return (
     <>
@@ -71,6 +69,7 @@ const App = (): JSX.Element => {
       </Routes> 
       : <div className='feedback-error'>
           <h3>{error}</h3>
+          <p>If you are seeing a 500 Internal Server error, this if often because the server has reached its submission limit. Please try again later!</p>
           <h4>Here's a handy button to return Home!</h4>
           <Link to={`/alps-ui/`} onClick={() => setError(null)}><button>Home</button></Link>
         </div>}

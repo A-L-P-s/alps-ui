@@ -16,10 +16,10 @@ const ChallengeCard = ({ verb, userId, eng_verb, challenge_id, image_url, image_
     <Link to={`/alps-ui/${userId}/feedback/${challenge_id}`} style={{textDecoration: 'none'}}>
     <div className='challenge-card'>
       <img src={image_url} alt={image_alt_text}></img>
-      <div className='card-right-content'>
-        <h2 className='right-info'>{date}</h2>
+      <div className='card-content'>
+        <p className='card-info'>{date}</p>
         <h3>{verb}</h3>
-        <p>({eng_verb})</p>
+        <h4>({eng_verb})</h4>
       </div>
     </div>
     </Link>

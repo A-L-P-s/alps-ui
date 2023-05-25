@@ -1,52 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
----
-
 <!-- ReadMe -->
 <a id="readme-top"></a>
 
@@ -54,7 +5,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 <br />
 <div align="center">
   <a href="https://github.com/A-L-P-s/ALPs_api">
-    <img src=".github/ALPs_logo_v2.jpg" alt="Logo" width="350">
+    <img src="src/assets/logo.png" alt="Logo" width="350">
   </a>
  
 <!-- <h2 align="center"></h2> -->
@@ -83,7 +34,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#testing">Testing</a></li>
       </ul>
     </li>
@@ -97,11 +47,11 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 <!-- ABOUT THE PROJECT -->
 <h2 id="about-the-project">About the Project</h2>
 
-<span>🔸</span> [Production Website](add link here)
+<span>🔸</span> [Deployed Site](https://a-l-p-s.github.io/alps-ui/)
 <br>
 <span>🔸</span> [Backend Service](https://git.heroku.com/calm-thicket-75558.git)
 <br>
-<span>🔸</span> [Front End Repository](https://github.com/A-L-P-s/alps-ui)
+<span>🔸</span> [Back End Repository](https://github.com/A-L-P-s/ALPS_api)
 <br>
 
 [Video Presentation](EMBED VIDEO HERE)
@@ -125,116 +75,65 @@ The `agile methodology` was chosen for backend development to expedite the app's
 
 <!-- Built With -->
 ### Built With
-#### `Phase 1:` Delivered Minimum Viable Product (MVC)
+#### `Collaboration Tools`
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-10A28C.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Git](https://img.shields.io/badge/git-4B0082.svg?style=for-the-badge&logo=git&logoColor=white)
-<img src=".github/logo_github_actions.jpg" alt="GitHub Actions Badge" height="27">
 
-<br>
+#### `Frontend Technologies`
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Cypress](	https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
 
-#### `Phase 2:` DESCRIPTION HERE
-- Add badges here
+#### `Packages Used`
+- [React Spinners](https://www.npmjs.com/package/react-spinners)
+  - NPM package used for loading animation viewed while challenge submission is being processed
+- [React Modal](https://www.npmjs.com/package/react-modal)
+  - NPM package used for instructions pop up on prompt page
+- [@types/react-modal](https://www.npmjs.com/package/@types/react-modal)
+  - NPM package used for type definitions for implementing the react modal in TypeScript
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started 
 
-If you'd like to demo this API on your local machine:
-1. Ensure you have the prerequisites
-2. Sign up for external API Keys
-2. Clone this repo: `git clone git@github.com:A-L-P-s/ALPs_api.git`
-3. Navigate to the root folder: `cd ALPs_api`
-4. Run: `bundle install`
-5. Run: `rails db:{create,migrate,seed}`
-6. Run: `bundle exec figaro install`
-7. In the `app/config/application.yml` file add you API keys:
-  - `UNSPLASH_API_KEY: add_api_key_here`
-  - `OPENAI_API_KEY: add_api_key_here`
-8. Inspect the `/db/schema.rb` and compare to the 'Schema' section below to ensure migration has been done successfully
-9. Run: `rails s`
-10. Visit http://localhost:3000/
+If you'd like to demo this application on your local machine:
+1. Fork and clone this repo: `git clone git@github.com:A-L-P-s/alps_ui.git`
+2. Visit the [Backend Repo](https://github.com/A-L-P-s/ALPs_api) and follow the steps to demo the ALPs API locally
+3. Navigate to the root folder: `cd alps_ui`
+4. Run: `npm install` to install necessary dependencies
+5. Run: `npm start` to open the local host on your machine
 
 <br>
 
-<!-- Prerequisites -->
-### Prerequisites 
-
-- Ruby Version 3.1.1
-- Rails Version 7.0.4.x
-- Bundler Version 2.4.9
-
-<br>
 
 <!-- Testing -->
 ### Testing 
 
-To test the entire spec suite, run `bundle exec rspec`.
-*All tests should be passing.*
+To run the test specs in Cypress, run `npm run cypress` in your terminal within your Apls UI repo!
 
-Happy path, sad path, and edge case testing were considered and tested. When a request cannot be completed, an error object is returned.
-
-<details>
-  <summary>See Error Object</summary>
-    <pre>
-    <code>
-{
-  "errors": [
-    {
-      "status": "404"
-      "title": "Invalid Request",
-      "detail": "Couldn't find User with 'id'=<id>"
-     }
-   ]
-}
-    </code></pre>
-</details>
-
-<br>
-
-<!-- Status Codes (DO WE ADD THIS ON FE?)
-### Status Codes
-
-<details><summary>See All</summary>
-
-**ALPs** API reutrns the folowing status codes:
-
-| Status Code | Description |
-| :--- | :--- |
-| 200 | `OK` |
-| 201 | `CREATED` |
-| 204 | `NO CONTENT` |
-| 404 | `NOT FOUND` |
-| 418 | `I'M A TEAPOT` |
-| 422 | `UNPROCESSABLE CONTENT` |
-| 500 | `INTERNAL SERVER ERROR` |
-
-</details>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-<!-- WireFrames -->
 ## WireFrames 
   
 <details>
   <summary>HomePage</summary>
-  Add Image here   
+  <img src='src/assets/home-wireframe.png'>
 </details>
 
 <details>
   <summary>User Dashboard</summary>
-  Add Image here
+  <img src='src/assets/dashboard-wireframe.png'>
 </details>
 
 <details>
   <summary>New Challenge Page</summary>
-  Add Image here
+  <img src='src/assets/prompt-wireframe.png'>
 </details>
   
  <details>
   <summary>Individual Challenge Page</summary>
-  Add Image here
+  <img src='src/assets/feedback-wireframe.png'>
 </details>
 
 <!-- not sure we need this on FE?
@@ -242,36 +141,14 @@ View these endpoints in [Postman] (add link here) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- Stretch Technologies -->
-<h2 id="technologies">Stretch Technologies</h2>
-
-EXAMPLE STRETCH TECH 1 
-  
-<img src= "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" style="width:60px; height:40px;"><a href="https://aws.amazon.com/"><strong> Elastic Beanstock Deployment</strong></a>
-
-<p>- Phase 2: Amazon Web Services was used to deploy the application.</p><br> 
-
-EXAMPLE STRETCH TECH 2 
-  
-<img src=".github/logo_python.jpg" height="30"><a href="https://www.python.org/"><strong> Python Programming Language</strong></a>
-
-<p>- Phase 2: Used as the programming language to build microservices.</p><br>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 <!-- Future Iterations -->
 <h2 id="refactor">Future Iterations</h2> 
 
 <details>
   <summary>See Refactoring Suggestions</summary>
   <dl>
-    <dt><span>🔸</span> ADD IDEA HERE</dt>
-      <dd>- Add description here</dd>
-     <dt><span>🔸</span> ADD IDEA HERE</dt>
-      <dd>- Add description here</dd>
-     <dt><span>🔸</span> ADD IDEA HERE</dt>
-      <dd>- Add description here</dd>
+    <dt><span>🔸</span> Delete Past Challenge</dt>
+      <dd>- Allow users to delete challenges that they do not want to see on their dashboard! This would require adding a button on the past challenge feedback component that would hit the existing BE delete endpoint.</dd>
   </dl>
 </details>
 

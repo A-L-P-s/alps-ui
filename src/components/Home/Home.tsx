@@ -13,7 +13,7 @@ const Home = ({ allUsers, resetUser }: IProps): JSX.Element => {
 
   useEffect(() => {
     resetUser();
-  }, [resetUser])
+  }, [resetUser]);
 
   useEffect(() => {
     if(allUsers.data.length) {
@@ -22,7 +22,7 @@ const Home = ({ allUsers, resetUser }: IProps): JSX.Element => {
       })
       setUserCards(cards);
     }
-  }, [allUsers])
+  }, [allUsers]);
 
   return (
     <div className='home-page'>

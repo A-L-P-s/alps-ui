@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import mexicanFlag from '../../assets/mexico.png'
-import turkeyFlag from '../../assets/turkey.png'
-import vietnamFlag from '../../assets/vietnam.png'
+import mexicanFlag from '../../assets/mexico.png';
+import turkeyFlag from '../../assets/turkey.png';
+import vietnamFlag from '../../assets/vietnam.png';
 import './User.css';
 
 interface IProps {
