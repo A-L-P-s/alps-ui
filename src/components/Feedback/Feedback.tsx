@@ -58,7 +58,7 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
               <h5 className='feedback-section-title'>Corrected Sentence</h5>
               <p className='sentence'>{feedback.data.attributes.sentences[1].ai_sent}</p>
               <h5 className='feedback-section-title'>Feedback</h5>
-              <p>{feedback.data.attributes.sentences[1].ai_explanation}</p>
+              <p className='sentence'>{feedback.data.attributes.sentences[1].ai_explanation}</p>
             </div>
           </div>
             <Link to={`/${userId}/dashboard`}><button>Back</button></Link>
