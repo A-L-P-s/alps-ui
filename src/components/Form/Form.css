@@ -1,15 +1,16 @@
 form {
   display: flex;
   justify-content: center;
+  height: 80vh;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .prompt-img {
   max-width: 45vw;
-  height: auto;
-  margin: 5%;
+  margin: 2vw;
   border-radius: 10px;
   box-shadow: 0 0 14px #ccc;
+  object-fit: cover;
 }
 
 .chars-remaining {
@@ -21,11 +22,12 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 80vh;
-  border: 2px solid #2D8CFF;
+  margin-right: 2vw;
+  margin-left: 4vw;
   border-radius: 10px;
   background-color: aliceblue;
   box-shadow: 0 0 14px #ccc;
+  overflow-y: scroll;
 }
 
 .challenge-header-container {
@@ -35,10 +37,10 @@ form {
 
 .challenge-header {
   align-self: center;
+  margin-bottom: 0;
 }
 
 .prompt-container {
-  height: 50%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -66,8 +68,6 @@ form {
 .sentence-container {
   display: flex;
   flex-direction: column;
-  height: 60vh;
-  width: 54vh;
 }
 
 input {
@@ -77,13 +77,6 @@ input {
 .submit-button-container {
   align-self: center;
   margin-bottom: 20px;
-}
-
-.submit-link {
-  display: inline-block;
-  align-self: center;
-  height: 100%;
-  width: fit-content;
 }
 
 .my-modal {
@@ -109,4 +102,17 @@ input {
   margin-right: -7%;
   align-self: flex-end;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .challenge-container {
+    width: 90vw;
+    margin-bottom: 5vh;
+  }
 }

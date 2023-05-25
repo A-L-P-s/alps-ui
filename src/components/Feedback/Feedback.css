@@ -1,6 +1,6 @@
 .feedback-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: 80vh;
 }
 
