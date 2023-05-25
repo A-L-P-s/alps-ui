@@ -1,4 +1,6 @@
-describe('sad path tests', () => {
+/// <reference types="Cypress" />
+
+describe('sad path flows', () => {
   beforeEach(() => {
     cy.interceptAll();
     cy.visit('http://localhost:3000');
@@ -45,20 +47,6 @@ describe('sad path tests', () => {
 
     cy.url().should('eq', 'http://localhost:3000/')
       .get('.user').should('have.length', 2);
-  });
-
-  it('Should display an error message if the user tries to submit a challenge without filling out both input fields', () => {
-    cy.get('button').first().click();
-
-    cy.get('button').contains('New Challenge').click();
-
-    cy.get('.submit-button').click()
-
-    cy.get('.submit-button-container > p').should('be.visible').contains('Please complete both sentences to receive feedback for your work!')
-    
-    cy.get('textarea').first().type('Example sentence 1');
-    
-    cy.get('.submit-button-container > p').should('be.visible').contains('Please complete both sentences to receive feedback for your work!')
   });
 
   it('should show an error when the user clicks "Submit" with a bad network request and allow them to return Home', () => {

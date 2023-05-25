@@ -1,9 +1,3 @@
-img {
-  height: 20vh;
-  width: 16vw;
-  border-radius: 1.5vh;
-}
-
 .challenge-card-container {
   display: flex;
   flex-direction: row;
@@ -12,7 +6,6 @@ img {
   overflow-y: scroll;
   height: 70vh;
   width: 80vw;
-  gap: 1vh;
   padding: 1.3vh;
   border-radius: 15px;
   box-shadow: 0 0 8px #ccc;

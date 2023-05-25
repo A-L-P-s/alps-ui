@@ -1,21 +1,57 @@
 .challenge-card {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  width: 200px;
   padding: 1vh;
-  margin: 1vw;
+  padding-bottom: 2.5vh;
+  background-color: white;
   border-radius: 1.5vh;
   box-shadow: 0 0 8px #ccc;
   background-color: white;
 }
 
-.card-right-content {
+.challenge-card img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1.5vh;
+}
+
+.card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5vh;
-  font-size: 12px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
   color: black;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.card-content > * {
+  margin: 0.5vh 0;
+}
+
+.card-content > h3 {
+  font-size: 24px;
+  font-weight: bold
+}
+
+.card-info {
+  margin-top: 0;
+  align-self: flex-end;
+}
+
+.card-content > * {
+  margin: 0.5vh 0;
+}
+
+.card-content > h3 {
+  font-size: 24px;
+  font-weight: bold
+}
+
+.card-info {
+  margin-top: 0;
+  align-self: flex-end;
 }
 
 .challenge-card:hover {
