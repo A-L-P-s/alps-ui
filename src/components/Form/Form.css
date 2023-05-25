@@ -124,4 +124,12 @@ input {
     width: 90vw;
     margin-bottom: 5vh;
   }
+
+  .my-modal {
+    width: 85vw;
+  }
+
+  .close-modal-button {
+    margin-right: -2%;
+  }
 }

@@ -1,8 +1,10 @@
 .user {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 240px;
+    height: 300px;
     margin: 6vh;
     padding: 4vh;
     border: 2px solid #2D8CFF;
