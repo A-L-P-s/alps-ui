@@ -1,9 +1,8 @@
 /// <reference types="Cypress" />
 
-
 describe ('Feedback flow', () => { 
   beforeEach('intercept all endpoints', () => {
-    cy.interceptAll()
+    cy.interceptAll();
     cy.visit('http://localhost:3000')
     .wait('@getUsers');
   });
