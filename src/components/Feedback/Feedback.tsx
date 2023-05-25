@@ -40,8 +40,8 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
               <h2>{`Your challenge from ${feedback.data.attributes.created_at}`}</h2>
             </div>
           <div className='sentences-container'>
-            <h3 className='verb-assigned'>Verb assigned → <p className='verb'>{feedback.data.attributes.verb}</p></h3>
-            <h4 >Sentence #1</h4>
+            <h3 className='verb-assigned'>Verb assigned: <span className='verb'>{feedback.data.attributes.verb}</span></h3>
+            <h4>Sentence #1</h4>
             <h4 className='grammar-point'>{feedback.data.attributes.sentences[0].grammar_point} ✴ {feedback.data.attributes.sentences[0].eng_grammar_point}</h4>
             <div className='sentence-feedback'>
               <h5 className='feedback-section-title'>Your response</h5>
@@ -49,7 +49,7 @@ const Feedback = ( { setError }: IProps): JSX.Element => {
               <h5 className='feedback-section-title'>Corrected Sentence</h5>
               <p className='sentence'>{feedback.data.attributes.sentences[0].ai_sent}</p>
               <h5 className='feedback-section-title'>Feedback</h5>
-              <p>{feedback.data.attributes.sentences[0].ai_explanation}</p>
+              <p className='sentence'>{feedback.data.attributes.sentences[0].ai_explanation}</p>
             </div>
 
             <h4>Sentence #2</h4>

@@ -1,7 +1,8 @@
-describe ('Feedback flow', () => {
-  
+/// <reference types="Cypress" />
+
+describe ('Feedback flow', () => { 
   beforeEach('intercept all endpoints', () => {
-    cy.interceptAll()
+    cy.interceptAll();
     cy.visit('http://localhost:3000')
     .wait('@getUsers');
   });
@@ -20,7 +21,7 @@ describe ('Feedback flow', () => {
       .click();
  
     cy.get('.challenge-card-container').should('be.visible') ;
-    cy.get('[href="/1/feedback/1"] > .challenge-card > .card-right-content')
+    cy.get('.challenge-card')
       .first()
       .click();
  
