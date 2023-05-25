@@ -17,7 +17,7 @@ describe ('Feedback flow', () => {
       .click();
  
     cy.get('.challenge-card-container').should('be.visible') ;
-    cy.get('[href="/1/feedback/100"] > .challenge-card > .card-right-content')
+    cy.get('[href="/1/feedback/100"] > .challenge-card > .card-content')
       .first()
       .click();
  

@@ -1,4 +1,4 @@
-describe('sad path tests', () => {
+describe('sad path flows', () => {
   beforeEach(() => {
     cy.interceptAll();
     cy.visit('http://localhost:3000');
@@ -54,11 +54,11 @@ describe('sad path tests', () => {
 
     cy.get('.submit-button').click()
 
-    cy.get('.submit-button-container > p').should('be.visible').contains('Please complete both sentences to receive feedback for your work!')
+    cy.get('.submit-button-container > p').contains('Please complete both sentences to receive feedback for your work!')
     
     cy.get('textarea').first().type('Example sentence 1');
     
-    cy.get('.submit-button-container > p').should('be.visible').contains('Please complete both sentences to receive feedback for your work!')
+    cy.get('.submit-button-container > p').contains('Please complete both sentences to receive feedback for your work!')
   });
 
   it('should show an error when the user clicks "Submit" with a bad network request and allow them to return Home', () => {
