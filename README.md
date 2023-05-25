@@ -15,7 +15,7 @@
       <hr><br>
       Now that you've "climbed the mountain" of learning another language, keep your skills fresh with regular practice! Language output (speaking & writing) is key but can get dull with routine drills, plus you may never know if it's entirely correct. <br><span>🔸</span><br> With ALPs, every writing challenge comes with an inspiring image to ignite your imagination, a random verb & grammar points to help focus your language, and immediate feedback with the help of AI!
     </p><br>
-      <a href="https://a-l-p-s.github.io/alps-ui/">Visit ALPs.com!</a>
+      <a href="https://a-l-p-s.github.io/alps-ui/">Visit ALPs deployed site!</a>
 </div>
 <hr>
 
@@ -172,7 +172,7 @@ To run the test specs in Cypress, run `npm run cypress` in your terminal within 
 | [<img alt="Caleb Thomas" width="100" src="src/assets/caleb.jpg"/>](https://www.linkedin.com/in/calebjthomas/) | [<img alt="James Taylor" width="100" src="src/assets/james.jpg"/>](https://www.linkedin.com/in/james-taylor-a02a7a199/) | [<img alt="Huy Phan" width="100" src="src/assets/huy.jpg"/>](https://www.linkedin.com/in/huy-phan-2471b3261/) | [<img alt="David Marino" width="100" src="src/assets/david.jpg"/>](https://www.linkedin.com/in/davidjmarino8/) | [<img alt="Melony Erin Franchini" width="100" src="src/assets/mel.jpg"/>](https://www.linkedin.com/in/melony-erin-franchini/) |
 | ------------------ | ------------ | -------------- | ----------- | -------------- | 
 | Caleb Thomas | James Taylor | Huy Phan | David Marino | Melony Erin Franchini |
-| Backend Developer | Backend Developer | Backend Developer | Backend Developer | BackEnd | 
+| Backend Developer | Backend Developer | Backend Developer | Backend Developer | Backend Developer | 
 | [GitHub](https://github.com/cjthomas00) | [GitHub](https://github.com/JTaylor28) | [GitHub](https://github.com/HuyPhan2025) | [GitHub](https://github.com/davejm8) | [GitHub](https://github.com/MelTravelz) |
 | [LinkedIn](https://www.linkedin.com/in/calebjthomas/) |  [LinkedIn](https://www.linkedin.com/in/james-taylor-a02a7a199/) | [LinkedIn](https://www.linkedin.com/in/huy-phan-2471b3261/) | [LinkedIn](https://www.linkedin.com/in/davidjmarino8/) | [LinkedIn](https://www.linkedin.com/in/melony-erin-franchini/) |
 
