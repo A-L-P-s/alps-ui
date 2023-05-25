@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe('sad path flows', () => {
   beforeEach(() => {
     cy.interceptAll();

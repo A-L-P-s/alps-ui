@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe('instructions flow', () => {
   beforeEach('intercept all endpoints', () => {
     cy.interceptAll();

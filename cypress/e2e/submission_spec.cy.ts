@@ -1,4 +1,5 @@
 /// <reference types='Cypress' />
+
 describe('successful submission user flow', () => {
   beforeEach('intercept all endpoints', () => {
     cy.interceptAll();

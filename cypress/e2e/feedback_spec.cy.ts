@@ -1,6 +1,11 @@
-describe ('Feedback flow', () => {
+/// <reference types="Cypress" />
+
+
+describe ('Feedback flow', () => { 
   beforeEach('intercept all endpoints', () => {
-    cy.visit('http://localhost:3000');
+    cy.interceptAll()
+    cy.visit('http://localhost:3000')
+    .wait('@getUsers');
   });
 
   it('should show the user dashboard once a user is selected', () => {
@@ -17,24 +22,33 @@ describe ('Feedback flow', () => {
       .click();
  
     cy.get('.challenge-card-container').should('be.visible') ;
-    cy.get('[href="/1/feedback/100"] > .challenge-card > .card-content')
+    cy.get('.challenge-card')
       .first()
       .click();
  
     cy.get('.feedback-container') 
-      .should('contain', 'Your challenge from 05/23/2023')
+      .should('contain', 'Your challenge from 05/18/2023')
       .and('contain', 'Sentence #1')
-      .and('contain', 'presente ✴ simple present tense')
+      .and('contain', 'condicional ✴ conditional tense')
       .and('contain', 'Your response')
-      .and('contain', 'Él habla español y francés con fluidez.')
+      .and('contain', 'Si la rana pudiera hablar, contaría historias fascinantes.')
       .and('contain', 'Corrected Sentence')
-      .and('contain', 'Él habla español y francés con fluidez.')
+      .and('contain', 'Si la rana pudiera hablar, contaría historias fascinantes.')
       .and('contain', 'Feedback')
-      .and('contain', 'This sentence is correct. Nice work rockstar!');
+      .and('contain', 'Si la rana pudiera hablar, contaría historias fascinantes.')
+
+      .and('contain', 'Sentence #2')
+      .and('contain', 'pretérito ✴ preterite tense')
+      .and('contain', 'Your response')
+      .and('contain', 'La rana habló con los otros animales en el estanque.')
+      .and('contain', 'Corrected Sentence')
+      .and('contain', 'La rana habló con los otros animales en el estanque.')
+      .and('contain', 'Feedback')
+      .and('contain', 'The sentence is correct! Nice work!');
     })
 
     it('should return to dashboard view when user clicks back button from feedback view', () => {
-        cy.visit('http://localhost:3000/1/feedback/100');
+        cy.visit('http://localhost:3000/1/feedback/1');
      
         cy.get('button').click();
         cy.url().should('include', '/dashboard');
