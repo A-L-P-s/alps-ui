@@ -85,6 +85,8 @@ input {
   color: white;
   background-color: #2875ba;
   position: fixed;
+  height: 80vh;
+  width: 70vw;
   margin: 5%;
   width: 50%;
   padding: 5%;
@@ -96,11 +98,18 @@ input {
   bottom: auto;
   margin-right: -50%;
   border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .close-modal-button {
-  margin-right: -7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   align-self: flex-end;
+  width: 24px;
+  height: 24px;
+  margin-right: -10%;
   cursor: pointer;
 }
 
